@@ -10,7 +10,7 @@ namespace ProtoMine.DAO
 {
     class Conexao
     {
-        string info = "SERVER=127.0.0.1; DATABASE=protomine; UID=root; PWD=020401";
+        string info = "SERVER=127.0.0.1; DATABASE=protomine; UID=root; PWD=1234";
         protected MySqlConnection conexao = null;
         UtilidadesTelas util = new UtilidadesTelas();
         public void abrirConexao()

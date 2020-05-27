@@ -52,7 +52,6 @@ namespace ProtoMine.DAO
             {
                 fecharConexao();
             }
-            // Console.ReadKey();
         }
     }
 }
