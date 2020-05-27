@@ -60,7 +60,7 @@ namespace ProtoMine
             } 
             else
             {
-                util.MensagemDeTeste("Usuário não encontrado", "Erro");
+                util.MensagemDeTeste("Usuário não encontrado", "Erro!");
             }
         }
     }

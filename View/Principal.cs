@@ -16,5 +16,11 @@ namespace ProtoMine.View
         {
             InitializeComponent();
         }
+
+        private void PrincipalFechada(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit(); 
+            // Quando a janela principal for fechada toda a execução do sistema será interrompida
+        }
     }
 }
