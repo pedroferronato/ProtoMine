@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProtoMine.Modelo;
+using ProtoMine.View;
 
 namespace ProtoMine
 {
@@ -37,9 +38,30 @@ namespace ProtoMine
 
         private void OnClickLogin(object sender, EventArgs e)
         {
-            UsuarioDAO userDAO = new UsuarioDAO();
-            Usuario user = userDAO.buscarLogin(txtLogin.Text, txtSenha.Text);
-            util.MensagemDeTeste(user.ToString(), "Login");
+            Usuario usuario = new Usuario(txtLogin.Text, txtSenha.Text);
+            UsuarioController usController = new UsuarioController();
+
+            bool logado = false;
+            try
+            {
+                logado = usController.Logar(usuario);
+            }
+            catch (Exception exce)
+            {
+                util.MensagemDeTeste("Erro no login", "Erro!");
+                throw exce;
+            }
+
+            if (logado)
+            {
+                this.Hide();
+                Principal p = new Principal();
+                p.ShowDialog();
+            } 
+            else
+            {
+                util.MensagemDeTeste("Usuário não encontrado", "Erro");
+            }
         }
     }
 }
