@@ -85,3 +85,5 @@ C:\Users\pedro\source\repos\gitProtoMine\ProtoMine\obj\Debug\ProtoMine.csproj.Co
 C:\Users\pedro\source\repos\gitProtoMine\ProtoMine\obj\Debug\ProtoMine.exe
 C:\Users\pedro\source\repos\gitProtoMine\ProtoMine\obj\Debug\ProtoMine.pdb
 C:\Users\pedro\source\repos\gitProtoMine\ProtoMine\obj\Debug\ProtoMine.View.Principal.resources
+C:\Users\pedro\source\repos\gitProtoMine\ProtoMine\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+C:\Users\pedro\source\repos\gitProtoMine\ProtoMine\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml

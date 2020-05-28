@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProtoMine.Modelo;
 using ProtoMine.View;
+using System.Runtime.InteropServices;
 
 namespace ProtoMine
 {
@@ -21,25 +22,71 @@ namespace ProtoMine
         {
             InitializeComponent();
 
-            CustomizarPanelLogin();
         }
 
-        private void CustomizarPanelLogin()
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(IntPtr hwmd, int wmsg, int wparam, int lparam);
+
+        private void onClickSair(object sender, EventArgs e)
         {
-            util.Centralizar(this, panel1); // Centraliza painal de login
-
-            titulo.Top = (panel1.Height / 10) - (titulo.Height / 2); // Define altura do título
-            titulo.Left = (panel1.Width / 2) - (titulo.Width / 2); // Define Centralização do título
-
-            panellogin.Top = titulo.Top + 65; // Define distânica do painel secundário em relação ao título
-            panellogin.Left = (panel1.Width / 2) - (panellogin.Width / 2); // Centraliza o Painel central
-
-            panel1.Width -= 15; // Remove 15 pixels do painel de login para ajuste
+            Application.Exit();
         }
 
-        private void OnClickLogin(object sender, EventArgs e) // Ao clickar no botão login
+        private void txtUsuario_Enter(object sender, EventArgs e)
         {
-            Usuario usuario = new Usuario(txtLogin.Text, txtSenha.Text); // Instancia usuário com login e senha
+            if (txtUsuario.Text == "USUARIO")
+            {
+                txtUsuario.Text = "";
+                txtUsuario.ForeColor = Color.FromArgb(1, 50, 50, 50);
+            }
+        }
+
+        private void txtUsuario_Leave(object sender, EventArgs e)
+        {
+            if (txtUsuario.Text == "")
+            {
+                txtUsuario.Text = "USUARIO";
+                txtUsuario.ForeColor = Color.FromArgb(1, 255, 255, 255);
+            }
+        }
+
+        private void txtSenha_Enter(object sender, EventArgs e)
+        {
+            if (txtSenha.Text == "SENHA")
+            {
+                txtSenha.Text = "";
+                txtSenha.ForeColor = Color.FromArgb(1, 50, 50, 50);
+                txtSenha.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void txtSenha_Leave(object sender, EventArgs e)
+        {
+            if (txtSenha.Text == "")
+            {
+                txtSenha.Text = "SENHA";
+                txtSenha.ForeColor = Color.FromArgb(1, 255, 255, 255);
+                txtSenha.UseSystemPasswordChar = false;
+            }
+        }
+
+        private void Login_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void panel2_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            Usuario usuario = new Usuario(txtUsuario.Text, txtSenha.Text); // Instancia usuário com login e senha
             UsuarioController usController = new UsuarioController();
 
             try
@@ -57,7 +104,7 @@ namespace ProtoMine
                 this.Hide(); // Esconde tela de login
                 Principal p = new Principal(); // Instancia tela principal
                 p.ShowDialog(); // Apresenta tela principal
-            } 
+            }
             else // Caso login inválido
             {
                 util.MensagemDeTeste("Usuário não encontrado", "Erro!");
