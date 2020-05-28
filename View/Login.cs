@@ -26,25 +26,25 @@ namespace ProtoMine
 
         private void CustomizarPanelLogin()
         {
-            util.Centralizar(this, panel1);
-            titulo.Top = (panel1.Height / 10) - (titulo.Height / 2);
-            titulo.Left = (panel1.Width / 2) - (titulo.Width / 2);
+            util.Centralizar(this, panel1); // Centraliza painal de login
 
-            panellogin.Top = titulo.Top + 65;
-            panellogin.Left = (panel1.Width / 2) - (panellogin.Width / 2);
+            titulo.Top = (panel1.Height / 10) - (titulo.Height / 2); // Define altura do título
+            titulo.Left = (panel1.Width / 2) - (titulo.Width / 2); // Define Centralização do título
 
-            panel1.Width -= 15;
+            panellogin.Top = titulo.Top + 65; // Define distânica do painel secundário em relação ao título
+            panellogin.Left = (panel1.Width / 2) - (panellogin.Width / 2); // Centraliza o Painel central
+
+            panel1.Width -= 15; // Remove 15 pixels do painel de login para ajuste
         }
 
-        private void OnClickLogin(object sender, EventArgs e)
+        private void OnClickLogin(object sender, EventArgs e) // Ao clickar no botão login
         {
-            Usuario usuario = new Usuario(txtLogin.Text, txtSenha.Text);
+            Usuario usuario = new Usuario(txtLogin.Text, txtSenha.Text); // Instancia usuário com login e senha
             UsuarioController usController = new UsuarioController();
 
-            bool logado = false;
             try
             {
-                logado = usController.Logar(usuario);
+                usuario = usController.Logar(usuario); // Retorno do usuário (Existe ou não)
             }
             catch (Exception exce)
             {
@@ -52,13 +52,13 @@ namespace ProtoMine
                 throw exce;
             }
 
-            if (logado)
+            if (usuario.Id != 0) // Caso login válido
             {
-                this.Hide();
-                Principal p = new Principal();
-                p.ShowDialog();
+                this.Hide(); // Esconde tela de login
+                Principal p = new Principal(); // Instancia tela principal
+                p.ShowDialog(); // Apresenta tela principal
             } 
-            else
+            else // Caso login inválido
             {
                 util.MensagemDeTeste("Usuário não encontrado", "Erro!");
             }
