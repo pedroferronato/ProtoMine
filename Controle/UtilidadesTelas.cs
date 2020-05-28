@@ -17,12 +17,9 @@ namespace ProtoMine.Controle
 
         public void MensagemDeTeste(string message, string caption)
         {
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            DialogResult result;
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
 
-            // Displays the MessageBox.
-            result = MessageBox.Show(message, caption, buttons);
-            
+            MessageBox.Show(message, caption, buttons);
         }
     }
 }
