@@ -109,7 +109,7 @@ namespace ProtoMine
             else // Caso login inválido
             {
                 util.MensagemDeTeste("Usuário não encontrado", "Erro!");
-                txtSenha.Text = "";
+                txtSenha.Text = "SENHA";
             }
         }
     }
