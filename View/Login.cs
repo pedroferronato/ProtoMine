@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using ProtoMine.Modelo;
 using ProtoMine.View;
 using System.Runtime.InteropServices;
+using MySql.Data.MySqlClient;
 
 namespace ProtoMine
 {
@@ -87,6 +88,29 @@ namespace ProtoMine
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            lbErro.Visible = false;
+
+            if (txtUsuario.Text == "USUARIO" && txtSenha.Text == "SENHA")
+            {
+                lbErro.Visible = true;
+                lbErro.Text = "   Os campos Usuário e Senha devem ser preenchidos";
+                return;
+            } 
+            else if (txtSenha.Text == "SENHA")
+            {
+                lbErro.Visible = true;
+                lbErro.Text = "   O campo Senha deve ser preenchido";
+                txtSenha.Focus();
+                return;
+            } 
+            else if (txtUsuario.Text == "USUARIO")
+            {
+                lbErro.Visible = true;
+                lbErro.Text = "   O campo Usuário deve ser preenchido";
+                txtUsuario.Focus();
+                return;
+            }
+
             Usuario usuario = new Usuario(txtUsuario.Text, txtSenha.Text); // Instancia usuário com login e senha
             UsuarioController usController = new UsuarioController();
 
@@ -94,10 +118,15 @@ namespace ProtoMine
             {
                 usuario = usController.Logar(usuario); // Retorno do usuário (Existe ou não)
             }
-            catch (Exception exce)
+            catch (MySqlException exce)
             {
-                util.MensagemDeTeste("Erro no login", "Erro!");
+                util.MensagemDeTeste("Erro no login, falha na conexão ao banco de dados", "Erro!");
                 throw exce;
+            }
+            catch (Exception ex)
+            {
+                util.MensagemDeTeste("Erro desconhecido no login:  " + ex.Message, "Erro!");
+                throw ex;
             }
 
             if (usuario.Id != 0) // Caso login válido
@@ -108,7 +137,10 @@ namespace ProtoMine
             }
             else // Caso login inválido
             {
-                util.MensagemDeTeste("Usuário não encontrado", "Erro!");
+                txtSenha.ForeColor = Color.FromArgb(1, 255, 255, 255);
+                txtSenha.UseSystemPasswordChar = false;
+                lbErro.Visible = true;
+                lbErro.Text = "   Credênciais inválidas, favor conferir.\n   usuário não encontrado";
                 txtSenha.Text = "SENHA";
             }
         }
