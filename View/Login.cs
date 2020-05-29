@@ -41,7 +41,6 @@ namespace ProtoMine
             if (txtUsuario.Text == "USUARIO")
             {
                 txtUsuario.Text = "";
-                txtUsuario.ForeColor = Color.FromArgb(1, 50, 50, 50);
             }
         }
 
@@ -59,7 +58,6 @@ namespace ProtoMine
             if (txtSenha.Text == "SENHA")
             {
                 txtSenha.Text = "";
-                txtSenha.ForeColor = Color.FromArgb(1, 50, 50, 50);
                 txtSenha.UseSystemPasswordChar = true;
             }
         }
