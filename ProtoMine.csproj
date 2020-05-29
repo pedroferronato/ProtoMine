@@ -54,6 +54,7 @@
     <Compile Include="Controle\UtilidadesTelas.cs" />
     <Compile Include="DAO\Conexao.cs" />
     <Compile Include="DAO\UsuarioDAO.cs" />
+    <Compile Include="Excecoes\LoginException.cs" />
     <Compile Include="Modelo\Usuario.cs" />
     <Compile Include="View\Login.cs">
       <SubType>Form</SubType>
@@ -115,6 +116,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="icon\ic-cancel_97589.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\vcsconflicting_93497.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -47,10 +47,15 @@ namespace ProtoMine.DAO
                 return user; // Retorna o usuario preenchido caso exista e somente com login e senha caso não exista 
                 //(o importante para verificação se trata do login ser diferente de 0 "valor padrão e nunca existente no banco de dados")
             }
-            catch (Exception e)
+            catch (MySqlException exce)
             {
-                util.MensagemDeTeste(e.Message, e.Message);
-                throw e;
+                util.MensagemDeTeste("Erro no login, falha na conexão ao banco de dados", "Erro!");
+                throw exce;
+            }
+            catch (Exception ex)
+            {
+                util.MensagemDeTeste("Erro desconhecido no login:  " + ex.Message, "Erro!");
+                throw ex;
             }
             finally
             {
