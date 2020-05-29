@@ -24,6 +24,7 @@ namespace ProtoMine
 
         }
 
+        // importação de dll para captura de mouse e movimentação de tela
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
