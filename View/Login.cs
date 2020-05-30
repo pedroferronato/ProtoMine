@@ -84,7 +84,7 @@ namespace ProtoMine
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void Logar()
         {
             lbErro.Visible = false;
 
@@ -93,14 +93,14 @@ namespace ProtoMine
                 lbErro.Visible = true;
                 lbErro.Text = "   Os campos Usuário e Senha devem ser preenchidos";
                 return;
-            } 
+            }
             else if (txtSenha.Text == "SENHA")
             {
                 lbErro.Visible = true;
                 lbErro.Text = "   O campo Senha deve ser preenchido";
                 txtSenha.Focus();
                 return;
-            } 
+            }
             else if (txtUsuario.Text == "USUARIO")
             {
                 lbErro.Visible = true;
@@ -140,6 +140,27 @@ namespace ProtoMine
                 lbErro.Visible = true;
                 lbErro.Text = "   Credênciais inválidas, favor conferir.\n   usuário não encontrado";
                 txtSenha.Text = "SENHA";
+            }
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            Logar();
+        }
+
+        private void userLogin(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Logar();
+            }
+        }
+
+        private void senhaLogar(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Logar();
             }
         }
     }

@@ -93,6 +93,16 @@ namespace ProtoMine.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap lines_menu_burger_icon_123889 {
+            get {
+                object obj = ResourceManager.GetObject("lines_menu_burger_icon_123889", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap SaidaBranco {
             get {
                 object obj = ResourceManager.GetObject("SaidaBranco", resourceCulture);

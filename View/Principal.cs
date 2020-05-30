@@ -31,5 +31,10 @@ namespace ProtoMine.View
             Application.Exit();
             // Quando a janela principal for fechada toda a execução do sistema será interrompida
         }
+
+        private void mostarMenu(object sender, EventArgs e)
+        {
+            panelBurg.Visible = !panelBurg.Visible;
+        }
     }
 }
