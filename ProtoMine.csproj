@@ -120,5 +120,8 @@
   <ItemGroup>
     <None Include="icon\vcsconflicting_93497.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\jones.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
