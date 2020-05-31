@@ -1,5 +1,6 @@
 ﻿using ProtoMine.Controle;
 using ProtoMine.DAO;
+using ProtoMine.Cache;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -109,12 +110,12 @@ namespace ProtoMine
                 return;
             }
 
-            Usuario usuario = new Usuario(txtUsuario.Text, txtSenha.Text); // Instancia usuário com login e senha
+            bool logado;
             UsuarioController usController = new UsuarioController();
 
             try
             {
-                usuario = usController.Logar(usuario); // Retorno do usuário (Existe ou não)
+                logado = usController.Logar(txtUsuario.Text, txtSenha.Text); // Retorno do usuário (Existe ou não)
             }
             catch (MySqlException exce)
             {
@@ -127,7 +128,7 @@ namespace ProtoMine
                 throw ex;
             }
 
-            if (usuario.Id != 0) // Caso login válido
+            if (logado) // Caso login válido
             {
                 this.Hide(); // Esconde tela de login
                 Principal p = new Principal(); // Instancia tela principal

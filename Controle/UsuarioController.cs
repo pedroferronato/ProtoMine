@@ -8,20 +8,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using ProtoMine.Cache;
 
 namespace ProtoMine.Controle
 {
     class UsuarioController
     {
-        public Usuario Logar(Usuario user)
+        public bool Logar(string login, string senha)
         {
+            Usuario user = new Usuario();
             UtilidadesTelas util = new UtilidadesTelas();
 			UsuarioDAO userDAO = new UsuarioDAO();
 
 			try
 			{
-				user = userDAO.buscarLogin(user.Login, user.Senha); // Realiza a conexão da tela com o DAO
-				return user;
+				user = userDAO.buscarLogin(login, senha); // Realiza a conexão da tela com o DAO
+                if (user.Id != 0)
+                {
+                    UserCache.UsuarioLogado = user;
+                    return true;
+                }
+                return false;
 			}
             catch (MySqlException exce)
             {
