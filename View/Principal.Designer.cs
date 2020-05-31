@@ -39,8 +39,6 @@
             this.panelEsquerdo = new System.Windows.Forms.Panel();
             this.panelPrincipal = new System.Windows.Forms.Panel();
             this.panelBurg = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
@@ -101,7 +99,7 @@
             this.panSupXp.Dock = System.Windows.Forms.DockStyle.Left;
             this.panSupXp.Location = new System.Drawing.Point(0, 0);
             this.panSupXp.Name = "panSupXp";
-            this.panSupXp.Size = new System.Drawing.Size(10, 30);
+            this.panSupXp.Size = new System.Drawing.Size(0, 30);
             this.panSupXp.TabIndex = 0;
             // 
             // lbNome
@@ -150,13 +148,13 @@
             // panelPrincipal
             // 
             this.panelPrincipal.BackColor = System.Drawing.SystemColors.Control;
+            this.panelPrincipal.BackgroundImage = global::ProtoMine.Properties.Resources.cavern_background_free_vector;
             this.panelPrincipal.Controls.Add(this.pnAdmin);
             this.panelPrincipal.Controls.Add(this.panelBurg);
-            this.panelPrincipal.Controls.Add(this.label1);
-            this.panelPrincipal.Controls.Add(this.label2);
+            this.panelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelPrincipal.Location = new System.Drawing.Point(400, 100);
             this.panelPrincipal.Name = "panelPrincipal";
-            this.panelPrincipal.Size = new System.Drawing.Size(880, 500);
+            this.panelPrincipal.Size = new System.Drawing.Size(880, 620);
             this.panelPrincipal.TabIndex = 2;
             // 
             // panelBurg
@@ -172,24 +170,6 @@
             this.panelBurg.Size = new System.Drawing.Size(260, 242);
             this.panelBurg.TabIndex = 3;
             this.panelBurg.Visible = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(240, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "fica mais fácil de configurar a principal se precisar";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(189, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Dx assim até se necessário mexer nela";
             // 
             // shapeContainer2
             // 
@@ -298,6 +278,7 @@
             this.btnDesconectar.TabIndex = 5;
             this.btnDesconectar.Text = "Desconectar";
             this.btnDesconectar.UseVisualStyleBackColor = true;
+            this.btnDesconectar.Click += new System.EventHandler(this.DesconectarUser);
             // 
             // btnLoja
             // 
@@ -354,7 +335,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconBurg)).EndInit();
             this.panelInferiorXp.ResumeLayout(false);
             this.panelPrincipal.ResumeLayout(false);
-            this.panelPrincipal.PerformLayout();
             this.panelBurg.ResumeLayout(false);
             this.pnAdmin.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -372,8 +352,6 @@
         private System.Windows.Forms.Panel panelInferiorXp;
         private System.Windows.Forms.Panel panSupXp;
         private System.Windows.Forms.PictureBox iconBurg;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panelBurg;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer2;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape5;
