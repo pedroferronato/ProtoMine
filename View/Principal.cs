@@ -16,27 +16,32 @@ namespace ProtoMine.View
         public Principal()
         {
             InitializeComponent();
-            Image i = Image.FromFile("../../icon/Miner.png");
+            Image i;
+            if (UserCache.UsuarioLogado.Role.Equals("admin"))
+            {
+                i = Image.FromFile("../../icon/jones.png");
+            }
+            else
+            {
+                i = Image.FromFile("../../icon/miner.png");
+            }
             foto.BackgroundImage = i;
             lbNome.Text = UserCache.UsuarioLogado.Nome;
-        }
-
-        private void PrincipalFechada(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-            // Quando a janela principal for fechada toda a execução do sistema será interrompida
-            
-        }
-
-        private void OnClickSair(object sender, EventArgs e)
-        {
-            Application.Exit();
-            // Quando a janela principal for fechada toda a execução do sistema será interrompida
+            pnAdmin.Visible = false;
         }
 
         private void mostarMenu(object sender, EventArgs e)
         {
             panelBurg.Visible = !panelBurg.Visible;
+            if (!UserCache.UsuarioLogado.Role.Equals("jogador"))
+            {
+                pnAdmin.Visible = !pnAdmin.Visible;
+            }
+        }
+
+        private void FecharAplicacao(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
