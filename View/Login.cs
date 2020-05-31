@@ -131,7 +131,7 @@ namespace ProtoMine
             if (logado) // Caso login válido
             {
                 this.Hide(); // Esconde tela de login
-                Principal p = new Principal(); // Instancia tela principal
+                Principal p = new Principal(this); // Instancia tela principal
                 p.ShowDialog(); // Apresenta tela principal
             }
             else // Caso login inválido

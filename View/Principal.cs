@@ -13,7 +13,7 @@ namespace ProtoMine.View
 {
     public partial class Principal : Form
     {
-        public Principal()
+        public Principal(Form login)
         {
             InitializeComponent();
             Image i;
@@ -38,10 +38,23 @@ namespace ProtoMine.View
                 pnAdmin.Visible = !pnAdmin.Visible;
             }
         }
+        MessageBoxButtons buttons = MessageBoxButtons.YesNo;
 
+        
         private void FecharAplicacao(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (MessageBox.Show("Deseja realmente sair?", "Sair", buttons) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void DesconectarUser(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Deseja realmente desconectar?", "Desconectar", buttons) == DialogResult.Yes)
+            {
+                Application.Restart();
+            }  
         }
     }
 }
