@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProtoMine.Cache;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,7 @@ namespace ProtoMine.View
             InitializeComponent();
             Image i = Image.FromFile("../../icon/Miner.png");
             foto.BackgroundImage = i;
+            lbNome.Text = UserCache.UsuarioLogado.Nome;
         }
 
         private void PrincipalFechada(object sender, FormClosedEventArgs e)

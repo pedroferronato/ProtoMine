@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cache\UserCache.cs" />
     <Compile Include="Controle\UsuarioController.cs" />
     <Compile Include="Controle\UtilidadesTelas.cs" />
     <Compile Include="DAO\Conexao.cs" />
@@ -111,9 +112,7 @@
   <ItemGroup>
     <None Include="icon\SaidaBranco60x60.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DTO\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="icon\ic-cancel_97589.png" />
   </ItemGroup>
