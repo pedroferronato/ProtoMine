@@ -30,33 +30,33 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.PanelTopo = new System.Windows.Forms.Panel();
-            this.iconBurg = new System.Windows.Forms.PictureBox();
             this.panelInferiorXp = new System.Windows.Forms.Panel();
             this.panSupXp = new System.Windows.Forms.Panel();
             this.lbNome = new System.Windows.Forms.Label();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.foto = new Microsoft.VisualBasic.PowerPacks.OvalShape();
             this.panelEsquerdo = new System.Windows.Forms.Panel();
-            this.panelPrincipal = new System.Windows.Forms.Panel();
-            this.panelBurg = new System.Windows.Forms.Panel();
-            this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape5 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.btnAdmin = new System.Windows.Forms.Button();
-            this.btnFechar = new System.Windows.Forms.Button();
-            this.btnDesconectar = new System.Windows.Forms.Button();
-            this.btnLoja = new System.Windows.Forms.Button();
-            this.btnMinerar = new System.Windows.Forms.Button();
+            this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.panelPrincipal = new System.Windows.Forms.Panel();
             this.pnAdmin = new System.Windows.Forms.Panel();
+            this.btnAdmin = new System.Windows.Forms.Button();
+            this.panelBurg = new System.Windows.Forms.Panel();
+            this.btnLoja = new System.Windows.Forms.Button();
+            this.btnDesconectar = new System.Windows.Forms.Button();
+            this.btnFechar = new System.Windows.Forms.Button();
+            this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.btnMinerar = new System.Windows.Forms.Button();
+            this.iconBurg = new System.Windows.Forms.PictureBox();
+            this.foto = new Microsoft.VisualBasic.PowerPacks.OvalShape();
             this.PanelTopo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconBurg)).BeginInit();
             this.panelInferiorXp.SuspendLayout();
             this.panelPrincipal.SuspendLayout();
-            this.panelBurg.SuspendLayout();
             this.pnAdmin.SuspendLayout();
+            this.panelBurg.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconBurg)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelTopo
@@ -71,18 +71,6 @@
             this.PanelTopo.Name = "PanelTopo";
             this.PanelTopo.Size = new System.Drawing.Size(1280, 100);
             this.PanelTopo.TabIndex = 0;
-            // 
-            // iconBurg
-            // 
-            this.iconBurg.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconBurg.Image = global::ProtoMine.Properties.Resources.lines_menu_burger_icon_123889;
-            this.iconBurg.Location = new System.Drawing.Point(1210, 30);
-            this.iconBurg.Name = "iconBurg";
-            this.iconBurg.Size = new System.Drawing.Size(40, 40);
-            this.iconBurg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.iconBurg.TabIndex = 4;
-            this.iconBurg.TabStop = false;
-            this.iconBurg.Click += new System.EventHandler(this.mostarMenu);
             // 
             // panelInferiorXp
             // 
@@ -105,11 +93,11 @@
             // lbNome
             // 
             this.lbNome.AutoSize = true;
-            this.lbNome.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNome.ForeColor = System.Drawing.Color.Snow;
             this.lbNome.Location = new System.Drawing.Point(116, 20);
             this.lbNome.Name = "lbNome";
-            this.lbNome.Size = new System.Drawing.Size(77, 23);
+            this.lbNome.Size = new System.Drawing.Size(81, 24);
             this.lbNome.TabIndex = 2;
             this.lbNome.Text = "Usuário";
             // 
@@ -124,18 +112,6 @@
             this.shapeContainer1.TabIndex = 0;
             this.shapeContainer1.TabStop = false;
             // 
-            // foto
-            // 
-            this.foto.BackColor = System.Drawing.Color.White;
-            this.foto.BackgroundImage = global::ProtoMine.Properties.Resources.jones;
-            this.foto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.foto.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.foto.BorderColor = System.Drawing.Color.Snow;
-            this.foto.BorderWidth = 4;
-            this.foto.Location = new System.Drawing.Point(20, 13);
-            this.foto.Name = "foto";
-            this.foto.Size = new System.Drawing.Size(75, 75);
-            // 
             // panelEsquerdo
             // 
             this.panelEsquerdo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(100)))), ((int)(((byte)(50)))));
@@ -144,6 +120,56 @@
             this.panelEsquerdo.Name = "panelEsquerdo";
             this.panelEsquerdo.Size = new System.Drawing.Size(400, 620);
             this.panelEsquerdo.TabIndex = 1;
+            // 
+            // lineShape5
+            // 
+            this.lineShape5.BorderColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lineShape5.Enabled = false;
+            this.lineShape5.Name = "lineShape5";
+            this.lineShape5.X1 = 0;
+            this.lineShape5.X2 = 260;
+            this.lineShape5.Y1 = 241;
+            this.lineShape5.Y2 = 241;
+            // 
+            // lineShape4
+            // 
+            this.lineShape4.BorderColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lineShape4.Enabled = false;
+            this.lineShape4.Name = "lineShape4";
+            this.lineShape4.X1 = 0;
+            this.lineShape4.X2 = 260;
+            this.lineShape4.Y1 = 180;
+            this.lineShape4.Y2 = 180;
+            // 
+            // lineShape3
+            // 
+            this.lineShape3.BorderColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lineShape3.Enabled = false;
+            this.lineShape3.Name = "lineShape3";
+            this.lineShape3.X1 = 0;
+            this.lineShape3.X2 = 260;
+            this.lineShape3.Y1 = 120;
+            this.lineShape3.Y2 = 120;
+            // 
+            // lineShape2
+            // 
+            this.lineShape2.BorderColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lineShape2.Enabled = false;
+            this.lineShape2.Name = "lineShape2";
+            this.lineShape2.X1 = 0;
+            this.lineShape2.X2 = 260;
+            this.lineShape2.Y1 = 1;
+            this.lineShape2.Y2 = 1;
+            // 
+            // lineShape1
+            // 
+            this.lineShape1.BorderColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lineShape1.Enabled = false;
+            this.lineShape1.Name = "lineShape1";
+            this.lineShape1.X1 = 0;
+            this.lineShape1.X2 = 260;
+            this.lineShape1.Y1 = 60;
+            this.lineShape1.Y2 = 60;
             // 
             // panelPrincipal
             // 
@@ -157,19 +183,86 @@
             this.panelPrincipal.Size = new System.Drawing.Size(880, 620);
             this.panelPrincipal.TabIndex = 2;
             // 
+            // pnAdmin
+            // 
+            this.pnAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(10)))), ((int)(((byte)(3)))));
+            this.pnAdmin.Controls.Add(this.btnAdmin);
+            this.pnAdmin.Location = new System.Drawing.Point(620, 242);
+            this.pnAdmin.Name = "pnAdmin";
+            this.pnAdmin.Size = new System.Drawing.Size(260, 61);
+            this.pnAdmin.TabIndex = 4;
+            // 
+            // btnAdmin
+            // 
+            this.btnAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdmin.FlatAppearance.BorderSize = 0;
+            this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnAdmin.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnAdmin.Location = new System.Drawing.Point(1, 2);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.Size = new System.Drawing.Size(257, 57);
+            this.btnAdmin.TabIndex = 3;
+            this.btnAdmin.Text = "Admin";
+            this.btnAdmin.UseVisualStyleBackColor = true;
+            // 
             // panelBurg
             // 
             this.panelBurg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(10)))), ((int)(((byte)(3)))));
-            this.panelBurg.Controls.Add(this.btnMinerar);
             this.panelBurg.Controls.Add(this.btnLoja);
             this.panelBurg.Controls.Add(this.btnDesconectar);
             this.panelBurg.Controls.Add(this.btnFechar);
             this.panelBurg.Controls.Add(this.shapeContainer2);
+            this.panelBurg.Controls.Add(this.btnMinerar);
             this.panelBurg.Location = new System.Drawing.Point(620, 0);
             this.panelBurg.Name = "panelBurg";
             this.panelBurg.Size = new System.Drawing.Size(260, 242);
             this.panelBurg.TabIndex = 3;
             this.panelBurg.Visible = false;
+            // 
+            // btnLoja
+            // 
+            this.btnLoja.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLoja.FlatAppearance.BorderSize = 0;
+            this.btnLoja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoja.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnLoja.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnLoja.Location = new System.Drawing.Point(1, 62);
+            this.btnLoja.Name = "btnLoja";
+            this.btnLoja.Size = new System.Drawing.Size(257, 57);
+            this.btnLoja.TabIndex = 6;
+            this.btnLoja.Text = "Loja";
+            this.btnLoja.UseVisualStyleBackColor = true;
+            // 
+            // btnDesconectar
+            // 
+            this.btnDesconectar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDesconectar.FlatAppearance.BorderSize = 0;
+            this.btnDesconectar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDesconectar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnDesconectar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnDesconectar.Location = new System.Drawing.Point(1, 122);
+            this.btnDesconectar.Name = "btnDesconectar";
+            this.btnDesconectar.Size = new System.Drawing.Size(257, 57);
+            this.btnDesconectar.TabIndex = 5;
+            this.btnDesconectar.Text = "Desconectar";
+            this.btnDesconectar.UseVisualStyleBackColor = true;
+            this.btnDesconectar.Click += new System.EventHandler(this.DesconectarUser);
+            // 
+            // btnFechar
+            // 
+            this.btnFechar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFechar.FlatAppearance.BorderSize = 0;
+            this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnFechar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnFechar.Location = new System.Drawing.Point(1, 182);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(257, 57);
+            this.btnFechar.TabIndex = 4;
+            this.btnFechar.Text = "Fechar";
+            this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.Click += new System.EventHandler(this.FecharAplicacao);
             // 
             // shapeContainer2
             // 
@@ -186,120 +279,12 @@
             this.shapeContainer2.TabIndex = 2;
             this.shapeContainer2.TabStop = false;
             // 
-            // lineShape1
-            // 
-            this.lineShape1.BorderColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lineShape1.Enabled = false;
-            this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 0;
-            this.lineShape1.X2 = 260;
-            this.lineShape1.Y1 = 60;
-            this.lineShape1.Y2 = 60;
-            // 
-            // lineShape2
-            // 
-            this.lineShape2.BorderColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lineShape2.Enabled = false;
-            this.lineShape2.Name = "lineShape2";
-            this.lineShape2.X1 = 0;
-            this.lineShape2.X2 = 260;
-            this.lineShape2.Y1 = 1;
-            this.lineShape2.Y2 = 1;
-            // 
-            // lineShape3
-            // 
-            this.lineShape3.BorderColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lineShape3.Enabled = false;
-            this.lineShape3.Name = "lineShape3";
-            this.lineShape3.X1 = 0;
-            this.lineShape3.X2 = 260;
-            this.lineShape3.Y1 = 120;
-            this.lineShape3.Y2 = 120;
-            // 
-            // lineShape4
-            // 
-            this.lineShape4.BorderColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lineShape4.Enabled = false;
-            this.lineShape4.Name = "lineShape4";
-            this.lineShape4.X1 = 0;
-            this.lineShape4.X2 = 260;
-            this.lineShape4.Y1 = 180;
-            this.lineShape4.Y2 = 180;
-            // 
-            // lineShape5
-            // 
-            this.lineShape5.BorderColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lineShape5.Enabled = false;
-            this.lineShape5.Name = "lineShape5";
-            this.lineShape5.X1 = 0;
-            this.lineShape5.X2 = 260;
-            this.lineShape5.Y1 = 241;
-            this.lineShape5.Y2 = 241;
-            // 
-            // btnAdmin
-            // 
-            this.btnAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdmin.FlatAppearance.BorderSize = 0;
-            this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdmin.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold);
-            this.btnAdmin.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnAdmin.Location = new System.Drawing.Point(1, 2);
-            this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Size = new System.Drawing.Size(257, 57);
-            this.btnAdmin.TabIndex = 3;
-            this.btnAdmin.Text = "Admin";
-            this.btnAdmin.UseVisualStyleBackColor = true;
-            // 
-            // btnFechar
-            // 
-            this.btnFechar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFechar.FlatAppearance.BorderSize = 0;
-            this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFechar.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold);
-            this.btnFechar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnFechar.Location = new System.Drawing.Point(1, 182);
-            this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(257, 57);
-            this.btnFechar.TabIndex = 4;
-            this.btnFechar.Text = "Fechar";
-            this.btnFechar.UseVisualStyleBackColor = true;
-            this.btnFechar.Click += new System.EventHandler(this.FecharAplicacao);
-            // 
-            // btnDesconectar
-            // 
-            this.btnDesconectar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDesconectar.FlatAppearance.BorderSize = 0;
-            this.btnDesconectar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDesconectar.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold);
-            this.btnDesconectar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnDesconectar.Location = new System.Drawing.Point(1, 122);
-            this.btnDesconectar.Name = "btnDesconectar";
-            this.btnDesconectar.Size = new System.Drawing.Size(257, 57);
-            this.btnDesconectar.TabIndex = 5;
-            this.btnDesconectar.Text = "Desconectar";
-            this.btnDesconectar.UseVisualStyleBackColor = true;
-            this.btnDesconectar.Click += new System.EventHandler(this.DesconectarUser);
-            // 
-            // btnLoja
-            // 
-            this.btnLoja.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLoja.FlatAppearance.BorderSize = 0;
-            this.btnLoja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoja.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold);
-            this.btnLoja.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnLoja.Location = new System.Drawing.Point(1, 62);
-            this.btnLoja.Name = "btnLoja";
-            this.btnLoja.Size = new System.Drawing.Size(257, 57);
-            this.btnLoja.TabIndex = 6;
-            this.btnLoja.Text = "Loja";
-            this.btnLoja.UseVisualStyleBackColor = true;
-            // 
             // btnMinerar
             // 
             this.btnMinerar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinerar.FlatAppearance.BorderSize = 0;
             this.btnMinerar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinerar.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold);
+            this.btnMinerar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnMinerar.ForeColor = System.Drawing.SystemColors.Control;
             this.btnMinerar.Location = new System.Drawing.Point(1, 2);
             this.btnMinerar.Name = "btnMinerar";
@@ -307,15 +292,31 @@
             this.btnMinerar.TabIndex = 7;
             this.btnMinerar.Text = "Minerar";
             this.btnMinerar.UseVisualStyleBackColor = true;
+            this.btnMinerar.Click += new System.EventHandler(this.abrirMineracao);
             // 
-            // pnAdmin
+            // iconBurg
             // 
-            this.pnAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(10)))), ((int)(((byte)(3)))));
-            this.pnAdmin.Controls.Add(this.btnAdmin);
-            this.pnAdmin.Location = new System.Drawing.Point(620, 242);
-            this.pnAdmin.Name = "pnAdmin";
-            this.pnAdmin.Size = new System.Drawing.Size(260, 61);
-            this.pnAdmin.TabIndex = 4;
+            this.iconBurg.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconBurg.Image = global::ProtoMine.Properties.Resources.lines_menu_burger_icon_123889;
+            this.iconBurg.Location = new System.Drawing.Point(1210, 30);
+            this.iconBurg.Name = "iconBurg";
+            this.iconBurg.Size = new System.Drawing.Size(40, 40);
+            this.iconBurg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.iconBurg.TabIndex = 4;
+            this.iconBurg.TabStop = false;
+            this.iconBurg.Click += new System.EventHandler(this.mostarMenu);
+            // 
+            // foto
+            // 
+            this.foto.BackColor = System.Drawing.Color.White;
+            this.foto.BackgroundImage = global::ProtoMine.Properties.Resources.jones;
+            this.foto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.foto.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.foto.BorderColor = System.Drawing.Color.Snow;
+            this.foto.BorderWidth = 4;
+            this.foto.Location = new System.Drawing.Point(20, 13);
+            this.foto.Name = "foto";
+            this.foto.Size = new System.Drawing.Size(75, 75);
             // 
             // Principal
             // 
@@ -332,11 +333,11 @@
             this.Text = "Principal";
             this.PanelTopo.ResumeLayout(false);
             this.PanelTopo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconBurg)).EndInit();
             this.panelInferiorXp.ResumeLayout(false);
             this.panelPrincipal.ResumeLayout(false);
-            this.panelBurg.ResumeLayout(false);
             this.pnAdmin.ResumeLayout(false);
+            this.panelBurg.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.iconBurg)).EndInit();
             this.ResumeLayout(false);
 
         }

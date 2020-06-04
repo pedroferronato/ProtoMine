@@ -13,6 +13,7 @@ namespace ProtoMine.View
 {
     public partial class Principal : Form
     {
+        Minerar miner = new Minerar();
         public Principal(Form login)
         {
             InitializeComponent();
@@ -55,6 +56,22 @@ namespace ProtoMine.View
             {
                 Application.Restart();
             }  
+        }
+
+        private void AbrirMineração(object formMinerar)
+        {
+                Form fm = formMinerar as Form;
+                fm.TopLevel = false;
+                fm.Dock = DockStyle.Fill;
+                this.panelPrincipal.Controls.Add(fm);
+                this.panelPrincipal.Tag = fm;
+                fm.Show();
+            
+        }
+
+        private void abrirMineracao(object sender, EventArgs e)
+        {
+            AbrirMineração(miner);
         }
     }
 }
