@@ -14,6 +14,7 @@ namespace ProtoMine.View
     public partial class Principal : Form
     {
         Minerar miner = new Minerar();
+        Item itemTeste = new Item();
         public Principal(Form login)
         {
             InitializeComponent();
@@ -58,20 +59,29 @@ namespace ProtoMine.View
             }  
         }
 
-        private void AbrirMineração(object formMinerar)
+        private void AbrirTela(object formGen)
         {
-                Form fm = formMinerar as Form;
-                fm.TopLevel = false;
-                fm.Dock = DockStyle.Fill;
-                this.panelPrincipal.Controls.Add(fm);
-                this.panelPrincipal.Tag = fm;
-                fm.Show();
-            
+            Form fm = formGen as Form;
+            fm.TopLevel = false;
+            fm.Dock = DockStyle.Fill;
+            panelPrincipal.Controls.Add(fm);
+            panelPrincipal.Tag = fm;
+            fm.Show();
         }
 
         private void abrirMineracao(object sender, EventArgs e)
         {
-            AbrirMineração(miner);
+            AbrirTela(miner);
+        }
+
+        private void abrirItem(object sender, EventArgs e)
+        {
+            Form fm = itemTeste as Form;
+            fm.TopLevel = false;
+            fm.Dock = DockStyle.Fill;
+            panelItem1.Controls.Add(fm);
+            panelItem1.Tag = fm;
+            fm.Show();
         }
     }
 }

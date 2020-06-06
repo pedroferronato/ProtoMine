@@ -40,6 +40,17 @@
             this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.panelExpecial1 = new System.Windows.Forms.Panel();
+            this.panelExpecial2 = new System.Windows.Forms.Panel();
+            this.panelItem1 = new System.Windows.Forms.Panel();
+            this.panelItem2 = new System.Windows.Forms.Panel();
+            this.panelItem3 = new System.Windows.Forms.Panel();
+            this.panelItem6 = new System.Windows.Forms.Panel();
+            this.panelItem5 = new System.Windows.Forms.Panel();
+            this.panelItem4 = new System.Windows.Forms.Panel();
+            this.panelItem9 = new System.Windows.Forms.Panel();
+            this.panelItem8 = new System.Windows.Forms.Panel();
+            this.panelItem7 = new System.Windows.Forms.Panel();
             this.panelPrincipal = new System.Windows.Forms.Panel();
             this.pnAdmin = new System.Windows.Forms.Panel();
             this.btnAdmin = new System.Windows.Forms.Button();
@@ -51,8 +62,10 @@
             this.btnMinerar = new System.Windows.Forms.Button();
             this.iconBurg = new System.Windows.Forms.PictureBox();
             this.foto = new Microsoft.VisualBasic.PowerPacks.OvalShape();
+            this.button1 = new System.Windows.Forms.Button();
             this.PanelTopo.SuspendLayout();
             this.panelInferiorXp.SuspendLayout();
+            this.panelEsquerdo.SuspendLayout();
             this.panelPrincipal.SuspendLayout();
             this.pnAdmin.SuspendLayout();
             this.panelBurg.SuspendLayout();
@@ -62,6 +75,7 @@
             // PanelTopo
             // 
             this.PanelTopo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(10)))), ((int)(((byte)(3)))));
+            this.PanelTopo.Controls.Add(this.button1);
             this.PanelTopo.Controls.Add(this.iconBurg);
             this.PanelTopo.Controls.Add(this.panelInferiorXp);
             this.PanelTopo.Controls.Add(this.lbNome);
@@ -115,6 +129,17 @@
             // panelEsquerdo
             // 
             this.panelEsquerdo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(100)))), ((int)(((byte)(50)))));
+            this.panelEsquerdo.Controls.Add(this.panelItem9);
+            this.panelEsquerdo.Controls.Add(this.panelItem6);
+            this.panelEsquerdo.Controls.Add(this.panelItem8);
+            this.panelEsquerdo.Controls.Add(this.panelItem3);
+            this.panelEsquerdo.Controls.Add(this.panelItem7);
+            this.panelEsquerdo.Controls.Add(this.panelItem5);
+            this.panelEsquerdo.Controls.Add(this.panelItem2);
+            this.panelEsquerdo.Controls.Add(this.panelItem4);
+            this.panelEsquerdo.Controls.Add(this.panelItem1);
+            this.panelEsquerdo.Controls.Add(this.panelExpecial2);
+            this.panelEsquerdo.Controls.Add(this.panelExpecial1);
             this.panelEsquerdo.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelEsquerdo.Location = new System.Drawing.Point(0, 100);
             this.panelEsquerdo.Name = "panelEsquerdo";
@@ -170,6 +195,94 @@
             this.lineShape1.X2 = 260;
             this.lineShape1.Y1 = 60;
             this.lineShape1.Y2 = 60;
+            // 
+            // panelExpecial1
+            // 
+            this.panelExpecial1.BackColor = System.Drawing.Color.White;
+            this.panelExpecial1.Location = new System.Drawing.Point(50, 30);
+            this.panelExpecial1.Name = "panelExpecial1";
+            this.panelExpecial1.Size = new System.Drawing.Size(120, 140);
+            this.panelExpecial1.TabIndex = 0;
+            // 
+            // panelExpecial2
+            // 
+            this.panelExpecial2.BackColor = System.Drawing.Color.White;
+            this.panelExpecial2.Location = new System.Drawing.Point(230, 30);
+            this.panelExpecial2.Name = "panelExpecial2";
+            this.panelExpecial2.Size = new System.Drawing.Size(120, 140);
+            this.panelExpecial2.TabIndex = 1;
+            // 
+            // panelItem1
+            // 
+            this.panelItem1.BackColor = System.Drawing.Color.White;
+            this.panelItem1.Location = new System.Drawing.Point(20, 190);
+            this.panelItem1.Name = "panelItem1";
+            this.panelItem1.Size = new System.Drawing.Size(110, 130);
+            this.panelItem1.TabIndex = 1;
+            // 
+            // panelItem2
+            // 
+            this.panelItem2.BackColor = System.Drawing.Color.White;
+            this.panelItem2.Location = new System.Drawing.Point(145, 190);
+            this.panelItem2.Name = "panelItem2";
+            this.panelItem2.Size = new System.Drawing.Size(110, 130);
+            this.panelItem2.TabIndex = 2;
+            // 
+            // panelItem3
+            // 
+            this.panelItem3.BackColor = System.Drawing.Color.White;
+            this.panelItem3.Location = new System.Drawing.Point(270, 190);
+            this.panelItem3.Name = "panelItem3";
+            this.panelItem3.Size = new System.Drawing.Size(110, 130);
+            this.panelItem3.TabIndex = 2;
+            // 
+            // panelItem6
+            // 
+            this.panelItem6.BackColor = System.Drawing.Color.White;
+            this.panelItem6.Location = new System.Drawing.Point(270, 334);
+            this.panelItem6.Name = "panelItem6";
+            this.panelItem6.Size = new System.Drawing.Size(110, 130);
+            this.panelItem6.TabIndex = 5;
+            // 
+            // panelItem5
+            // 
+            this.panelItem5.BackColor = System.Drawing.Color.White;
+            this.panelItem5.Location = new System.Drawing.Point(145, 334);
+            this.panelItem5.Name = "panelItem5";
+            this.panelItem5.Size = new System.Drawing.Size(110, 130);
+            this.panelItem5.TabIndex = 4;
+            // 
+            // panelItem4
+            // 
+            this.panelItem4.BackColor = System.Drawing.Color.White;
+            this.panelItem4.Location = new System.Drawing.Point(20, 334);
+            this.panelItem4.Name = "panelItem4";
+            this.panelItem4.Size = new System.Drawing.Size(110, 130);
+            this.panelItem4.TabIndex = 3;
+            // 
+            // panelItem9
+            // 
+            this.panelItem9.BackColor = System.Drawing.Color.White;
+            this.panelItem9.Location = new System.Drawing.Point(270, 478);
+            this.panelItem9.Name = "panelItem9";
+            this.panelItem9.Size = new System.Drawing.Size(110, 130);
+            this.panelItem9.TabIndex = 5;
+            // 
+            // panelItem8
+            // 
+            this.panelItem8.BackColor = System.Drawing.Color.White;
+            this.panelItem8.Location = new System.Drawing.Point(145, 478);
+            this.panelItem8.Name = "panelItem8";
+            this.panelItem8.Size = new System.Drawing.Size(110, 130);
+            this.panelItem8.TabIndex = 4;
+            // 
+            // panelItem7
+            // 
+            this.panelItem7.BackColor = System.Drawing.Color.White;
+            this.panelItem7.Location = new System.Drawing.Point(20, 478);
+            this.panelItem7.Name = "panelItem7";
+            this.panelItem7.Size = new System.Drawing.Size(110, 130);
+            this.panelItem7.TabIndex = 3;
             // 
             // panelPrincipal
             // 
@@ -318,6 +431,16 @@
             this.foto.Name = "foto";
             this.foto.Size = new System.Drawing.Size(75, 75);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(354, 47);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.abrirItem);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -334,6 +457,7 @@
             this.PanelTopo.ResumeLayout(false);
             this.PanelTopo.PerformLayout();
             this.panelInferiorXp.ResumeLayout(false);
+            this.panelEsquerdo.ResumeLayout(false);
             this.panelPrincipal.ResumeLayout(false);
             this.pnAdmin.ResumeLayout(false);
             this.panelBurg.ResumeLayout(false);
@@ -366,5 +490,17 @@
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.Button btnAdmin;
         private System.Windows.Forms.Panel pnAdmin;
+        private System.Windows.Forms.Panel panelItem3;
+        private System.Windows.Forms.Panel panelItem2;
+        private System.Windows.Forms.Panel panelItem1;
+        private System.Windows.Forms.Panel panelExpecial2;
+        private System.Windows.Forms.Panel panelExpecial1;
+        private System.Windows.Forms.Panel panelItem6;
+        private System.Windows.Forms.Panel panelItem5;
+        private System.Windows.Forms.Panel panelItem4;
+        private System.Windows.Forms.Panel panelItem9;
+        private System.Windows.Forms.Panel panelItem8;
+        private System.Windows.Forms.Panel panelItem7;
+        private System.Windows.Forms.Button button1;
     }
 }
