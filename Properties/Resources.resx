@@ -130,13 +130,16 @@
   <data name="cavern-background-free-vector" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icon\cavern-background-free-vector.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="lines_menu_burger_icon_123889" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\lines_menu_burger_icon_123889.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ic-cancel_97589" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icon\ic-cancel_97589.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="vcsconflicting_93497" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icon\vcsconflicting_93497.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="lines_menu_burger_icon_123889" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon\lines_menu_burger_icon_123889.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="minerio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\minerio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

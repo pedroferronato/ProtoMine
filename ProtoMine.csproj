@@ -57,6 +57,12 @@
     <Compile Include="DAO\UsuarioDAO.cs" />
     <Compile Include="Excecoes\LoginException.cs" />
     <Compile Include="Modelo\Usuario.cs" />
+    <Compile Include="View\Item.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Item.Designer.cs">
+      <DependentUpon>Item.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,9 @@
     <Compile Include="View\Principal.Designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\Item.resx">
+      <DependentUpon>Item.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -112,7 +121,9 @@
   <ItemGroup>
     <None Include="icon\SaidaBranco60x60.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="icon\minerio.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="icon\ic-cancel_97589.png" />
   </ItemGroup>

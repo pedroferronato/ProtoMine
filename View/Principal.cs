@@ -13,7 +13,7 @@ namespace ProtoMine.View
 {
     public partial class Principal : Form
     {
-        public Principal(Form login)
+        public Principal()
         {
             InitializeComponent();
             Image i;
@@ -30,13 +30,18 @@ namespace ProtoMine.View
             pnAdmin.Visible = false;
         }
 
-        private void mostarMenu(object sender, EventArgs e)
+        private void alterarVizibilidadeBurguer()
         {
             panelBurg.Visible = !panelBurg.Visible;
             if (!UserCache.UsuarioLogado.Role.Equals("jogador"))
             {
                 pnAdmin.Visible = !pnAdmin.Visible;
             }
+        }
+
+        private void mostarMenu(object sender, EventArgs e)
+        {
+            alterarVizibilidadeBurguer();
         }
         MessageBoxButtons buttons = MessageBoxButtons.YesNo;
 
@@ -47,6 +52,7 @@ namespace ProtoMine.View
             {
                 Application.Exit();
             }
+            alterarVizibilidadeBurguer();
         }
 
         private void DesconectarUser(object sender, EventArgs e)
@@ -54,7 +60,8 @@ namespace ProtoMine.View
             if (MessageBox.Show("Deseja realmente desconectar?", "Desconectar", buttons) == DialogResult.Yes)
             {
                 Application.Restart();
-            }  
+            }
+            alterarVizibilidadeBurguer();
         }
     }
 }

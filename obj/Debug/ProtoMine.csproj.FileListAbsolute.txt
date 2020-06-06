@@ -118,3 +118,4 @@ C:\Users\55699\source\repos\ProtoMine\obj\Debug\zu\ProtoMine.resources.dll
 C:\Users\55699\source\repos\ProtoMine\obj\Debug\ProtoMine.csproj.CopyComplete
 C:\Users\55699\source\repos\ProtoMine\obj\Debug\ProtoMine.exe
 C:\Users\55699\source\repos\ProtoMine\obj\Debug\ProtoMine.pdb
+C:\Users\pedro\source\repos\gitProtoMine\ProtoMine\obj\Debug\ProtoMine.View.Item.resources
