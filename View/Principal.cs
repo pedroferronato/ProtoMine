@@ -1,4 +1,6 @@
 ﻿using ProtoMine.Cache;
+using ProtoMine.Controle;
+using ProtoMine.Modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,30 +16,65 @@ namespace ProtoMine.View
     public partial class Principal : Form
     {
         Minerar miner = new Minerar();
-        Item itemTeste = new Item();
+
+        List<Panel> paineis = new List<Panel>();
+
+        ItemController itemController = new ItemController();
+
+        pepega easter = new pepega();
+
+        int pepega = 1;
+
         public Principal(Form login)
         {
             InitializeComponent();
+            
+            // Início do load de itens
+            itemController.CarregarItens();
+
+            // labels de item
+            paineis.Add(panelItem1);
+            paineis.Add(panelItem2);
+            paineis.Add(panelItem3);
+            paineis.Add(panelItem4);
+            paineis.Add(panelItem5);
+            paineis.Add(panelItem6);
+            paineis.Add(panelItem7);
+            paineis.Add(panelItem8);
+            paineis.Add(panelItem9);
+
+            int index = 0;
+
+            foreach (ItemModel item in ItemCache.ListaItens)
+            {
+                AbrirTela(new Item(), paineis[index]);
+                index++;
+            }
+
             Image i;
             if (UserCache.UsuarioLogado.Role.Equals("admin"))
-            {
                 i = Image.FromFile("../../icon/jones.png");
-            }
             else
-            {
                 i = Image.FromFile("../../icon/miner.png");
-            }
             foto.BackgroundImage = i;
             lbNome.Text = UserCache.UsuarioLogado.Nome;
-            pnAdmin.Visible = false;
+            money.Text = UserCache.UsuarioLogado.Moeda.ToString() + " $";
+            picDesligar.Visible = false;
+            picRelogar.Visible = false;
+            picLoja.Visible = false;
+            picMinerar.Visible = false;
+            picADM.Visible = false;
         }
 
         private void mostarMenu(object sender, EventArgs e)
         {
-            panelBurg.Visible = !panelBurg.Visible;
+            picDesligar.Visible = !picDesligar.Visible;
+            picRelogar.Visible = !picRelogar.Visible;
+            picLoja.Visible = !picLoja.Visible;
+            picMinerar.Visible = !picMinerar.Visible;
             if (!UserCache.UsuarioLogado.Role.Equals("jogador"))
             {
-                pnAdmin.Visible = !pnAdmin.Visible;
+                picADM.Visible = !picADM.Visible;
             }
         }
         MessageBoxButtons buttons = MessageBoxButtons.YesNo;
@@ -51,37 +88,44 @@ namespace ProtoMine.View
             }
         }
 
-        private void DesconectarUser(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Deseja realmente desconectar?", "Desconectar", buttons) == DialogResult.Yes)
-            {
-                Application.Restart();
-            }  
-        }
-
-        private void AbrirTela(object formGen)
+        private void AbrirTela(object formGen, Panel fundoBase)
         {
             Form fm = formGen as Form;
             fm.TopLevel = false;
             fm.Dock = DockStyle.Fill;
-            panelPrincipal.Controls.Add(fm);
-            panelPrincipal.Tag = fm;
+            fundoBase.Controls.Add(fm);
+            fundoBase.Tag = fm;
             fm.Show();
         }
 
-        private void abrirMineracao(object sender, EventArgs e)
+        private void AbrirMineracao(object sender, EventArgs e)
         {
-            AbrirTela(miner);
+            
         }
 
-        private void abrirItem(object sender, EventArgs e)
+        private void FecharAppProto(object sender, EventArgs e)
         {
-            Form fm = itemTeste as Form;
-            fm.TopLevel = false;
-            fm.Dock = DockStyle.Fill;
-            panelItem1.Controls.Add(fm);
-            panelItem1.Tag = fm;
-            fm.Show();
+            if (MessageBox.Show("Deseja realmente sair?", "Sair", buttons) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void Desconectar(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Deseja realmente desconectar?", "Desconectar", buttons) == DialogResult.Yes)
+            {
+                Application.Restart();
+            }
+        }
+
+        private void Minerar(object sender, EventArgs e)
+        {
+            pepega++;
+            if (pepega == 5)
+                AbrirTela(easter, panelPrincipal);
+            else
+                AbrirTela(miner, panelPrincipal);
         }
     }
 }

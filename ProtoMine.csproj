@@ -50,15 +50,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cache\ItemCache.cs" />
     <Compile Include="Cache\UserCache.cs" />
+    <Compile Include="Controle\ItemController.cs" />
     <Compile Include="Controle\UsuarioController.cs" />
     <Compile Include="Controle\UtilidadesTelas.cs" />
     <Compile Include="DAO\Conexao.cs" />
+    <Compile Include="DAO\ItemBasicoDAO.cs" />
     <Compile Include="DAO\UsuarioDAO.cs" />
     <Compile Include="Excecoes\LoginException.cs" />
     <Compile Include="Modelo\ItemEspecial.cs" />
     <Compile Include="Modelo\ItemAbstract.cs" />
+    <Compile Include="Modelo\ItemModel.cs" />
     <Compile Include="Modelo\Usuario.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="View\Item.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +88,12 @@
     <Compile Include="View\Minerar.Designer.cs">
       <DependentUpon>Minerar.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\pepega.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\pepega.Designer.cs">
+      <DependentUpon>pepega.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,16 +111,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="View\Minerar.resx">
       <DependentUpon>Minerar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\pepega.resx">
+      <DependentUpon>pepega.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
@@ -132,7 +145,9 @@
   <ItemGroup>
     <None Include="icon\SaidaBranco60x60.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="icon\BaseItem.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="icon\ic-cancel_97589.png" />
   </ItemGroup>
@@ -144,6 +159,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="icon\lines_menu_burger_icon_123889.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\ferro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\coin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\Usuario\jones.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\Usuario\adm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\BreakableGraveCony-size_restricted.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\adm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\minerar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\shop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\relogar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\desligar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

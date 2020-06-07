@@ -6,22 +6,26 @@ using System.Threading.Tasks;
 
 namespace ProtoMine.Modelo
 {
-    public class ItemEspecial : ItemAbstract
+    public class ItemModel : ItemAbstract
     {
-        public ItemEspecial()
+        public ItemModel()
         {
-            Tipo = "Especial";
+            Tipo = "Comum";
         }
-        public ItemEspecial(int id, string nome, double peso, string urlImg, int quantidade)
+
+        public ItemModel(int id, string nome, double peso, string urlImg, int quantidade)
         {
             Id = id;
             Nome = nome;
             Peso = peso;
             UrlImg = urlImg;
             Quantidade = quantidade;
-            Tipo = "Especial";
+            Tipo = "Comum";
         }
 
-        public override double CalcularPeso() => throw new NotImplementedException();
+        public override double CalcularPeso()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

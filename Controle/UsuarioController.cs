@@ -37,7 +37,7 @@ namespace ProtoMine.Controle
             }
             catch (Exception ex)
             {
-                util.MensagemDeTeste("Erro desconhecido no login:  " + ex.Message, "Erro!");
+                util.MensagemDeTeste("Erro não esperado no login:  " + ex.Message, "Erro!");
                 throw ex;
             }
         }

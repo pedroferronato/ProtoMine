@@ -118,25 +118,46 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="SaidaBranco" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon\SaidaBranco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SaidaBranco60x60" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon\SaidaBranco60x60.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="jones" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icon\jones.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="coin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\coin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lines_menu_burger_icon_123889" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\lines_menu_burger_icon_123889.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cavern-background-free-vector" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icon\cavern-background-free-vector.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ic-cancel_97589" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon\ic-cancel_97589.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="shop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\shop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="vcsconflicting_93497" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icon\vcsconflicting_93497.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="lines_menu_burger_icon_123889" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon\lines_menu_burger_icon_123889.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="relogar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\relogar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="adm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\adm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minerar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\minerar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SaidaBranco60x60" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\SaidaBranco60x60.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SaidaBranco" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\SaidaBranco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BreakableGraveCony-size_restricted" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\BreakableGraveCony-size_restricted.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic-cancel_97589" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\ic-cancel_97589.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="desligar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\desligar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

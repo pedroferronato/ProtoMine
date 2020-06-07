@@ -35,47 +35,49 @@
             this.lbNome = new System.Windows.Forms.Label();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.panelEsquerdo = new System.Windows.Forms.Panel();
-            this.lineShape5 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.panelExpecial1 = new System.Windows.Forms.Panel();
-            this.panelExpecial2 = new System.Windows.Forms.Panel();
-            this.panelItem1 = new System.Windows.Forms.Panel();
-            this.panelItem2 = new System.Windows.Forms.Panel();
-            this.panelItem3 = new System.Windows.Forms.Panel();
-            this.panelItem6 = new System.Windows.Forms.Panel();
-            this.panelItem5 = new System.Windows.Forms.Panel();
-            this.panelItem4 = new System.Windows.Forms.Panel();
             this.panelItem9 = new System.Windows.Forms.Panel();
+            this.panelItem6 = new System.Windows.Forms.Panel();
             this.panelItem8 = new System.Windows.Forms.Panel();
+            this.panelItem3 = new System.Windows.Forms.Panel();
             this.panelItem7 = new System.Windows.Forms.Panel();
+            this.panelItem5 = new System.Windows.Forms.Panel();
+            this.panelItem2 = new System.Windows.Forms.Panel();
+            this.panelItem4 = new System.Windows.Forms.Panel();
+            this.panelItem1 = new System.Windows.Forms.Panel();
+            this.panelExpecial2 = new System.Windows.Forms.Panel();
+            this.panelExpecial1 = new System.Windows.Forms.Panel();
+            this.money = new System.Windows.Forms.Label();
             this.panelPrincipal = new System.Windows.Forms.Panel();
-            this.pnAdmin = new System.Windows.Forms.Panel();
-            this.btnAdmin = new System.Windows.Forms.Button();
-            this.panelBurg = new System.Windows.Forms.Panel();
-            this.btnLoja = new System.Windows.Forms.Button();
-            this.btnDesconectar = new System.Windows.Forms.Button();
-            this.btnFechar = new System.Windows.Forms.Button();
-            this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.btnMinerar = new System.Windows.Forms.Button();
+            this.picRelogar = new System.Windows.Forms.PictureBox();
+            this.picDesligar = new System.Windows.Forms.PictureBox();
+            this.picLoja = new System.Windows.Forms.PictureBox();
+            this.picMinerar = new System.Windows.Forms.PictureBox();
+            this.picADM = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.iconBurg = new System.Windows.Forms.PictureBox();
             this.foto = new Microsoft.VisualBasic.PowerPacks.OvalShape();
-            this.button1 = new System.Windows.Forms.Button();
             this.PanelTopo.SuspendLayout();
             this.panelInferiorXp.SuspendLayout();
             this.panelEsquerdo.SuspendLayout();
-            this.panelPrincipal.SuspendLayout();
-            this.pnAdmin.SuspendLayout();
-            this.panelBurg.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picRelogar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDesligar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLoja)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMinerar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picADM)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconBurg)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelTopo
             // 
             this.PanelTopo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(10)))), ((int)(((byte)(3)))));
-            this.PanelTopo.Controls.Add(this.button1);
+            this.PanelTopo.Controls.Add(this.picRelogar);
+            this.PanelTopo.Controls.Add(this.picDesligar);
+            this.PanelTopo.Controls.Add(this.picLoja);
+            this.PanelTopo.Controls.Add(this.picMinerar);
+            this.PanelTopo.Controls.Add(this.picADM);
+            this.PanelTopo.Controls.Add(this.money);
+            this.PanelTopo.Controls.Add(this.pictureBox1);
             this.PanelTopo.Controls.Add(this.iconBurg);
             this.PanelTopo.Controls.Add(this.panelInferiorXp);
             this.PanelTopo.Controls.Add(this.lbNome);
@@ -146,95 +148,13 @@
             this.panelEsquerdo.Size = new System.Drawing.Size(400, 620);
             this.panelEsquerdo.TabIndex = 1;
             // 
-            // lineShape5
+            // panelItem9
             // 
-            this.lineShape5.BorderColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lineShape5.Enabled = false;
-            this.lineShape5.Name = "lineShape5";
-            this.lineShape5.X1 = 0;
-            this.lineShape5.X2 = 260;
-            this.lineShape5.Y1 = 241;
-            this.lineShape5.Y2 = 241;
-            // 
-            // lineShape4
-            // 
-            this.lineShape4.BorderColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lineShape4.Enabled = false;
-            this.lineShape4.Name = "lineShape4";
-            this.lineShape4.X1 = 0;
-            this.lineShape4.X2 = 260;
-            this.lineShape4.Y1 = 180;
-            this.lineShape4.Y2 = 180;
-            // 
-            // lineShape3
-            // 
-            this.lineShape3.BorderColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lineShape3.Enabled = false;
-            this.lineShape3.Name = "lineShape3";
-            this.lineShape3.X1 = 0;
-            this.lineShape3.X2 = 260;
-            this.lineShape3.Y1 = 120;
-            this.lineShape3.Y2 = 120;
-            // 
-            // lineShape2
-            // 
-            this.lineShape2.BorderColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lineShape2.Enabled = false;
-            this.lineShape2.Name = "lineShape2";
-            this.lineShape2.X1 = 0;
-            this.lineShape2.X2 = 260;
-            this.lineShape2.Y1 = 1;
-            this.lineShape2.Y2 = 1;
-            // 
-            // lineShape1
-            // 
-            this.lineShape1.BorderColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lineShape1.Enabled = false;
-            this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 0;
-            this.lineShape1.X2 = 260;
-            this.lineShape1.Y1 = 60;
-            this.lineShape1.Y2 = 60;
-            // 
-            // panelExpecial1
-            // 
-            this.panelExpecial1.BackColor = System.Drawing.Color.White;
-            this.panelExpecial1.Location = new System.Drawing.Point(50, 30);
-            this.panelExpecial1.Name = "panelExpecial1";
-            this.panelExpecial1.Size = new System.Drawing.Size(120, 140);
-            this.panelExpecial1.TabIndex = 0;
-            // 
-            // panelExpecial2
-            // 
-            this.panelExpecial2.BackColor = System.Drawing.Color.White;
-            this.panelExpecial2.Location = new System.Drawing.Point(230, 30);
-            this.panelExpecial2.Name = "panelExpecial2";
-            this.panelExpecial2.Size = new System.Drawing.Size(120, 140);
-            this.panelExpecial2.TabIndex = 1;
-            // 
-            // panelItem1
-            // 
-            this.panelItem1.BackColor = System.Drawing.Color.White;
-            this.panelItem1.Location = new System.Drawing.Point(20, 190);
-            this.panelItem1.Name = "panelItem1";
-            this.panelItem1.Size = new System.Drawing.Size(110, 130);
-            this.panelItem1.TabIndex = 1;
-            // 
-            // panelItem2
-            // 
-            this.panelItem2.BackColor = System.Drawing.Color.White;
-            this.panelItem2.Location = new System.Drawing.Point(145, 190);
-            this.panelItem2.Name = "panelItem2";
-            this.panelItem2.Size = new System.Drawing.Size(110, 130);
-            this.panelItem2.TabIndex = 2;
-            // 
-            // panelItem3
-            // 
-            this.panelItem3.BackColor = System.Drawing.Color.White;
-            this.panelItem3.Location = new System.Drawing.Point(270, 190);
-            this.panelItem3.Name = "panelItem3";
-            this.panelItem3.Size = new System.Drawing.Size(110, 130);
-            this.panelItem3.TabIndex = 2;
+            this.panelItem9.BackColor = System.Drawing.Color.White;
+            this.panelItem9.Location = new System.Drawing.Point(270, 478);
+            this.panelItem9.Name = "panelItem9";
+            this.panelItem9.Size = new System.Drawing.Size(110, 130);
+            this.panelItem9.TabIndex = 5;
             // 
             // panelItem6
             // 
@@ -244,30 +164,6 @@
             this.panelItem6.Size = new System.Drawing.Size(110, 130);
             this.panelItem6.TabIndex = 5;
             // 
-            // panelItem5
-            // 
-            this.panelItem5.BackColor = System.Drawing.Color.White;
-            this.panelItem5.Location = new System.Drawing.Point(145, 334);
-            this.panelItem5.Name = "panelItem5";
-            this.panelItem5.Size = new System.Drawing.Size(110, 130);
-            this.panelItem5.TabIndex = 4;
-            // 
-            // panelItem4
-            // 
-            this.panelItem4.BackColor = System.Drawing.Color.White;
-            this.panelItem4.Location = new System.Drawing.Point(20, 334);
-            this.panelItem4.Name = "panelItem4";
-            this.panelItem4.Size = new System.Drawing.Size(110, 130);
-            this.panelItem4.TabIndex = 3;
-            // 
-            // panelItem9
-            // 
-            this.panelItem9.BackColor = System.Drawing.Color.White;
-            this.panelItem9.Location = new System.Drawing.Point(270, 478);
-            this.panelItem9.Name = "panelItem9";
-            this.panelItem9.Size = new System.Drawing.Size(110, 130);
-            this.panelItem9.TabIndex = 5;
-            // 
             // panelItem8
             // 
             this.panelItem8.BackColor = System.Drawing.Color.White;
@@ -275,6 +171,14 @@
             this.panelItem8.Name = "panelItem8";
             this.panelItem8.Size = new System.Drawing.Size(110, 130);
             this.panelItem8.TabIndex = 4;
+            // 
+            // panelItem3
+            // 
+            this.panelItem3.BackColor = System.Drawing.Color.White;
+            this.panelItem3.Location = new System.Drawing.Point(270, 190);
+            this.panelItem3.Name = "panelItem3";
+            this.panelItem3.Size = new System.Drawing.Size(110, 130);
+            this.panelItem3.TabIndex = 2;
             // 
             // panelItem7
             // 
@@ -284,128 +188,142 @@
             this.panelItem7.Size = new System.Drawing.Size(110, 130);
             this.panelItem7.TabIndex = 3;
             // 
+            // panelItem5
+            // 
+            this.panelItem5.BackColor = System.Drawing.Color.White;
+            this.panelItem5.Location = new System.Drawing.Point(145, 334);
+            this.panelItem5.Name = "panelItem5";
+            this.panelItem5.Size = new System.Drawing.Size(110, 130);
+            this.panelItem5.TabIndex = 4;
+            // 
+            // panelItem2
+            // 
+            this.panelItem2.BackColor = System.Drawing.Color.White;
+            this.panelItem2.Location = new System.Drawing.Point(145, 190);
+            this.panelItem2.Name = "panelItem2";
+            this.panelItem2.Size = new System.Drawing.Size(110, 130);
+            this.panelItem2.TabIndex = 2;
+            // 
+            // panelItem4
+            // 
+            this.panelItem4.BackColor = System.Drawing.Color.White;
+            this.panelItem4.Location = new System.Drawing.Point(20, 334);
+            this.panelItem4.Name = "panelItem4";
+            this.panelItem4.Size = new System.Drawing.Size(110, 130);
+            this.panelItem4.TabIndex = 3;
+            // 
+            // panelItem1
+            // 
+            this.panelItem1.BackColor = System.Drawing.Color.White;
+            this.panelItem1.Location = new System.Drawing.Point(20, 190);
+            this.panelItem1.Name = "panelItem1";
+            this.panelItem1.Size = new System.Drawing.Size(110, 130);
+            this.panelItem1.TabIndex = 1;
+            // 
+            // panelExpecial2
+            // 
+            this.panelExpecial2.BackColor = System.Drawing.Color.White;
+            this.panelExpecial2.Location = new System.Drawing.Point(230, 30);
+            this.panelExpecial2.Name = "panelExpecial2";
+            this.panelExpecial2.Size = new System.Drawing.Size(120, 140);
+            this.panelExpecial2.TabIndex = 1;
+            // 
+            // panelExpecial1
+            // 
+            this.panelExpecial1.BackColor = System.Drawing.Color.White;
+            this.panelExpecial1.Location = new System.Drawing.Point(50, 30);
+            this.panelExpecial1.Name = "panelExpecial1";
+            this.panelExpecial1.Size = new System.Drawing.Size(120, 140);
+            this.panelExpecial1.TabIndex = 0;
+            // 
+            // money
+            // 
+            this.money.AutoSize = true;
+            this.money.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.money.ForeColor = System.Drawing.Color.Snow;
+            this.money.Location = new System.Drawing.Point(383, 40);
+            this.money.Name = "money";
+            this.money.Size = new System.Drawing.Size(59, 20);
+            this.money.TabIndex = 6;
+            this.money.Text = "00,0 $";
+            // 
             // panelPrincipal
             // 
             this.panelPrincipal.BackColor = System.Drawing.SystemColors.Control;
             this.panelPrincipal.BackgroundImage = global::ProtoMine.Properties.Resources.cavern_background_free_vector;
-            this.panelPrincipal.Controls.Add(this.pnAdmin);
-            this.panelPrincipal.Controls.Add(this.panelBurg);
             this.panelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelPrincipal.Location = new System.Drawing.Point(400, 100);
             this.panelPrincipal.Name = "panelPrincipal";
             this.panelPrincipal.Size = new System.Drawing.Size(880, 620);
             this.panelPrincipal.TabIndex = 2;
             // 
-            // pnAdmin
+            // picRelogar
             // 
-            this.pnAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(10)))), ((int)(((byte)(3)))));
-            this.pnAdmin.Controls.Add(this.btnAdmin);
-            this.pnAdmin.Location = new System.Drawing.Point(620, 242);
-            this.pnAdmin.Name = "pnAdmin";
-            this.pnAdmin.Size = new System.Drawing.Size(260, 61);
-            this.pnAdmin.TabIndex = 4;
+            this.picRelogar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picRelogar.Image = global::ProtoMine.Properties.Resources.relogar;
+            this.picRelogar.Location = new System.Drawing.Point(1055, 30);
+            this.picRelogar.Name = "picRelogar";
+            this.picRelogar.Size = new System.Drawing.Size(40, 40);
+            this.picRelogar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picRelogar.TabIndex = 11;
+            this.picRelogar.TabStop = false;
+            this.picRelogar.Click += new System.EventHandler(this.Desconectar);
             // 
-            // btnAdmin
+            // picDesligar
             // 
-            this.btnAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdmin.FlatAppearance.BorderSize = 0;
-            this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.btnAdmin.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnAdmin.Location = new System.Drawing.Point(1, 2);
-            this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Size = new System.Drawing.Size(257, 57);
-            this.btnAdmin.TabIndex = 3;
-            this.btnAdmin.Text = "Admin";
-            this.btnAdmin.UseVisualStyleBackColor = true;
+            this.picDesligar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picDesligar.Image = global::ProtoMine.Properties.Resources.desligar;
+            this.picDesligar.Location = new System.Drawing.Point(1125, 30);
+            this.picDesligar.Name = "picDesligar";
+            this.picDesligar.Size = new System.Drawing.Size(40, 40);
+            this.picDesligar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picDesligar.TabIndex = 10;
+            this.picDesligar.TabStop = false;
+            this.picDesligar.Click += new System.EventHandler(this.FecharAppProto);
             // 
-            // panelBurg
+            // picLoja
             // 
-            this.panelBurg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(10)))), ((int)(((byte)(3)))));
-            this.panelBurg.Controls.Add(this.btnLoja);
-            this.panelBurg.Controls.Add(this.btnDesconectar);
-            this.panelBurg.Controls.Add(this.btnFechar);
-            this.panelBurg.Controls.Add(this.shapeContainer2);
-            this.panelBurg.Controls.Add(this.btnMinerar);
-            this.panelBurg.Location = new System.Drawing.Point(620, 0);
-            this.panelBurg.Name = "panelBurg";
-            this.panelBurg.Size = new System.Drawing.Size(260, 242);
-            this.panelBurg.TabIndex = 3;
-            this.panelBurg.Visible = false;
+            this.picLoja.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picLoja.Image = global::ProtoMine.Properties.Resources.shop;
+            this.picLoja.Location = new System.Drawing.Point(980, 30);
+            this.picLoja.Name = "picLoja";
+            this.picLoja.Size = new System.Drawing.Size(40, 40);
+            this.picLoja.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLoja.TabIndex = 9;
+            this.picLoja.TabStop = false;
             // 
-            // btnLoja
+            // picMinerar
             // 
-            this.btnLoja.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLoja.FlatAppearance.BorderSize = 0;
-            this.btnLoja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoja.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.btnLoja.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnLoja.Location = new System.Drawing.Point(1, 62);
-            this.btnLoja.Name = "btnLoja";
-            this.btnLoja.Size = new System.Drawing.Size(257, 57);
-            this.btnLoja.TabIndex = 6;
-            this.btnLoja.Text = "Loja";
-            this.btnLoja.UseVisualStyleBackColor = true;
+            this.picMinerar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picMinerar.Image = global::ProtoMine.Properties.Resources.minerar;
+            this.picMinerar.Location = new System.Drawing.Point(905, 30);
+            this.picMinerar.Name = "picMinerar";
+            this.picMinerar.Size = new System.Drawing.Size(40, 40);
+            this.picMinerar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMinerar.TabIndex = 8;
+            this.picMinerar.TabStop = false;
+            this.picMinerar.Click += new System.EventHandler(this.Minerar);
             // 
-            // btnDesconectar
+            // picADM
             // 
-            this.btnDesconectar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDesconectar.FlatAppearance.BorderSize = 0;
-            this.btnDesconectar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDesconectar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.btnDesconectar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnDesconectar.Location = new System.Drawing.Point(1, 122);
-            this.btnDesconectar.Name = "btnDesconectar";
-            this.btnDesconectar.Size = new System.Drawing.Size(257, 57);
-            this.btnDesconectar.TabIndex = 5;
-            this.btnDesconectar.Text = "Desconectar";
-            this.btnDesconectar.UseVisualStyleBackColor = true;
-            this.btnDesconectar.Click += new System.EventHandler(this.DesconectarUser);
+            this.picADM.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picADM.Image = global::ProtoMine.Properties.Resources.adm;
+            this.picADM.Location = new System.Drawing.Point(830, 30);
+            this.picADM.Name = "picADM";
+            this.picADM.Size = new System.Drawing.Size(40, 40);
+            this.picADM.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picADM.TabIndex = 7;
+            this.picADM.TabStop = false;
             // 
-            // btnFechar
+            // pictureBox1
             // 
-            this.btnFechar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFechar.FlatAppearance.BorderSize = 0;
-            this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.btnFechar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnFechar.Location = new System.Drawing.Point(1, 182);
-            this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(257, 57);
-            this.btnFechar.TabIndex = 4;
-            this.btnFechar.Text = "Fechar";
-            this.btnFechar.UseVisualStyleBackColor = true;
-            this.btnFechar.Click += new System.EventHandler(this.FecharAplicacao);
-            // 
-            // shapeContainer2
-            // 
-            this.shapeContainer2.Location = new System.Drawing.Point(0, 0);
-            this.shapeContainer2.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer2.Name = "shapeContainer2";
-            this.shapeContainer2.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape5,
-            this.lineShape4,
-            this.lineShape3,
-            this.lineShape2,
-            this.lineShape1});
-            this.shapeContainer2.Size = new System.Drawing.Size(260, 242);
-            this.shapeContainer2.TabIndex = 2;
-            this.shapeContainer2.TabStop = false;
-            // 
-            // btnMinerar
-            // 
-            this.btnMinerar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinerar.FlatAppearance.BorderSize = 0;
-            this.btnMinerar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinerar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.btnMinerar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnMinerar.Location = new System.Drawing.Point(1, 2);
-            this.btnMinerar.Name = "btnMinerar";
-            this.btnMinerar.Size = new System.Drawing.Size(257, 57);
-            this.btnMinerar.TabIndex = 7;
-            this.btnMinerar.Text = "Minerar";
-            this.btnMinerar.UseVisualStyleBackColor = true;
-            this.btnMinerar.Click += new System.EventHandler(this.abrirMineracao);
+            this.pictureBox1.Image = global::ProtoMine.Properties.Resources.coin;
+            this.pictureBox1.Location = new System.Drawing.Point(330, 25);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
             // 
             // iconBurg
             // 
@@ -431,16 +349,6 @@
             this.foto.Name = "foto";
             this.foto.Size = new System.Drawing.Size(75, 75);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(354, 47);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.abrirItem);
-            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -458,9 +366,12 @@
             this.PanelTopo.PerformLayout();
             this.panelInferiorXp.ResumeLayout(false);
             this.panelEsquerdo.ResumeLayout(false);
-            this.panelPrincipal.ResumeLayout(false);
-            this.pnAdmin.ResumeLayout(false);
-            this.panelBurg.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picRelogar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDesligar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLoja)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMinerar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picADM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconBurg)).EndInit();
             this.ResumeLayout(false);
 
@@ -477,19 +388,6 @@
         private System.Windows.Forms.Panel panelInferiorXp;
         private System.Windows.Forms.Panel panSupXp;
         private System.Windows.Forms.PictureBox iconBurg;
-        private System.Windows.Forms.Panel panelBurg;
-        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer2;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape5;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape4;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape3;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
-        private System.Windows.Forms.Button btnMinerar;
-        private System.Windows.Forms.Button btnLoja;
-        private System.Windows.Forms.Button btnDesconectar;
-        private System.Windows.Forms.Button btnFechar;
-        private System.Windows.Forms.Button btnAdmin;
-        private System.Windows.Forms.Panel pnAdmin;
         private System.Windows.Forms.Panel panelItem3;
         private System.Windows.Forms.Panel panelItem2;
         private System.Windows.Forms.Panel panelItem1;
@@ -501,6 +399,12 @@
         private System.Windows.Forms.Panel panelItem9;
         private System.Windows.Forms.Panel panelItem8;
         private System.Windows.Forms.Panel panelItem7;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label money;
+        private System.Windows.Forms.PictureBox picRelogar;
+        private System.Windows.Forms.PictureBox picDesligar;
+        private System.Windows.Forms.PictureBox picLoja;
+        private System.Windows.Forms.PictureBox picMinerar;
+        private System.Windows.Forms.PictureBox picADM;
     }
 }
