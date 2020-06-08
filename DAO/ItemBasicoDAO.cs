@@ -60,5 +60,41 @@ namespace ProtoMine.DAO
             }
         }
 
+        public void BuscarTodos()
+        {
+            try
+            {
+                abrirConexao();
+
+                comando = new MySqlCommand("select * from item", conexao);
+
+                MySqlDataReader reader = comando.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    ItemModel itemTemp = new ItemModel();
+                    itemTemp.Id = reader.GetInt32(0);
+                    itemTemp.Nome = reader.GetString(1);
+                    itemTemp.Peso = reader.GetDouble(2);
+                    itemTemp.UrlImg = reader.GetString(3);
+                    ItemCache.ListaGeral.Add(itemTemp.Id, itemTemp);
+                }
+            }
+            catch (MySqlException exce)
+            {
+                util.MensagemDeTeste("Erro no load dos itens, falha na conexão ao banco de dados", "Erro!");
+                throw exce;
+            }
+            catch (Exception ex)
+            {
+                util.MensagemDeTeste("Erro não esperado no load dos itens:  " + ex.Message, "Erro!");
+                throw ex;
+            }
+            finally
+            {
+                fecharConexao(); // Fecha a conexão
+            }
+        }
+
     }
 }

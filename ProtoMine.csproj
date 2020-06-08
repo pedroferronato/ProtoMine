@@ -88,11 +88,11 @@
     <Compile Include="View\Minerar.Designer.cs">
       <DependentUpon>Minerar.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\pepega.cs">
+    <Compile Include="View\Pepega.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\pepega.Designer.cs">
-      <DependentUpon>pepega.cs</DependentUpon>
+    <Compile Include="View\Pepega.Designer.cs">
+      <DependentUpon>Pepega.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Principal.cs">
       <SubType>Form</SubType>
@@ -117,8 +117,8 @@
     <EmbeddedResource Include="View\Minerar.resx">
       <DependentUpon>Minerar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\pepega.resx">
-      <DependentUpon>pepega.cs</DependentUpon>
+    <EmbeddedResource Include="View\Pepega.resx">
+      <DependentUpon>Pepega.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
@@ -189,6 +189,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="icon\desligar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\pick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\MINA.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

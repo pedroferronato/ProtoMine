@@ -11,5 +11,6 @@ namespace ProtoMine.Cache
     {
         public static List<ItemModel> ListaItens = new List<ItemModel>();
         public static List<ItemEspecial> ListaItensEspeciais = new List<ItemEspecial>();
+        public static Dictionary<int, ItemModel> ListaGeral = new Dictionary<int, ItemModel>();
     }
 }

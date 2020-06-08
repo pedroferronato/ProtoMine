@@ -25,7 +25,14 @@ namespace ProtoMine.Modelo
 
         public override double CalcularPeso()
         {
-            throw new NotImplementedException();
+            return Peso * Quantidade;
+        }
+
+        public override string ToString()
+        {
+            return "Nome: " + Nome +
+                   " Peso: " + Peso.ToString() +
+                   " Quantidade: " + Quantidade.ToString() ;
         }
     }
 }

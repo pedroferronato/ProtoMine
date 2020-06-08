@@ -30,10 +30,22 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.PanelTopo = new System.Windows.Forms.Panel();
+            this.lbPeso = new System.Windows.Forms.Label();
+            this.panPesoBaixo = new System.Windows.Forms.Panel();
+            this.picPeso = new System.Windows.Forms.PictureBox();
+            this.picRelogar = new System.Windows.Forms.PictureBox();
+            this.picDesligar = new System.Windows.Forms.PictureBox();
+            this.picLoja = new System.Windows.Forms.PictureBox();
+            this.picMinerar = new System.Windows.Forms.PictureBox();
+            this.picADM = new System.Windows.Forms.PictureBox();
+            this.money = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.iconBurg = new System.Windows.Forms.PictureBox();
             this.panelInferiorXp = new System.Windows.Forms.Panel();
             this.panSupXp = new System.Windows.Forms.Panel();
             this.lbNome = new System.Windows.Forms.Label();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.foto = new Microsoft.VisualBasic.PowerPacks.OvalShape();
             this.panelEsquerdo = new System.Windows.Forms.Panel();
             this.panelItem9 = new System.Windows.Forms.Panel();
             this.panelItem6 = new System.Windows.Forms.Panel();
@@ -46,19 +58,10 @@
             this.panelItem1 = new System.Windows.Forms.Panel();
             this.panelExpecial2 = new System.Windows.Forms.Panel();
             this.panelExpecial1 = new System.Windows.Forms.Panel();
-            this.money = new System.Windows.Forms.Label();
             this.panelPrincipal = new System.Windows.Forms.Panel();
-            this.picRelogar = new System.Windows.Forms.PictureBox();
-            this.picDesligar = new System.Windows.Forms.PictureBox();
-            this.picLoja = new System.Windows.Forms.PictureBox();
-            this.picMinerar = new System.Windows.Forms.PictureBox();
-            this.picADM = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.iconBurg = new System.Windows.Forms.PictureBox();
-            this.foto = new Microsoft.VisualBasic.PowerPacks.OvalShape();
             this.PanelTopo.SuspendLayout();
-            this.panelInferiorXp.SuspendLayout();
-            this.panelEsquerdo.SuspendLayout();
+            this.panPesoBaixo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picPeso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRelogar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDesligar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLoja)).BeginInit();
@@ -66,11 +69,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.picADM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconBurg)).BeginInit();
+            this.panelInferiorXp.SuspendLayout();
+            this.panelEsquerdo.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelTopo
             // 
             this.PanelTopo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(10)))), ((int)(((byte)(3)))));
+            this.PanelTopo.Controls.Add(this.lbPeso);
+            this.PanelTopo.Controls.Add(this.panPesoBaixo);
             this.PanelTopo.Controls.Add(this.picRelogar);
             this.PanelTopo.Controls.Add(this.picDesligar);
             this.PanelTopo.Controls.Add(this.picLoja);
@@ -87,6 +94,130 @@
             this.PanelTopo.Name = "PanelTopo";
             this.PanelTopo.Size = new System.Drawing.Size(1280, 100);
             this.PanelTopo.TabIndex = 0;
+            // 
+            // lbPeso
+            // 
+            this.lbPeso.AutoSize = true;
+            this.lbPeso.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPeso.ForeColor = System.Drawing.Color.Snow;
+            this.lbPeso.Location = new System.Drawing.Point(537, 40);
+            this.lbPeso.Name = "lbPeso";
+            this.lbPeso.Size = new System.Drawing.Size(70, 20);
+            this.lbPeso.TabIndex = 13;
+            this.lbPeso.Text = "00,0 Kg";
+            // 
+            // panPesoBaixo
+            // 
+            this.panPesoBaixo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.panPesoBaixo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panPesoBaixo.Controls.Add(this.picPeso);
+            this.panPesoBaixo.Location = new System.Drawing.Point(491, 30);
+            this.panPesoBaixo.Name = "panPesoBaixo";
+            this.panPesoBaixo.Size = new System.Drawing.Size(40, 40);
+            this.panPesoBaixo.TabIndex = 12;
+            // 
+            // picPeso
+            // 
+            this.picPeso.BackColor = System.Drawing.Color.Transparent;
+            this.picPeso.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.picPeso.Image = global::ProtoMine.Properties.Resources.cart;
+            this.picPeso.Location = new System.Drawing.Point(0, 0);
+            this.picPeso.Name = "picPeso";
+            this.picPeso.Size = new System.Drawing.Size(40, 40);
+            this.picPeso.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picPeso.TabIndex = 14;
+            this.picPeso.TabStop = false;
+            // 
+            // picRelogar
+            // 
+            this.picRelogar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picRelogar.Image = global::ProtoMine.Properties.Resources.relogar;
+            this.picRelogar.Location = new System.Drawing.Point(1055, 30);
+            this.picRelogar.Name = "picRelogar";
+            this.picRelogar.Size = new System.Drawing.Size(40, 40);
+            this.picRelogar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picRelogar.TabIndex = 11;
+            this.picRelogar.TabStop = false;
+            this.picRelogar.Click += new System.EventHandler(this.Desconectar);
+            // 
+            // picDesligar
+            // 
+            this.picDesligar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picDesligar.Image = global::ProtoMine.Properties.Resources.desligar;
+            this.picDesligar.Location = new System.Drawing.Point(1125, 30);
+            this.picDesligar.Name = "picDesligar";
+            this.picDesligar.Size = new System.Drawing.Size(40, 40);
+            this.picDesligar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picDesligar.TabIndex = 10;
+            this.picDesligar.TabStop = false;
+            this.picDesligar.Click += new System.EventHandler(this.FecharAppProto);
+            // 
+            // picLoja
+            // 
+            this.picLoja.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picLoja.Image = global::ProtoMine.Properties.Resources.shop;
+            this.picLoja.Location = new System.Drawing.Point(980, 30);
+            this.picLoja.Name = "picLoja";
+            this.picLoja.Size = new System.Drawing.Size(40, 40);
+            this.picLoja.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLoja.TabIndex = 9;
+            this.picLoja.TabStop = false;
+            // 
+            // picMinerar
+            // 
+            this.picMinerar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picMinerar.Image = global::ProtoMine.Properties.Resources.minerar;
+            this.picMinerar.Location = new System.Drawing.Point(905, 30);
+            this.picMinerar.Name = "picMinerar";
+            this.picMinerar.Size = new System.Drawing.Size(40, 40);
+            this.picMinerar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMinerar.TabIndex = 8;
+            this.picMinerar.TabStop = false;
+            this.picMinerar.Click += new System.EventHandler(this.Minerar);
+            // 
+            // picADM
+            // 
+            this.picADM.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picADM.Image = global::ProtoMine.Properties.Resources.adm;
+            this.picADM.Location = new System.Drawing.Point(830, 30);
+            this.picADM.Name = "picADM";
+            this.picADM.Size = new System.Drawing.Size(40, 40);
+            this.picADM.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picADM.TabIndex = 7;
+            this.picADM.TabStop = false;
+            // 
+            // money
+            // 
+            this.money.AutoSize = true;
+            this.money.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.money.ForeColor = System.Drawing.Color.Snow;
+            this.money.Location = new System.Drawing.Point(383, 40);
+            this.money.Name = "money";
+            this.money.Size = new System.Drawing.Size(59, 20);
+            this.money.TabIndex = 6;
+            this.money.Text = "00,0 $";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ProtoMine.Properties.Resources.coin;
+            this.pictureBox1.Location = new System.Drawing.Point(330, 25);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
+            // iconBurg
+            // 
+            this.iconBurg.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconBurg.Image = global::ProtoMine.Properties.Resources.lines_menu_burger_icon_123889;
+            this.iconBurg.Location = new System.Drawing.Point(1210, 30);
+            this.iconBurg.Name = "iconBurg";
+            this.iconBurg.Size = new System.Drawing.Size(40, 40);
+            this.iconBurg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.iconBurg.TabIndex = 4;
+            this.iconBurg.TabStop = false;
+            this.iconBurg.Click += new System.EventHandler(this.mostarMenu);
             // 
             // panelInferiorXp
             // 
@@ -127,6 +258,18 @@
             this.shapeContainer1.Size = new System.Drawing.Size(1280, 100);
             this.shapeContainer1.TabIndex = 0;
             this.shapeContainer1.TabStop = false;
+            // 
+            // foto
+            // 
+            this.foto.BackColor = System.Drawing.Color.White;
+            this.foto.BackgroundImage = global::ProtoMine.Properties.Resources.jones;
+            this.foto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.foto.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.foto.BorderColor = System.Drawing.Color.Snow;
+            this.foto.BorderWidth = 4;
+            this.foto.Location = new System.Drawing.Point(20, 13);
+            this.foto.Name = "foto";
+            this.foto.Size = new System.Drawing.Size(75, 75);
             // 
             // panelEsquerdo
             // 
@@ -236,17 +379,6 @@
             this.panelExpecial1.Size = new System.Drawing.Size(120, 140);
             this.panelExpecial1.TabIndex = 0;
             // 
-            // money
-            // 
-            this.money.AutoSize = true;
-            this.money.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.money.ForeColor = System.Drawing.Color.Snow;
-            this.money.Location = new System.Drawing.Point(383, 40);
-            this.money.Name = "money";
-            this.money.Size = new System.Drawing.Size(59, 20);
-            this.money.TabIndex = 6;
-            this.money.Text = "00,0 $";
-            // 
             // panelPrincipal
             // 
             this.panelPrincipal.BackColor = System.Drawing.SystemColors.Control;
@@ -256,98 +388,6 @@
             this.panelPrincipal.Name = "panelPrincipal";
             this.panelPrincipal.Size = new System.Drawing.Size(880, 620);
             this.panelPrincipal.TabIndex = 2;
-            // 
-            // picRelogar
-            // 
-            this.picRelogar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picRelogar.Image = global::ProtoMine.Properties.Resources.relogar;
-            this.picRelogar.Location = new System.Drawing.Point(1055, 30);
-            this.picRelogar.Name = "picRelogar";
-            this.picRelogar.Size = new System.Drawing.Size(40, 40);
-            this.picRelogar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picRelogar.TabIndex = 11;
-            this.picRelogar.TabStop = false;
-            this.picRelogar.Click += new System.EventHandler(this.Desconectar);
-            // 
-            // picDesligar
-            // 
-            this.picDesligar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picDesligar.Image = global::ProtoMine.Properties.Resources.desligar;
-            this.picDesligar.Location = new System.Drawing.Point(1125, 30);
-            this.picDesligar.Name = "picDesligar";
-            this.picDesligar.Size = new System.Drawing.Size(40, 40);
-            this.picDesligar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picDesligar.TabIndex = 10;
-            this.picDesligar.TabStop = false;
-            this.picDesligar.Click += new System.EventHandler(this.FecharAppProto);
-            // 
-            // picLoja
-            // 
-            this.picLoja.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picLoja.Image = global::ProtoMine.Properties.Resources.shop;
-            this.picLoja.Location = new System.Drawing.Point(980, 30);
-            this.picLoja.Name = "picLoja";
-            this.picLoja.Size = new System.Drawing.Size(40, 40);
-            this.picLoja.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picLoja.TabIndex = 9;
-            this.picLoja.TabStop = false;
-            // 
-            // picMinerar
-            // 
-            this.picMinerar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picMinerar.Image = global::ProtoMine.Properties.Resources.minerar;
-            this.picMinerar.Location = new System.Drawing.Point(905, 30);
-            this.picMinerar.Name = "picMinerar";
-            this.picMinerar.Size = new System.Drawing.Size(40, 40);
-            this.picMinerar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picMinerar.TabIndex = 8;
-            this.picMinerar.TabStop = false;
-            this.picMinerar.Click += new System.EventHandler(this.Minerar);
-            // 
-            // picADM
-            // 
-            this.picADM.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picADM.Image = global::ProtoMine.Properties.Resources.adm;
-            this.picADM.Location = new System.Drawing.Point(830, 30);
-            this.picADM.Name = "picADM";
-            this.picADM.Size = new System.Drawing.Size(40, 40);
-            this.picADM.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picADM.TabIndex = 7;
-            this.picADM.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::ProtoMine.Properties.Resources.coin;
-            this.pictureBox1.Location = new System.Drawing.Point(330, 25);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            // 
-            // iconBurg
-            // 
-            this.iconBurg.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconBurg.Image = global::ProtoMine.Properties.Resources.lines_menu_burger_icon_123889;
-            this.iconBurg.Location = new System.Drawing.Point(1210, 30);
-            this.iconBurg.Name = "iconBurg";
-            this.iconBurg.Size = new System.Drawing.Size(40, 40);
-            this.iconBurg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.iconBurg.TabIndex = 4;
-            this.iconBurg.TabStop = false;
-            this.iconBurg.Click += new System.EventHandler(this.mostarMenu);
-            // 
-            // foto
-            // 
-            this.foto.BackColor = System.Drawing.Color.White;
-            this.foto.BackgroundImage = global::ProtoMine.Properties.Resources.jones;
-            this.foto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.foto.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.foto.BorderColor = System.Drawing.Color.Snow;
-            this.foto.BorderWidth = 4;
-            this.foto.Location = new System.Drawing.Point(20, 13);
-            this.foto.Name = "foto";
-            this.foto.Size = new System.Drawing.Size(75, 75);
             // 
             // Principal
             // 
@@ -364,8 +404,8 @@
             this.Text = "Principal";
             this.PanelTopo.ResumeLayout(false);
             this.PanelTopo.PerformLayout();
-            this.panelInferiorXp.ResumeLayout(false);
-            this.panelEsquerdo.ResumeLayout(false);
+            this.panPesoBaixo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picPeso)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRelogar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDesligar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLoja)).EndInit();
@@ -373,6 +413,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picADM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconBurg)).EndInit();
+            this.panelInferiorXp.ResumeLayout(false);
+            this.panelEsquerdo.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -406,5 +448,8 @@
         private System.Windows.Forms.PictureBox picLoja;
         private System.Windows.Forms.PictureBox picMinerar;
         private System.Windows.Forms.PictureBox picADM;
+        public System.Windows.Forms.PictureBox picPeso;
+        public System.Windows.Forms.Panel panPesoBaixo;
+        public System.Windows.Forms.Label lbPeso;
     }
 }

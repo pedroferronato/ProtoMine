@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProtoMine.View
 {
-    public partial class pepega : Form
+    public partial class Pepega : Form
     {
-        public pepega()
+        public Pepega()
         {
             InitializeComponent();
         }

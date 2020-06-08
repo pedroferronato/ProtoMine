@@ -15,23 +15,21 @@ namespace ProtoMine.View
 {
     public partial class Principal : Form
     {
-        Minerar miner = new Minerar();
-
         List<Panel> paineis = new List<Panel>();
 
         ItemController itemController = new ItemController();
 
-        pepega easter = new pepega();
-
         int pepega = 1;
+
+        Usuario usuLogado = UserCache.UsuarioLogado;
 
         public Principal(Form login)
         {
             InitializeComponent();
-            
+            picPeso.BackColor = Color.Transparent;
             // Início do load de itens
-            itemController.CarregarItens();
-
+            itemController.CarregarItens(this);
+            GerarDict();
             // labels de item
             paineis.Add(panelItem1);
             paineis.Add(panelItem2);
@@ -43,13 +41,7 @@ namespace ProtoMine.View
             paineis.Add(panelItem8);
             paineis.Add(panelItem9);
 
-            int index = 0;
-
-            foreach (ItemModel item in ItemCache.ListaItens)
-            {
-                AbrirTela(new Item(), paineis[index]);
-                index++;
-            }
+            CarregarInventario();
 
             Image i;
             if (UserCache.UsuarioLogado.Role.Equals("admin"))
@@ -57,13 +49,25 @@ namespace ProtoMine.View
             else
                 i = Image.FromFile("../../icon/miner.png");
             foto.BackgroundImage = i;
-            lbNome.Text = UserCache.UsuarioLogado.Nome;
-            money.Text = UserCache.UsuarioLogado.Moeda.ToString() + " $";
+            lbNome.Text = usuLogado.Nome;
+            money.Text = usuLogado.Moeda.ToString() + " $";
+            lbPeso.Text = usuLogado.Peso.ToString() + " Kg";
             picDesligar.Visible = false;
             picRelogar.Visible = false;
             picLoja.Visible = false;
             picMinerar.Visible = false;
             picADM.Visible = false;
+        }
+
+        public void CarregarInventario()
+        {
+            int index = 0;
+
+            foreach (ItemModel item in ItemCache.ListaItens)
+            {
+                AbrirTela(new Item(ItemCache.ListaItens[index]), paineis[index]);
+                index++;
+            }
         }
 
         private void mostarMenu(object sender, EventArgs e)
@@ -72,13 +76,13 @@ namespace ProtoMine.View
             picRelogar.Visible = !picRelogar.Visible;
             picLoja.Visible = !picLoja.Visible;
             picMinerar.Visible = !picMinerar.Visible;
-            if (!UserCache.UsuarioLogado.Role.Equals("jogador"))
+            if (!usuLogado.Role.Equals("jogador"))
             {
                 picADM.Visible = !picADM.Visible;
             }
         }
-        MessageBoxButtons buttons = MessageBoxButtons.YesNo;
 
+        MessageBoxButtons buttons = MessageBoxButtons.YesNo;
         
         private void FecharAplicacao(object sender, EventArgs e)
         {
@@ -88,19 +92,29 @@ namespace ProtoMine.View
             }
         }
 
+        public void GerarDict()
+        {
+            UtilidadesTelas util = new UtilidadesTelas();
+            ItemController itemController = new ItemController();
+            itemController.BuscarTodos();
+            /*string teste = "";
+            foreach (KeyValuePair<int, ItemModel> item in ItemCache.ListaGeral)
+            {
+                teste += "Key: " + item.Key + " Item id: " + item.Value.Id + " Nome: " + item.Value.Nome + "\n";
+            }
+            util.MensagemDeTeste(teste, "geral");*/
+        }
+
         private void AbrirTela(object formGen, Panel fundoBase)
         {
+            if (fundoBase.Controls.Count > 0)
+                fundoBase.Controls.RemoveAt(0);
             Form fm = formGen as Form;
             fm.TopLevel = false;
             fm.Dock = DockStyle.Fill;
             fundoBase.Controls.Add(fm);
             fundoBase.Tag = fm;
             fm.Show();
-        }
-
-        private void AbrirMineracao(object sender, EventArgs e)
-        {
-            
         }
 
         private void FecharAppProto(object sender, EventArgs e)
@@ -121,9 +135,13 @@ namespace ProtoMine.View
 
         private void Minerar(object sender, EventArgs e)
         {
+            Minerar miner = new Minerar(this);
             pepega++;
-            if (pepega == 5)
+            if (pepega == 10)
+            {
+                Pepega easter = new Pepega();
                 AbrirTela(easter, panelPrincipal);
+            }
             else
                 AbrirTela(miner, panelPrincipal);
         }

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using ProtoMine.Cache;
+using ProtoMine.Controle;
+using ProtoMine.Modelo;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +15,18 @@ namespace ProtoMine.View
 {
     public partial class Minerar : Form
     {
-        public Minerar()
+        UtilidadesTelas util = new UtilidadesTelas();
+        ItemController itemController = new ItemController();
+        Principal prin;
+        public Minerar(Principal form)
         {
+            prin = form;
             InitializeComponent();
+        }
+
+        private void GerarMinerios(object sender, EventArgs e)
+        {
+            itemController.AdicionarItens(prin);
         }
     }
 }

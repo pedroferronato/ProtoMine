@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProtoMine.Modelo;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,13 @@ namespace ProtoMine.View
 {
     public partial class Item : Form
     {
-        public Item()
+        public Item(ItemModel item)
         {
             InitializeComponent();
+            picImgItem.Image = Image.FromFile(item.UrlImg);
+            labQuant.Text = item.Quantidade.ToString();
+            labPeso.Text = item.Peso.ToString() + " Kg";
+            labNome.Text = item.Nome;
         }
     }
 }

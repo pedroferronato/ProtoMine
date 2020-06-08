@@ -83,6 +83,16 @@ namespace ProtoMine.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cart {
+            get {
+                object obj = ResourceManager.GetObject("cart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cavern_background_free_vector {
             get {
                 object obj = ResourceManager.GetObject("cavern-background-free-vector", resourceCulture);
@@ -143,9 +153,29 @@ namespace ProtoMine.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap MINA {
+            get {
+                object obj = ResourceManager.GetObject("MINA", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minerar {
             get {
                 object obj = ResourceManager.GetObject("minerar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pick {
+            get {
+                object obj = ResourceManager.GetObject("pick", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
