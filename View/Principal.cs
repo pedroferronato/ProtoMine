@@ -37,9 +37,6 @@ namespace ProtoMine.View
             paineis.Add(panelItem4);
             paineis.Add(panelItem5);
             paineis.Add(panelItem6);
-            paineis.Add(panelItem7);
-            paineis.Add(panelItem8);
-            paineis.Add(panelItem9);
 
             CarregarInventario();
 
