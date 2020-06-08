@@ -54,6 +54,7 @@ namespace ProtoMine.View
             picLoja.Visible = false;
             picMinerar.Visible = false;
             picADM.Visible = false;
+            lbNivel.Text = "Nível: " + UserCache.UsuarioLogado.Nivel.ToString();
         }
 
         public void CarregarInventario()
@@ -134,7 +135,7 @@ namespace ProtoMine.View
         {
             Minerar miner = new Minerar(this);
             pepega++;
-            if (pepega == 10)
+            if (pepega >= 10)
             {
                 Pepega easter = new Pepega();
                 AbrirTela(easter, panelPrincipal);

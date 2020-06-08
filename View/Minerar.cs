@@ -30,6 +30,7 @@ namespace ProtoMine.View
 
         private void GerarMinerios(object sender, EventArgs e)
         {
+
             itemController.AdicionarItens(prin);
         }
     }
