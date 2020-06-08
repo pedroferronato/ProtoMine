@@ -73,7 +73,6 @@ namespace ProtoMine.Controle
                 List<ItemModel> dropados = GerarItensMinerados();
                 foreach (ItemModel i in dropados)
                 {
-                    util.MensagemDeTeste(i.ToString(), "Aaaaa");
                     if (ItemCache.ListaItens.Any(it => it.Id == i.Id))
                     {
                         if (UserCache.UsuarioLogado.Peso + i.Quantidade > UserCache.UsuarioLogado.Capacidade)
@@ -88,6 +87,21 @@ namespace ProtoMine.Controle
                             ItemCache.ListaItens[i.Id - 1].Quantidade += i.Quantidade;
                         }
                     }
+                    //200
+                    double xp = (i.Id * i.Quantidade) / (int)Math.Truncate(UserCache.UsuarioLogado.Proficiencia);
+                    int porcentagem = (int)(xp * 100) / 200;
+                    UserCache.UsuarioLogado.Proficiencia += (double)porcentagem/100;
+                    principal.panSupXp.Width += (int)(porcentagem/0.5); 
+                    if (principal.panSupXp.Width >= 200)
+                    {
+                        principal.panSupXp.Width -= 200;
+                        UserCache.UsuarioLogado.Nivel += 1;
+                        principal.lbNivel.Text = "Nível: " + UserCache.UsuarioLogado.Nivel.ToString();
+                        util.MensagemDeTeste("Parabéns você alcançou o Nível ["+UserCache.UsuarioLogado.Nivel.ToString()+"]" +
+                            " e seu nível de proficiência está em: "+UserCache.UsuarioLogado.Proficiencia.ToString(), 
+                            "Passou de Nível");
+                    }
+
                 }
                 UserCache.UsuarioLogado.Peso = 0;
                 foreach (ItemModel item in ItemCache.ListaItens)
@@ -95,7 +109,8 @@ namespace ProtoMine.Controle
                     AcrescentarPeso(item, principal);
                 }
                 principal.lbPeso.Text = UserCache.UsuarioLogado.Peso.ToString() + " Kg";
-                principal.CarregarInventario(); 
+                principal.CarregarInventario();
+
             }
             else
             {

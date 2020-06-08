@@ -44,6 +44,7 @@ namespace ProtoMine.DAO
                     user.Proficiencia = reader.GetFloat(6); // Defina a proficiência do usuário como um double que está na sétima posição do item SQL
                     user.Role = reader.GetString(7); // Defina o cargo do usuário como uma string que está na primeira oitava do item SQL
                     user.Peso = reader.GetDouble(8);
+                    user.Nivel = reader.GetInt32(9);
                 }
                 return user; // Retorna o usuario preenchido caso exista e somente com login e senha caso não exista 
                 //(o importante para verificação se trata do login ser diferente de 0 "valor padrão e nunca existente no banco de dados")

@@ -18,6 +18,7 @@ namespace ProtoMine.Modelo
         public double Proficiencia { get; set; }
         public string Role { get; set; }
         public double Peso { get; set; }
+        public int Nivel { get; set; }
 
         public Usuario ()
         {
@@ -30,7 +31,7 @@ namespace ProtoMine.Modelo
             Senha = senha;
         }
 
-        public Usuario(int id, string nome, string login, string senha, double moeda, double capacidade, double proficiencia, string role, double peso)
+        public Usuario(int id, string nome, string login, string senha, double moeda, double capacidade, double proficiencia, string role, double peso, int nivel)
         {
             Id = id;
             Nome = nome;
@@ -41,6 +42,7 @@ namespace ProtoMine.Modelo
             Proficiencia = proficiencia;
             Role = role;
             Peso = peso;
+            Nivel = nivel;
         }
 
         public override string ToString()

@@ -56,6 +56,7 @@
             this.panelExpecial2 = new System.Windows.Forms.Panel();
             this.panelExpecial1 = new System.Windows.Forms.Panel();
             this.panelPrincipal = new System.Windows.Forms.Panel();
+            this.lbNivel = new System.Windows.Forms.Label();
             this.PanelTopo.SuspendLayout();
             this.panPesoBaixo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPeso)).BeginInit();
@@ -73,6 +74,7 @@
             // PanelTopo
             // 
             this.PanelTopo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(10)))), ((int)(((byte)(3)))));
+            this.PanelTopo.Controls.Add(this.lbNivel);
             this.PanelTopo.Controls.Add(this.lbPeso);
             this.PanelTopo.Controls.Add(this.panPesoBaixo);
             this.PanelTopo.Controls.Add(this.picRelogar);
@@ -359,6 +361,17 @@
             this.panelPrincipal.Size = new System.Drawing.Size(880, 620);
             this.panelPrincipal.TabIndex = 2;
             // 
+            // lbNivel
+            // 
+            this.lbNivel.AutoSize = true;
+            this.lbNivel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNivel.ForeColor = System.Drawing.Color.Snow;
+            this.lbNivel.Location = new System.Drawing.Point(226, 19);
+            this.lbNivel.Name = "lbNivel";
+            this.lbNivel.Size = new System.Drawing.Size(91, 24);
+            this.lbNivel.TabIndex = 15;
+            this.lbNivel.Text = "Nível: 99";
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -398,7 +411,7 @@
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private System.Windows.Forms.Label lbNome;
         private System.Windows.Forms.Panel panelInferiorXp;
-        private System.Windows.Forms.Panel panSupXp;
+        public System.Windows.Forms.Panel panSupXp;
         private System.Windows.Forms.PictureBox iconBurg;
         private System.Windows.Forms.Panel panelItem3;
         private System.Windows.Forms.Panel panelItem2;
@@ -418,5 +431,6 @@
         public System.Windows.Forms.PictureBox picPeso;
         public System.Windows.Forms.Panel panPesoBaixo;
         public System.Windows.Forms.Label lbPeso;
+        public System.Windows.Forms.Label lbNivel;
     }
 }
