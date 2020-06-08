@@ -22,6 +22,10 @@ namespace ProtoMine.View
         {
             prin = form;
             InitializeComponent();
+            if (UserCache.UsuarioLogado.Peso > UserCache.UsuarioLogado.Capacidade)
+            {
+                ItemCache.Carregado = true;
+            }
         }
 
         private void GerarMinerios(object sender, EventArgs e)

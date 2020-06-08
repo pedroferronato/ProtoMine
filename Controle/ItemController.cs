@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualBasic.PowerPacks;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using Microsoft.VisualBasic.PowerPacks;
 using MySql.Data.MySqlClient;
 using ProtoMine.Cache;
 using ProtoMine.DAO;
@@ -17,7 +18,6 @@ namespace ProtoMine.Controle
     class ItemController
     {
         UtilidadesTelas util = new UtilidadesTelas();
-
         public void CarregarItens(Principal principal)
         {
             
@@ -68,22 +68,39 @@ namespace ProtoMine.Controle
 
         public void AdicionarItens(Principal principal)
         {
-            List<ItemModel> dropados = GerarItensMinerados();
-            foreach (ItemModel i in dropados)
+            if (!ItemCache.Carregado)
             {
-                util.MensagemDeTeste(i.ToString(), "Aleatórios");
-                if (ItemCache.ListaItens.Any(it => it.Id == i.Id))
+                List<ItemModel> dropados = GerarItensMinerados();
+                foreach (ItemModel i in dropados)
                 {
-                    ItemCache.ListaItens[i.Id - 1].Quantidade += i.Quantidade;
+                    util.MensagemDeTeste(i.ToString(), "Aaaaa");
+                    if (ItemCache.ListaItens.Any(it => it.Id == i.Id))
+                    {
+                        if (UserCache.UsuarioLogado.Peso + i.Quantidade > UserCache.UsuarioLogado.Capacidade)
+                        {
+                            util.MensagemDeTeste("Peso estourou", "Aaaaa");
+                            ItemCache.ListaItens[i.Id - 1].Quantidade += i.Quantidade;
+                            ItemCache.Carregado = true;
+                            break;
+                        }
+                        else
+                        {
+                            ItemCache.ListaItens[i.Id - 1].Quantidade += i.Quantidade;
+                        }
+                    }
                 }
+                UserCache.UsuarioLogado.Peso = 0;
+                foreach (ItemModel item in ItemCache.ListaItens)
+                {
+                    AcrescentarPeso(item, principal);
+                }
+                principal.lbPeso.Text = UserCache.UsuarioLogado.Peso.ToString() + " Kg";
+                principal.CarregarInventario(); 
             }
-            UserCache.UsuarioLogado.Peso = 0;
-            foreach (ItemModel item in ItemCache.ListaItens)
+            else
             {
-                AcrescentarPeso(item, principal);
+                util.MensagemDeTeste("By: Carrinho", "Não suporto mais");
             }
-            principal.lbPeso.Text = UserCache.UsuarioLogado.Peso.ToString() + " Kg";
-            principal.CarregarInventario();
         }
 
         public List<ItemModel> GerarItensMinerados()
