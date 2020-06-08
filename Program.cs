@@ -18,5 +18,10 @@ namespace ProtoMine
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login());
         }
+
+        // Acadêmicos: Bruno Delani, João V. Lopes Alves e Pedro Luís
+
+        // 3º Semestre : Trabalho Interdisciplinar, Desenvolvimento de sistema de coleta 
+        // e venda de itens em ambiente de jogo.
     }
 }
