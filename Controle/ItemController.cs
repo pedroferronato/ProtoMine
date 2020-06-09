@@ -87,21 +87,39 @@ namespace ProtoMine.Controle
                             ItemCache.ListaItens[i.Id - 1].Quantidade += i.Quantidade;
                         }
                     }
-                    //200
-                    double xp = (i.Id * i.Quantidade) / (int)Math.Truncate(UserCache.UsuarioLogado.Proficiencia);
-                    int porcentagem = (int)(xp * 100) / 200;
-                    UserCache.UsuarioLogado.Proficiencia += (double)porcentagem/100;
-                    principal.panSupXp.Width += (int)(porcentagem/0.5); 
-                    if (principal.panSupXp.Width >= 200)
+                    if (!UserCache.Mestre)
                     {
-                        principal.panSupXp.Width -= 200;
-                        UserCache.UsuarioLogado.Nivel += 1;
-                        principal.lbNivel.Text = "Nível: " + UserCache.UsuarioLogado.Nivel.ToString();
-                        util.MensagemDeTeste("Parabéns você alcançou o Nível ["+UserCache.UsuarioLogado.Nivel.ToString()+"]" +
-                            " e seu nível de proficiência está em: "+UserCache.UsuarioLogado.Proficiencia.ToString(), 
-                            "Passou de Nível");
+                        int nv = UserCache.UsuarioLogado.Nivel;
+                        double xp = (i.Id * i.Quantidade);
+                        int tetoXp = ((nv * 100) - (nv * nv)) + (nv * nv * nv);
+                        int porcentagem = (int)(xp * 100) / tetoXp;
+                        try
+                        {
+                            UserCache.UsuarioLogado.Experiencia += (porcentagem * tetoXp) / 100;
+                        }
+                        catch (Exception e)
+                        {
+                            throw e;
+                        }
+                        principal.panSupXp.Width += porcentagem * 2;
+                        if (tetoXp <= UserCache.UsuarioLogado.Experiencia)
+                        {
+                            principal.panSupXp.Width = 0;
+                            UserCache.UsuarioLogado.Experiencia = 0;
+                            if ((UserCache.UsuarioLogado.Nivel + 1) == 20)
+                            {
+                                UserCache.UsuarioLogado.Nivel += 1;
+                                principal.panSupXp.Width = 200;
+                                principal.panSupXp.BackColor = Color.Gold;
+                                UserCache.Mestre = true;
+                            }
+                            else
+                            {
+                                UserCache.UsuarioLogado.Nivel += 1;
+                            }
+                            principal.lbNivel.Text = "Nível: " + UserCache.UsuarioLogado.Nivel.ToString();
+                        } 
                     }
-
                 }
                 UserCache.UsuarioLogado.Peso = 0;
                 foreach (ItemModel item in ItemCache.ListaItens)
@@ -129,6 +147,7 @@ namespace ProtoMine.Controle
             for (int i = 1; i <= qntDrop; i++)
             {
                 int itemDropado = new Random().Next(1, 101);
+                itemDropado += UserCache.UsuarioLogado.Nivel;
                 int minerio = CalcularProbabilidade(itemDropado);
 
                 if (listaDrop.Any(l => l == minerio))
@@ -155,7 +174,7 @@ namespace ProtoMine.Controle
             // 7  % - 4
             // 3  % - 5
             // 2  % - 6
-
+       
             if (i >= 1 && i <= 50)
                 return 1;
             else if (i >= 51 && i <= 80)
@@ -166,7 +185,7 @@ namespace ProtoMine.Controle
                 return 4;
             else if (i >= 96 && i <= 98)
                 return 5;
-            else if (i == 99 && i == 100)
+            else if (i >= 99)
                 return 6;
             return 1;
         }

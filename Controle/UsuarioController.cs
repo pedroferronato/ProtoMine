@@ -26,6 +26,10 @@ namespace ProtoMine.Controle
                 if (user.Id != 0)
                 {
                     UserCache.UsuarioLogado = user;
+                    if (user.Nivel == 20)
+                    {
+                        UserCache.Mestre = true;
+                    }
                     return true;
                 }
                 return false;

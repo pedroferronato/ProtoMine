@@ -15,7 +15,7 @@ namespace ProtoMine.Modelo
         public string Senha { get; set; }
         public double Moeda { get; set; }
         public double Capacidade { get; set; }
-        public double Proficiencia { get; set; }
+        public int Experiencia { get; set; }
         public string Role { get; set; }
         public double Peso { get; set; }
         public int Nivel { get; set; }
@@ -31,7 +31,7 @@ namespace ProtoMine.Modelo
             Senha = senha;
         }
 
-        public Usuario(int id, string nome, string login, string senha, double moeda, double capacidade, double proficiencia, string role, double peso, int nivel)
+        public Usuario(int id, string nome, string login, string senha, double moeda, double capacidade, int experiencia, string role, double peso, int nivel)
         {
             Id = id;
             Nome = nome;
@@ -39,7 +39,7 @@ namespace ProtoMine.Modelo
             Senha = senha;
             Moeda = moeda;
             Capacidade = capacidade;
-            Proficiencia = proficiencia;
+            Experiencia = experiencia;
             Role = role;
             Peso = peso;
             Nivel = nivel;
@@ -53,7 +53,7 @@ namespace ProtoMine.Modelo
                    " Senha: " + Senha +
                    " Moeda: " + Moeda +
                    " Capacidade: " + Capacidade +
-                   " Proficiencia: " + Proficiencia +
+                   " Experiência: " + Experiencia +
                    " Role: " + Role +
                    " Peso: " + Peso;
         }

@@ -41,7 +41,7 @@ namespace ProtoMine.DAO
                     user.Senha = reader.GetString(3); // Defina a senha do usuário como uma string que está na quarta posição do item SQL
                     user.Moeda = reader.GetFloat(4); // Defina a moeda do usuário como um double que está na quinta posição do item SQL
                     user.Capacidade = reader.GetFloat(5); // Defina a capacidade do usuário como um double que está na sexta posição do item SQL
-                    user.Proficiencia = reader.GetFloat(6); // Defina a proficiência do usuário como um double que está na sétima posição do item SQL
+                    user.Experiencia = reader.GetInt32(6); // Defina a proficiência do usuário como um double que está na sétima posição do item SQL
                     user.Role = reader.GetString(7); // Defina o cargo do usuário como uma string que está na primeira oitava do item SQL
                     user.Peso = reader.GetDouble(8);
                     user.Nivel = reader.GetInt32(9);

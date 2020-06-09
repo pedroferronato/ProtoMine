@@ -1,4 +1,5 @@
-﻿using ProtoMine.Cache;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using ProtoMine.Cache;
 using ProtoMine.Controle;
 using ProtoMine.Modelo;
 using System;
@@ -55,6 +56,23 @@ namespace ProtoMine.View
             picMinerar.Visible = false;
             picADM.Visible = false;
             lbNivel.Text = "Nível: " + UserCache.UsuarioLogado.Nivel.ToString();
+            CarregarXp();
+        }
+
+        private void CarregarXp()
+        {
+            if (!UserCache.Mestre)
+            {
+                int nv = UserCache.UsuarioLogado.Nivel;
+                int tetoXp = ((nv * 100) - (nv * nv)) + (nv * nv * nv);
+                int porcentagem = (int)(UserCache.UsuarioLogado.Experiencia * 100) / tetoXp;
+                panSupXp.Width = porcentagem * 2; 
+            }
+            else
+            {
+                panSupXp.Width = 200;
+                panSupXp.BackColor = Color.Gold;
+            }
         }
 
         public void CarregarInventario()
