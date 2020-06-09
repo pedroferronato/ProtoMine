@@ -34,52 +34,164 @@ namespace ProtoMine.View
             }
             catch (Exception ex)
             {
-                util.MensagemDeTeste("Erro inesperado no cadastro:  " + ex.Message, "Erro!");
+                util.MensagemDeTeste("Erro inesperado no load dos cadastros:  " + ex.Message, "Erro!");
                 throw ex;
+            }
+            lbNome.Visible = false;
+            lbpass.Visible = false;
+            lbConf.Visible = false;
+            lbLogin.Visible = false;
+        }
+
+        private void NomeEnter(object sender, EventArgs e)
+        {
+            if (lbNome.Visible)
+            {
+                lbNome.Visible = false;
+            }
+            if (txtnomeUsu.Text == "Nome de Usuário")
+            {
+                txtnomeUsu.Text = "";
             }
         }
-        private void CadastrarUsuario(object sender, EventArgs e)
-        {
-            
-            try
-            {
-                Usuario user = new Usuario();
-                UsuarioController userController = new UsuarioController();
 
-                user.Login = txtLogin.Text;
-                user.Senha = txtSenha.Text;
-                user.Nome = txtNomePersonagem.Text;
-                if (checkRole.Checked)
+        private void NomeLeave(object sender, EventArgs e)
+        {
+            if (txtnomeUsu.Text == "")
+            {
+                txtnomeUsu.Text = "Nome de Usuário";
+            }
+        }
+
+        private void SenhaEnter(object sender, EventArgs e)
+        {
+            if (lbpass.Visible)
+            {
+                lbpass.Visible = false;
+            }
+            if (txtSenha.Text == "Senha")
+            {
+                txtSenha.Text = "";
+                txtSenha.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void SenhaLeave(object sender, EventArgs e)
+        {
+            if (txtSenha.Text == "")
+            {
+                txtSenha.Text = "Senha";
+                txtSenha.UseSystemPasswordChar = false;
+            }
+        }
+
+        private void EnterConfSenha(object sender, EventArgs e)
+        {
+            if (lbConf.Visible)
+            {
+                lbConf.Visible = false;
+            }
+            if (txtConfSenha.Text == "Confirme a senha")
+            {
+                txtConfSenha.Text = "";
+                txtConfSenha.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void LeaveConfSenha(object sender, EventArgs e)
+        {
+            if (txtConfSenha.Text == "")
+            {
+                txtConfSenha.Text = "Confirme a senha";
+                txtConfSenha.UseSystemPasswordChar = false;
+            }
+        }
+
+        private void EnterLogin(object sender, EventArgs e)
+        {
+            if (lbLogin.Visible)
+            {
+                lbLogin.Visible = false;
+            }
+            if (txtlogin.Text == "Login")
+            {
+                txtlogin.Text = "";
+            }
+        }
+
+        private void LeaveLogin(object sender, EventArgs e)
+        {
+            if (txtlogin.Text == "")
+            {
+                txtlogin.Text = "Login";
+            }
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            if (txtlogin.Text == "Login")
+            {
+                lbLogin.Visible = true;
+            }
+            if (txtSenha.Text == "Senha")
+            {
+                lbpass.Visible = true;
+            }
+            if (txtConfSenha.Text == "Confirme a senha")
+            {
+                lbConf.Visible = true;
+            }
+            if (txtnomeUsu.Text == "Nome de Usuário")
+            {
+                lbNome.Visible = true;
+            }
+
+            if (!(lbNome.Visible || lbConf.Visible || lbpass.Visible || lbLogin.Visible))
+            {
+                if (txtConfSenha.Text == txtSenha.Text)
                 {
-                    user.Role = "admin";
+                    Usuario novoUsuario = new Usuario();
+                    novoUsuario.Login = txtlogin.Text;
+                    novoUsuario.Senha = txtSenha.Text;
+                    novoUsuario.Nome = txtnomeUsu.Text;
+                    if (checkRole.Checked)
+                        novoUsuario.Role = "admin";
+                    else
+                        novoUsuario.Role = "jogador";
+
+                    UsuarioController usuarioController = new UsuarioController();
+                    try
+                    {
+                        usuarioController.Cadastrar(novoUsuario);
+                        tabela.DataSource = usuarioController.Listar();
+                    }
+                    catch (MySqlException exce)
+                    {
+                        util.MensagemDeTeste("Erro no login, falha na conexão ao banco de dados", "Erro!");
+                        throw exce;
+                    }
+                    catch (Exception ex)
+                    {
+                        util.MensagemDeTeste("Erro inesperado no load dos cadastros:  " + ex.Message, "Erro!");
+                        throw ex;
+                    }
+                    finally
+                    {
+                        txtlogin.Text = "Login";
+                        txtSenha.Text = "Senha";
+                        txtnomeUsu.Text = "Nome de Usuário";
+                        txtConfSenha.Text = "Confirme a senha";
+                        txtConfSenha.UseSystemPasswordChar = false;
+                        txtSenha.UseSystemPasswordChar = false;
+                        checkRole.Checked = false;
+                    }
+                    
                 }
                 else
                 {
-                    user.Role = "jogador";
+                    lbpass.Visible = true;
+                    lbConf.Visible = true;
                 }
-                if (txtNomePersonagem.Text == "" || txtLogin.Text == "" || txtSenha.Text == "" )
-                {
-                    util.MensagemDeTeste("Todos os campos precisam ser preenchidos", "Cadastro Inválido");
-                }
-                else
-                {
-                    userController.Cadastrar(user);
-                    util.MensagemDeTeste("O pesronagem " + user.Nome + " foi cadastrado!", "Cadastro Realizado");
-                    txtLogin.Clear();
-                    txtSenha.Clear();
-                    txtNomePersonagem.Clear();
-                    checkRole.CheckState = CheckState.Unchecked;
-                }
-            }
-            catch (MySqlException exce)
-            {
-                util.MensagemDeTeste("Erro no login, falha na conexão ao banco de dados", "Erro!");
-                throw exce;
-            }
-            catch (Exception ex)
-            {
-                util.MensagemDeTeste("Erro inesperado no cadastro:  " + ex.Message, "Erro!");
-                throw ex;
             }
         }
     }

@@ -86,14 +86,14 @@ namespace ProtoMine.Controle
                             ItemCache.ListaItens[i.Id - 1].Quantidade += i.Quantidade;
                             ItemCache.Carregado = true;
                             listaDrops[i.Id - 1].Text = i.Quantidade.ToString();
-                            principal.inventario[i.Id -1].labQuant.Text = (Convert.ToInt32(principal.inventario[i.Id - 1].labQuant.Text) + i.Quantidade).ToString();
+                            principal.inventario[i.Id -1].labQuant.Text = ItemCache.ListaItens[i.Id - 1].Quantidade.ToString();
                             break;
                         }
                         else
                         {
                             ItemCache.ListaItens[i.Id - 1].Quantidade += i.Quantidade;
-                            listaDrops[i.Id - 1].Text = i.Quantidade.ToString();
-                            principal.inventario[i.Id - 1].labQuant.Text = (Convert.ToInt32(principal.inventario[i.Id - 1].labQuant.Text) + i.Quantidade).ToString();
+                            listaDrops[i.Id - 1].Text = i.Quantidade.ToString(); 
+                            principal.inventario[i.Id - 1].labQuant.Text = ItemCache.ListaItens[i.Id - 1].Quantidade.ToString();
                         }
                     }
                     if (!UserCache.Mestre)

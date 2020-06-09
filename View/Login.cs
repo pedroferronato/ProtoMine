@@ -23,7 +23,6 @@ namespace ProtoMine
         public Login()
         {
             InitializeComponent();
-
         }
 
         // importação de dll para captura de mouse e movimentação de tela
