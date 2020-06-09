@@ -16,7 +16,9 @@ namespace ProtoMine.View
 {
     public partial class Principal : Form
     {
-        List<Panel> paineis = new List<Panel>();
+        public List<Panel> paineis = new List<Panel>();
+
+        public List<Item> inventario = new List<Item>();
 
         ItemController itemController = new ItemController();
 
@@ -81,7 +83,8 @@ namespace ProtoMine.View
 
             foreach (ItemModel item in ItemCache.ListaItens)
             {
-                AbrirTela(new Item(ItemCache.ListaItens[index]), paineis[index]);
+                inventario.Add(new Item(ItemCache.ListaItens[index]));
+                AbrirTela(inventario[index], paineis[index]);
                 index++;
             }
         }
@@ -113,12 +116,6 @@ namespace ProtoMine.View
             UtilidadesTelas util = new UtilidadesTelas();
             ItemController itemController = new ItemController();
             itemController.BuscarTodos();
-            /*string teste = "";
-            foreach (KeyValuePair<int, ItemModel> item in ItemCache.ListaGeral)
-            {
-                teste += "Key: " + item.Key + " Item id: " + item.Value.Id + " Nome: " + item.Value.Nome + "\n";
-            }
-            util.MensagemDeTeste(teste, "geral");*/
         }
 
         private void AbrirTela(object formGen, Panel fundoBase)

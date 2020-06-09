@@ -117,8 +117,8 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label labNome;
-        private System.Windows.Forms.Label labQuant;
         private System.Windows.Forms.PictureBox picImgItem;
         private System.Windows.Forms.Label labPeso;
+        public System.Windows.Forms.Label labQuant;
     }
 }
