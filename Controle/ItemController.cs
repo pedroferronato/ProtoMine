@@ -66,25 +66,32 @@ namespace ProtoMine.Controle
             }
         }
 
-        public void AdicionarItens(Principal principal)
+        public void AdicionarItens(Principal principal, List<Label> listaDrops)
         {
             if (!ItemCache.Carregado)
             {
+                foreach (Label l in listaDrops)
+                {
+                    l.Text = "0";
+                }
                 List<ItemModel> dropados = GerarItensMinerados();
                 foreach (ItemModel i in dropados)
                 {
                     if (ItemCache.ListaItens.Any(it => it.Id == i.Id))
                     {
+
                         if (UserCache.UsuarioLogado.Peso + i.Quantidade > UserCache.UsuarioLogado.Capacidade)
                         {
                             util.MensagemDeTeste("Peso estourou", "Aaaaa");
                             ItemCache.ListaItens[i.Id - 1].Quantidade += i.Quantidade;
                             ItemCache.Carregado = true;
+                            listaDrops[i.Id - 1].Text = i.Quantidade.ToString();
                             break;
                         }
                         else
                         {
                             ItemCache.ListaItens[i.Id - 1].Quantidade += i.Quantidade;
+                            listaDrops[i.Id - 1].Text = i.Quantidade.ToString();
                         }
                     }
                     if (!UserCache.Mestre)

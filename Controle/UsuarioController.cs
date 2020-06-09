@@ -14,12 +14,40 @@ namespace ProtoMine.Controle
 {
     class UsuarioController
     {
+        Usuario user = new Usuario();
+        UtilidadesTelas util = new UtilidadesTelas();
+        UsuarioDAO userDAO = new UsuarioDAO();
+
+        public void Cadastrar(Usuario usuario)
+        {
+            try
+            {
+                userDAO.Cadastro(usuario);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public DataTable Listar()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                dt = userDAO.GerarTabela();
+                return dt;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         public bool Logar(string login, string senha)
         {
-            Usuario user = new Usuario();
-            UtilidadesTelas util = new UtilidadesTelas();
-			UsuarioDAO userDAO = new UsuarioDAO();
-
 			try
 			{
 				user = userDAO.buscarLogin(login, senha); // Realiza a conexão da tela com o DAO

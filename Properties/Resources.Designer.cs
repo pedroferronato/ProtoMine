@@ -163,6 +163,16 @@ namespace ProtoMine.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap MINAr {
+            get {
+                object obj = ResourceManager.GetObject("MINAr", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minerar {
             get {
                 object obj = ResourceManager.GetObject("minerar", resourceCulture);
