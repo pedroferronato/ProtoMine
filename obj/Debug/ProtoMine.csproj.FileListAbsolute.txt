@@ -156,3 +156,4 @@ C:\Users\pedro\source\repos\ProtomineGit\ProtoMine\obj\Debug\ProtoMine.View.Item
 C:\Users\pedro\source\repos\ProtomineGit\ProtoMine\obj\Debug\ProtoMine.View.pepega.resources
 C:\Users\55699\source\repos\ProtoMine\obj\Debug\ProtoMine.View.Item.resources
 C:\Users\55699\source\repos\ProtoMine\obj\Debug\ProtoMine.View.Pepega.resources
+C:\Users\55699\source\repos\ProtoMine\obj\Debug\ProtoMine.View.Cadastro.resources

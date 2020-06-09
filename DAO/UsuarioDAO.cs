@@ -8,6 +8,8 @@ using System.Data;
 using ProtoMine.Modelo;
 using ProtoMine.Controle;
 using System.Data.SqlClient;
+using Microsoft.VisualBasic.ApplicationServices;
+using System.Security.Cryptography.X509Certificates;
 
 namespace ProtoMine.DAO
 {
@@ -15,6 +17,69 @@ namespace ProtoMine.DAO
     {
         MySqlCommand comando = null;
         UtilidadesTelas util = new UtilidadesTelas();
+
+        public void Cadastro(Usuario user)
+        {
+            try
+            {
+                abrirConexao();
+
+                comando = new MySqlCommand("INSERT INTO usuario (nome,login,senha,role)" +
+                    "VALUES (@nome, @login, @senha,@role)", conexao);
+
+                comando.Parameters.AddWithValue("@nome", user.Nome);
+                comando.Parameters.AddWithValue("@login", user.Login);
+                comando.Parameters.AddWithValue("@senha", user.Senha);
+                comando.Parameters.AddWithValue("@role", user.Role);
+                comando.ExecuteNonQuery();
+            }
+            catch (MySqlException exce)
+            {
+                util.MensagemDeTeste("Erro no login, falha na conexão ao banco de dados", "Erro!");
+                throw exce;
+            }
+            catch (Exception ex)
+            {
+                util.MensagemDeTeste("Erro inesperado no cadastro:  " + ex.Message, "Erro!");
+                throw ex;
+            }
+            finally
+            {
+                fecharConexao();
+            }
+        }
+
+        public DataTable GerarTabela()
+        {
+            try
+            {
+                abrirConexao();
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter();
+                comando = new MySqlCommand("SELECT nome,login,nivel,experiencia,moeda,peso,capacidade,role FROM usuario", conexao);
+
+                da.SelectCommand = comando;
+                da.Fill(dt);
+
+                return dt;
+
+            }
+            catch (MySqlException exce)
+            {
+                util.MensagemDeTeste("Erro no login, falha na conexão ao banco de dados", "Erro!");
+                throw exce;
+            }
+            catch (Exception ex)
+            {
+                util.MensagemDeTeste("Erro não esperado no login:  " + ex.Message, "Erro!");
+                throw ex;
+            }
+            finally
+            {
+                fecharConexao();
+            }
+        }
+
         public Usuario buscarLogin(string login, string senha) // Recebe Login e senha e conecta-se à base de dados 
         {
             try // Tenta conectar-se e realziar a busca

@@ -18,6 +18,8 @@ namespace ProtoMine.View
         UtilidadesTelas util = new UtilidadesTelas();
         ItemController itemController = new ItemController();
         Principal prin;
+        List<Label> listaDrops = new List<Label>();
+        
         public Minerar(Principal form)
         {
             prin = form;
@@ -26,12 +28,20 @@ namespace ProtoMine.View
             {
                 ItemCache.Carregado = true;
             }
+            listaDrops.Add(lbFerro);
+            listaDrops.Add(lbBauxita);
+            listaDrops.Add(lbQuartzo);
+            listaDrops.Add(lbOuro);
+            listaDrops.Add(lbVerde);
+            listaDrops.Add(lbDiamante);
+
         }
 
         private void GerarMinerios(object sender, EventArgs e)
         {
 
-            itemController.AdicionarItens(prin);
+            itemController.AdicionarItens(prin, listaDrops);
+
         }
     }
 }

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.PanelTopo = new System.Windows.Forms.Panel();
+            this.lbNivel = new System.Windows.Forms.Label();
             this.lbPeso = new System.Windows.Forms.Label();
             this.panPesoBaixo = new System.Windows.Forms.Panel();
             this.picPeso = new System.Windows.Forms.PictureBox();
@@ -56,7 +57,6 @@
             this.panelExpecial2 = new System.Windows.Forms.Panel();
             this.panelExpecial1 = new System.Windows.Forms.Panel();
             this.panelPrincipal = new System.Windows.Forms.Panel();
-            this.lbNivel = new System.Windows.Forms.Label();
             this.PanelTopo.SuspendLayout();
             this.panPesoBaixo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPeso)).BeginInit();
@@ -93,6 +93,17 @@
             this.PanelTopo.Name = "PanelTopo";
             this.PanelTopo.Size = new System.Drawing.Size(1280, 100);
             this.PanelTopo.TabIndex = 0;
+            // 
+            // lbNivel
+            // 
+            this.lbNivel.AutoSize = true;
+            this.lbNivel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNivel.ForeColor = System.Drawing.Color.Snow;
+            this.lbNivel.Location = new System.Drawing.Point(226, 19);
+            this.lbNivel.Name = "lbNivel";
+            this.lbNivel.Size = new System.Drawing.Size(91, 24);
+            this.lbNivel.TabIndex = 15;
+            this.lbNivel.Text = "Nível: 99";
             // 
             // lbPeso
             // 
@@ -184,6 +195,7 @@
             this.picADM.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picADM.TabIndex = 7;
             this.picADM.TabStop = false;
+            this.picADM.Click += new System.EventHandler(this.Cadastrar);
             // 
             // money
             // 
@@ -360,17 +372,6 @@
             this.panelPrincipal.Name = "panelPrincipal";
             this.panelPrincipal.Size = new System.Drawing.Size(880, 620);
             this.panelPrincipal.TabIndex = 2;
-            // 
-            // lbNivel
-            // 
-            this.lbNivel.AutoSize = true;
-            this.lbNivel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNivel.ForeColor = System.Drawing.Color.Snow;
-            this.lbNivel.Location = new System.Drawing.Point(226, 19);
-            this.lbNivel.Name = "lbNivel";
-            this.lbNivel.Size = new System.Drawing.Size(91, 24);
-            this.lbNivel.TabIndex = 15;
-            this.lbNivel.Text = "Nível: 99";
             // 
             // Principal
             // 

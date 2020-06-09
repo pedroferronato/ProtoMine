@@ -161,5 +161,11 @@ namespace ProtoMine.View
             else
                 AbrirTela(miner, panelPrincipal);
         }
+
+        private void Cadastrar(object sender, EventArgs e)
+        {
+            Cadastro telaCadastro = new Cadastro(this);
+            AbrirTela(telaCadastro, panelPrincipal);
+        }
     }
 }

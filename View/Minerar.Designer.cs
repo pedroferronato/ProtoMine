@@ -30,12 +30,12 @@
         {
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.ovalShape1 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lbFerro = new System.Windows.Forms.Label();
+            this.lbQuartzo = new System.Windows.Forms.Label();
+            this.lbBauxita = new System.Windows.Forms.Label();
+            this.lbOuro = new System.Windows.Forms.Label();
+            this.lbVerde = new System.Windows.Forms.Label();
+            this.lbDiamante = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // shapeContainer1
@@ -59,91 +59,91 @@
             this.ovalShape1.Size = new System.Drawing.Size(171, 172);
             this.ovalShape1.Click += new System.EventHandler(this.GerarMinerios);
             // 
-            // label1
+            // lbFerro
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(150)))), ((int)(((byte)(104)))));
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(788, 168);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 29);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "6";
+            this.lbFerro.AutoSize = true;
+            this.lbFerro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(150)))), ((int)(((byte)(104)))));
+            this.lbFerro.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFerro.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lbFerro.Location = new System.Drawing.Point(788, 168);
+            this.lbFerro.Name = "lbFerro";
+            this.lbFerro.Size = new System.Drawing.Size(27, 29);
+            this.lbFerro.TabIndex = 2;
+            this.lbFerro.Text = "0";
             // 
-            // label2
+            // lbQuartzo
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(150)))), ((int)(((byte)(104)))));
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(788, 350);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(27, 29);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "6";
+            this.lbQuartzo.AutoSize = true;
+            this.lbQuartzo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(150)))), ((int)(((byte)(104)))));
+            this.lbQuartzo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbQuartzo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lbQuartzo.Location = new System.Drawing.Point(788, 350);
+            this.lbQuartzo.Name = "lbQuartzo";
+            this.lbQuartzo.Size = new System.Drawing.Size(27, 29);
+            this.lbQuartzo.TabIndex = 3;
+            this.lbQuartzo.Text = "0";
             // 
-            // label3
+            // lbBauxita
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(150)))), ((int)(((byte)(104)))));
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(788, 226);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(27, 29);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "6";
+            this.lbBauxita.AutoSize = true;
+            this.lbBauxita.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(150)))), ((int)(((byte)(104)))));
+            this.lbBauxita.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBauxita.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lbBauxita.Location = new System.Drawing.Point(788, 226);
+            this.lbBauxita.Name = "lbBauxita";
+            this.lbBauxita.Size = new System.Drawing.Size(27, 29);
+            this.lbBauxita.TabIndex = 3;
+            this.lbBauxita.Text = "0";
             // 
-            // label4
+            // lbOuro
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(150)))), ((int)(((byte)(104)))));
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(788, 288);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(27, 29);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "6";
+            this.lbOuro.AutoSize = true;
+            this.lbOuro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(150)))), ((int)(((byte)(104)))));
+            this.lbOuro.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbOuro.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lbOuro.Location = new System.Drawing.Point(788, 288);
+            this.lbOuro.Name = "lbOuro";
+            this.lbOuro.Size = new System.Drawing.Size(27, 29);
+            this.lbOuro.TabIndex = 4;
+            this.lbOuro.Text = "0";
             // 
-            // label5
+            // lbVerde
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(150)))), ((int)(((byte)(104)))));
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(788, 410);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(27, 29);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "6";
+            this.lbVerde.AutoSize = true;
+            this.lbVerde.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(150)))), ((int)(((byte)(104)))));
+            this.lbVerde.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbVerde.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lbVerde.Location = new System.Drawing.Point(788, 410);
+            this.lbVerde.Name = "lbVerde";
+            this.lbVerde.Size = new System.Drawing.Size(27, 29);
+            this.lbVerde.TabIndex = 5;
+            this.lbVerde.Text = "0";
             // 
-            // label6
+            // lbDiamante
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(150)))), ((int)(((byte)(104)))));
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(788, 471);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(27, 29);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "6";
+            this.lbDiamante.AutoSize = true;
+            this.lbDiamante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(150)))), ((int)(((byte)(104)))));
+            this.lbDiamante.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDiamante.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lbDiamante.Location = new System.Drawing.Point(788, 471);
+            this.lbDiamante.Name = "lbDiamante";
+            this.lbDiamante.Size = new System.Drawing.Size(27, 29);
+            this.lbDiamante.TabIndex = 6;
+            this.lbDiamante.Text = "0";
             // 
             // Minerar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(10)))), ((int)(((byte)(3)))));
-            this.BackgroundImage = global::ProtoMine.Properties.Resources.MINA;
+            this.BackgroundImage = global::ProtoMine.Properties.Resources.MINAr;
             this.ClientSize = new System.Drawing.Size(880, 620);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbDiamante);
+            this.Controls.Add(this.lbVerde);
+            this.Controls.Add(this.lbOuro);
+            this.Controls.Add(this.lbBauxita);
+            this.Controls.Add(this.lbQuartzo);
+            this.Controls.Add(this.lbFerro);
             this.Controls.Add(this.shapeContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Minerar";
@@ -156,11 +156,11 @@
         #endregion
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.OvalShape ovalShape1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        public System.Windows.Forms.Label lbFerro;
+        public System.Windows.Forms.Label lbQuartzo;
+        public System.Windows.Forms.Label lbBauxita;
+        public System.Windows.Forms.Label lbOuro;
+        public System.Windows.Forms.Label lbVerde;
+        public System.Windows.Forms.Label lbDiamante;
     }
 }
