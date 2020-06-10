@@ -42,6 +42,30 @@ namespace ProtoMine.Controle
             }
         }
 
+        public void CarregarItensEspeciais()
+        {
+
+            ItemEspecialDAO itemDAO = new ItemEspecialDAO();
+            try
+            {
+                itemDAO.carregarItensEspeciais();
+                if (UserCache.Mochila != null)
+                {
+                    UserCache.Mochila.CalcularPeso(); 
+                }
+            }
+            catch (MySqlException exce)
+            {
+                util.MensagemDeTeste("Erro no load dos itens, falha na conexão ao banco de dados", "Erro!");
+                throw exce;
+            }
+            catch (Exception ex)
+            {
+                util.MensagemDeTeste("Erro não esperado no load dos itens:  " + ex.Message, "Erro!");
+                throw ex;
+            }
+        }
+
         public void BuscarTodos()
         {
             ItemBasicoDAO itemDAO = new ItemBasicoDAO();
@@ -146,6 +170,7 @@ namespace ProtoMine.Controle
         public List<ItemModel> GerarItensMinerados()
         {
             int numDrop = new Random().Next(1, 101);
+            int melhoriaPicareta = Convert.ToInt32(UserCache.Picareta.Peso);
             int qntDrop = CalcularProbabilidade(numDrop);
 
             List<int> listaDrop = new List<int>();
@@ -162,7 +187,7 @@ namespace ProtoMine.Controle
                 else
                 {
                     int qntPerc = new Random().Next(1, 101);
-                    int quant = CalcularProbabilidade(qntPerc);
+                    int quant = CalcularProbabilidade(qntPerc + melhoriaPicareta);
                     listaDrop.Add(minerio);
                     ItemModel item = ItemCache.ListaGeral[minerio];
                     item.Quantidade = quant;
@@ -197,7 +222,7 @@ namespace ProtoMine.Controle
             return 1;
         }
 
-        public void AcrescentarPeso(ItemModel item, Principal princip)
+        public void AcrescentarPeso(ItemAbstract item, Principal princip)
         {
             UserCache.UsuarioLogado.Peso += item.CalcularPeso();
             VerificarCor(princip);

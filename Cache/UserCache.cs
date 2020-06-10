@@ -11,5 +11,7 @@ namespace ProtoMine.Cache
     {
         public static Usuario UsuarioLogado { get; set; }
         public static bool Mestre { get; set; }
+        public static ItemEspecial Picareta { get; set; }
+        public static ItemEspecial Mochila { get; set; }
     }
 }

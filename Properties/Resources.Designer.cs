@@ -73,6 +73,16 @@ namespace ProtoMine.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap baseDourada {
+            get {
+                object obj = ResourceManager.GetObject("baseDourada", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BreakableGraveCony_size_restricted {
             get {
                 object obj = ResourceManager.GetObject("BreakableGraveCony-size_restricted", resourceCulture);

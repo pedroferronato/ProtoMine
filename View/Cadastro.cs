@@ -313,8 +313,15 @@ namespace ProtoMine.View
 
         private void CancelarAtualizar(object sender, EventArgs e)
         {
+            txtlogin.Text = "Login";
+            txtnomeUsu.Text = "Nome de Usuário";
+            txtSenha.Text = "Senha";
+            txtConfSenha.Text = "Confirme a senha";
+            checkRole.Checked = false;
             btnAtualizar.Visible = false;
             btnCadastrar.Visible = true;
+            txtConfSenha.UseSystemPasswordChar = false;
+            txtSenha.UseSystemPasswordChar = false;
         }
     }
 }

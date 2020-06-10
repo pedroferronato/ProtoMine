@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProtoMine.Cache;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ namespace ProtoMine.Modelo
         {
             Tipo = "Especial";
         }
+
         public ItemEspecial(int id, string nome, double peso, string urlImg, int quantidade)
         {
             Id = id;
@@ -22,6 +24,12 @@ namespace ProtoMine.Modelo
             Tipo = "Especial";
         }
 
-        public override double CalcularPeso() => throw new NotImplementedException();
+        public override double CalcularPeso() {
+            if (Tipo == "bag")
+            {
+                UserCache.UsuarioLogado.Capacidade += (Peso * 100);
+            }
+            return 0.0;
+        }
     }
 }

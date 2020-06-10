@@ -20,7 +20,13 @@ namespace ProtoMine.View
 
         public List<Item> inventario = new List<Item>();
 
+        public List<ItemEspecialView> itensEspeciais = new List<ItemEspecialView>();
+        
+        public List<Panel> lbEspeciais = new List<Panel>();
+
         ItemController itemController = new ItemController();
+
+        UtilidadesTelas util = new UtilidadesTelas();
 
         int pepega = 1;
 
@@ -30,9 +36,12 @@ namespace ProtoMine.View
         {
             InitializeComponent();
             picPeso.BackColor = Color.Transparent;
+
             // Início do load de itens
             itemController.CarregarItens(this);
+            itemController.CarregarItensEspeciais();
             GerarDict();
+
             // labels de item
             paineis.Add(panelItem1);
             paineis.Add(panelItem2);
@@ -40,6 +49,9 @@ namespace ProtoMine.View
             paineis.Add(panelItem4);
             paineis.Add(panelItem5);
             paineis.Add(panelItem6);
+
+            lbEspeciais.Add(panelExpecial1);
+            lbEspeciais.Add(panelExpecial2);
 
             CarregarInventario();
 
@@ -87,6 +99,17 @@ namespace ProtoMine.View
                 AbrirTela(inventario[index], paineis[index]);
                 index++;
             }
+
+            itensEspeciais.Add(new ItemEspecialView(UserCache.Picareta));
+            if (UserCache.Mochila != null)
+                itensEspeciais.Add(new ItemEspecialView(UserCache.Mochila));
+
+            index = 0;
+            foreach (ItemEspecialView item in itensEspeciais)
+            {
+                AbrirTela(item, lbEspeciais[index]);
+                index++;
+            }
         }
 
         private void mostarMenu(object sender, EventArgs e)
@@ -113,7 +136,6 @@ namespace ProtoMine.View
 
         public void GerarDict()
         {
-            UtilidadesTelas util = new UtilidadesTelas();
             ItemController itemController = new ItemController();
             itemController.BuscarTodos();
         }

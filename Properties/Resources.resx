@@ -124,9 +124,6 @@
   <data name="jones" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icon\jones.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pick" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon\pick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="coin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icon\coin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -145,8 +142,14 @@
   <data name="relogar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icon\relogar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="MINAr" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\MINAr.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="adm" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icon\adm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic-cancel_97589" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\ic-cancel_97589.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="minerar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icon\minerar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,10 +169,10 @@
   <data name="MINA" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icon\MINA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ic-cancel_97589" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon\ic-cancel_97589.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\pick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MINAr" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon\MINAr.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="baseDourada" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\baseDourada.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
