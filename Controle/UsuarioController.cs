@@ -24,10 +24,49 @@ namespace ProtoMine.Controle
             {
                 userDAO.Cadastro(usuario);
             }
-            catch (Exception)
+            catch (MySqlException exce)
             {
-
-                throw;
+                util.MensagemDeTeste("Erro no cadastro, falha na conexão ao banco de dados", "Erro!");
+                throw exce;
+            }
+            catch (Exception ex)
+            {
+                util.MensagemDeTeste("Erro não esperado no cadastro:  " + ex.Message, "Erro!");
+                throw ex;
+            }
+        }
+        public void Alterar(Usuario usuario)
+        {
+            try
+            {
+                userDAO.Alterar(usuario);
+            }
+            catch (MySqlException exce)
+            {
+                util.MensagemDeTeste("Erro ao alterar, falha na conexão ao banco de dados", "Erro!");
+                throw exce;
+            }
+            catch (Exception ex)
+            {
+                util.MensagemDeTeste("Erro não esperado na alteração:  " + ex.Message, "Erro!");
+                throw ex;
+            }
+        }
+        public void Deletar(Usuario usuario)
+        {
+            try
+            {
+                userDAO.Deletar(usuario);
+            }
+            catch (MySqlException exce)
+            {
+                util.MensagemDeTeste("Erro ao excluir, falha na conexão ao banco de dados", "Erro!");
+                throw exce;
+            }
+            catch (Exception ex)
+            {
+                util.MensagemDeTeste("Erro não esperado no delete:  " + ex.Message, "Erro!");
+                throw ex;
             }
         }
 
@@ -39,10 +78,15 @@ namespace ProtoMine.Controle
                 dt = userDAO.GerarTabela();
                 return dt;
             }
-            catch (Exception)
+            catch (MySqlException exce)
             {
-
-                throw;
+                util.MensagemDeTeste("Erro na listagem, falha na conexão ao banco de dados", "Erro!");
+                throw exce;
+            }
+            catch (Exception ex)
+            {
+                util.MensagemDeTeste("Erro não esperado na listagem:  " + ex.Message, "Erro!");
+                throw ex;
             }
         }
 
