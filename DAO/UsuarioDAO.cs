@@ -35,7 +35,7 @@ namespace ProtoMine.DAO
             }
             catch (MySqlException exce)
             {
-                util.MensagemDeTeste("Erro no login, falha na conexão ao banco de dados", "Erro!");
+                util.MensagemDeTeste("Erro no cadastro, falha na conexão ao banco de dados", "Erro!");
                 throw exce;
             }
             catch (Exception ex)
@@ -48,6 +48,63 @@ namespace ProtoMine.DAO
                 fecharConexao();
             }
         }
+
+        public void Alterar(Usuario user)
+        {
+            try
+            {
+                abrirConexao();
+                comando = new MySqlCommand("UPDATE usuario SET nome = @nome, login = @login, senha = @senha ,role = @role " +
+                    "WHERE login = @login", conexao);
+
+                comando.Parameters.AddWithValue("@nome", user.Nome);
+                comando.Parameters.AddWithValue("@login", user.Login);
+                comando.Parameters.AddWithValue("@senha", user.Senha);
+                comando.Parameters.AddWithValue("@role", user.Role);
+                comando.ExecuteNonQuery();
+            }
+            catch (MySqlException exce)
+            {
+                util.MensagemDeTeste("Erro na alteração, falha na conexão ao banco de dados", "Erro!");
+                throw exce;
+            }
+            catch (Exception ex)
+            {
+                util.MensagemDeTeste("Erro inesperado ao alterar:  " + ex.Message, "Erro!");
+                throw ex;
+            }
+            finally
+            {
+                fecharConexao();
+            }
+        }
+
+        public void Deletar(Usuario user)
+        {
+            try
+            {
+                abrirConexao();
+                comando = new MySqlCommand("DELETE FROM usuario WHERE login = @login", conexao);
+                comando.Parameters.AddWithValue("@login", user.Login);
+                comando.ExecuteNonQuery();
+                util.MensagemDeTeste("O usuário foi excluido do jogo", "Delete Realizado");
+            }
+            catch (MySqlException exce)
+            {
+                util.MensagemDeTeste("Erro ao excluir, falha na conexão ao banco de dados", "Erro!");
+                throw exce;
+            }
+            catch (Exception ex)
+            {
+                util.MensagemDeTeste("Erro inesperado no delete:  " + ex.Message, "Erro!");
+                throw ex;
+            }
+            finally
+            {
+                fecharConexao();
+            }
+        }
+
 
         public DataTable GerarTabela()
         {
@@ -66,12 +123,12 @@ namespace ProtoMine.DAO
             }
             catch (MySqlException exce)
             {
-                util.MensagemDeTeste("Erro no login, falha na conexão ao banco de dados", "Erro!");
+                util.MensagemDeTeste("Erro ao gerar tabela, falha na conexão ao banco de dados", "Erro!");
                 throw exce;
             }
             catch (Exception ex)
             {
-                util.MensagemDeTeste("Erro não esperado no login:  " + ex.Message, "Erro!");
+                util.MensagemDeTeste("Erro não esperado na tabela:  " + ex.Message, "Erro!");
                 throw ex;
             }
             finally

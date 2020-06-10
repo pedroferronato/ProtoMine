@@ -17,10 +17,11 @@ namespace ProtoMine.View
     {
         UtilidadesTelas util = new UtilidadesTelas();
         Principal prin;
+        UsuarioController userController = new UsuarioController();
 
         public Cadastro(Principal form)
         {
-            UsuarioController userController = new UsuarioController();
+            
             prin = form;
             InitializeComponent();
             try
@@ -41,6 +42,7 @@ namespace ProtoMine.View
             lbpass.Visible = false;
             lbConf.Visible = false;
             lbLogin.Visible = false;
+            btnAtualizar.Visible = false;
         }
 
         private void NomeEnter(object sender, EventArgs e)
@@ -167,7 +169,7 @@ namespace ProtoMine.View
                     }
                     catch (MySqlException exce)
                     {
-                        util.MensagemDeTeste("Erro no login, falha na conexão ao banco de dados", "Erro!");
+                        util.MensagemDeTeste("Erro ao cadastrar, falha na conexão ao banco de dados", "Erro!");
                         throw exce;
                     }
                     catch (Exception ex)
@@ -193,6 +195,126 @@ namespace ProtoMine.View
                     lbConf.Visible = true;
                 }
             }
+        }
+
+
+        private void getDados(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            txtnomeUsu.Text = tabela.CurrentRow.Cells[0].Value.ToString();
+            txtlogin.Text = tabela.CurrentRow.Cells[1].Value.ToString();
+            txtSenha.Text = "Senha";
+            txtConfSenha.Text = "Confirme a senha";
+            if (tabela.CurrentRow.Cells[7].Value.ToString() == "admin")
+                checkRole.Checked = true;
+            else
+                checkRole.Checked = false;
+            btnAtualizar.Visible = true;
+            btnCadastrar.Visible = false;
+
+        }
+
+        private void deletarDados(object sender, DataGridViewCellEventArgs e)
+        {
+            UsuarioController usuarioController = new UsuarioController();
+
+            var confirmResult = MessageBox.Show("Tem certeza que deseja deletar o usuario "+ tabela.CurrentRow.Cells[0].Value.ToString() +" ?? ",
+                                     "Confirme a ação Delete!!",
+                                     MessageBoxButtons.YesNo);
+            try
+            {
+                if (confirmResult == DialogResult.Yes)
+                {
+                    Usuario user = new Usuario();
+                    user.Login = tabela.CurrentRow.Cells[1].Value.ToString();
+                    userController.Deletar(user);
+                    tabela.DataSource = usuarioController.Listar();
+                }
+            }
+            catch (MySqlException exce)
+            {
+                util.MensagemDeTeste("Erro ao deletar, falha na conexão ao banco de dados", "Erro!");
+                throw exce;
+            }
+            catch (Exception ex)
+            {
+                util.MensagemDeTeste("Erro inesperado no load do delete:  " + ex.Message, "Erro!");
+                throw ex;
+            }
+
+        }
+
+        private void Atualizar(object sender, EventArgs e)
+        {
+            if (txtlogin.Text == "Login")
+            {
+                lbLogin.Visible = true;
+            }
+            if (txtSenha.Text == "Senha")
+            {
+                lbpass.Visible = true;
+            }
+            if (txtConfSenha.Text == "Confirme a senha")
+            {
+                lbConf.Visible = true;
+            }
+            if (txtnomeUsu.Text == "Nome de Usuário")
+            {
+                lbNome.Visible = true;
+            }
+
+            if (!(lbNome.Visible || lbConf.Visible || lbpass.Visible || lbLogin.Visible))
+            {
+                if (txtConfSenha.Text == txtSenha.Text)
+                {
+                    Usuario novoUsuario = new Usuario();
+                    novoUsuario.Login = txtlogin.Text;
+                    novoUsuario.Senha = txtSenha.Text;
+                    novoUsuario.Nome = txtnomeUsu.Text;
+                    if (checkRole.Checked)
+                        novoUsuario.Role = "admin";
+                    else
+                        novoUsuario.Role = "jogador";
+
+                    UsuarioController usuarioController = new UsuarioController();
+                    try
+                    {
+                        usuarioController.Alterar(novoUsuario);
+                        tabela.DataSource = usuarioController.Listar();
+                    }
+                    catch (MySqlException exce)
+                    {
+                        util.MensagemDeTeste("Erro ao cadastrar, falha na conexão ao banco de dados", "Erro!");
+                        throw exce;
+                    }
+                    catch (Exception ex)
+                    {
+                        util.MensagemDeTeste("Erro inesperado no load dos cadastros:  " + ex.Message, "Erro!");
+                        throw ex;
+                    }
+                    finally
+                    {
+                        txtlogin.Text = "Login";
+                        txtSenha.Text = "Senha";
+                        txtnomeUsu.Text = "Nome de Usuário";
+                        txtConfSenha.Text = "Confirme a senha";
+                        txtConfSenha.UseSystemPasswordChar = false;
+                        txtSenha.UseSystemPasswordChar = false;
+                        checkRole.Checked = false;
+                    }
+
+                }
+                else
+                {
+                    lbpass.Visible = true;
+                    lbConf.Visible = true;
+                }
+            }
+        }
+
+        private void CancelarAtualizar(object sender, EventArgs e)
+        {
+            btnAtualizar.Visible = false;
+            btnCadastrar.Visible = true;
         }
     }
 }

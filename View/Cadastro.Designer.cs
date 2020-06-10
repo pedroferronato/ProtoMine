@@ -31,6 +31,8 @@
             this.txtnomeUsu = new System.Windows.Forms.TextBox();
             this.checkRole = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbLogin = new System.Windows.Forms.Label();
+            this.lbpass = new System.Windows.Forms.Label();
             this.lbConf = new System.Windows.Forms.Label();
             this.lbNome = new System.Windows.Forms.Label();
             this.btnCadastrar = new System.Windows.Forms.Button();
@@ -45,8 +47,8 @@
             this.tabela = new System.Windows.Forms.DataGridView();
             this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lbpass = new System.Windows.Forms.Label();
-            this.lbLogin = new System.Windows.Forms.Label();
+            this.btnAtualizar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabela)).BeginInit();
             this.SuspendLayout();
@@ -73,12 +75,14 @@
             this.checkRole.Location = new System.Drawing.Point(500, 91);
             this.checkRole.Name = "checkRole";
             this.checkRole.Size = new System.Drawing.Size(131, 24);
-            this.checkRole.TabIndex = 4;
+            this.checkRole.TabIndex = 5;
             this.checkRole.Text = "Conta Admin";
             this.checkRole.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnCancelar);
+            this.groupBox1.Controls.Add(this.btnAtualizar);
             this.groupBox1.Controls.Add(this.lbLogin);
             this.groupBox1.Controls.Add(this.lbpass);
             this.groupBox1.Controls.Add(this.lbConf);
@@ -98,6 +102,28 @@
             this.groupBox1.TabIndex = 98;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cadastro de Usuário";
+            // 
+            // lbLogin
+            // 
+            this.lbLogin.AutoSize = true;
+            this.lbLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.lbLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lbLogin.Location = new System.Drawing.Point(814, 44);
+            this.lbLogin.Name = "lbLogin";
+            this.lbLogin.Size = new System.Drawing.Size(16, 20);
+            this.lbLogin.TabIndex = 109;
+            this.lbLogin.Text = "*";
+            // 
+            // lbpass
+            // 
+            this.lbpass.AutoSize = true;
+            this.lbpass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.lbpass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lbpass.Location = new System.Drawing.Point(344, 91);
+            this.lbpass.Name = "lbpass";
+            this.lbpass.Size = new System.Drawing.Size(16, 20);
+            this.lbpass.TabIndex = 108;
+            this.lbpass.Text = "*";
             // 
             // lbConf
             // 
@@ -134,7 +160,7 @@
             this.btnCadastrar.Location = new System.Drawing.Point(499, 138);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(331, 40);
-            this.btnCadastrar.TabIndex = 103;
+            this.btnCadastrar.TabIndex = 6;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = false;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
@@ -148,7 +174,7 @@
             this.txtlogin.Location = new System.Drawing.Point(500, 42);
             this.txtlogin.Name = "txtlogin";
             this.txtlogin.Size = new System.Drawing.Size(330, 19);
-            this.txtlogin.TabIndex = 102;
+            this.txtlogin.TabIndex = 4;
             this.txtlogin.Text = "Login";
             this.txtlogin.Enter += new System.EventHandler(this.EnterLogin);
             this.txtlogin.Leave += new System.EventHandler(this.LeaveLogin);
@@ -162,7 +188,7 @@
             this.txtConfSenha.Location = new System.Drawing.Point(30, 145);
             this.txtConfSenha.Name = "txtConfSenha";
             this.txtConfSenha.Size = new System.Drawing.Size(330, 19);
-            this.txtConfSenha.TabIndex = 101;
+            this.txtConfSenha.TabIndex = 3;
             this.txtConfSenha.Text = "Confirme a senha";
             this.txtConfSenha.Enter += new System.EventHandler(this.EnterConfSenha);
             this.txtConfSenha.Leave += new System.EventHandler(this.LeaveConfSenha);
@@ -176,7 +202,7 @@
             this.txtSenha.Location = new System.Drawing.Point(30, 92);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(330, 19);
-            this.txtSenha.TabIndex = 99;
+            this.txtSenha.TabIndex = 2;
             this.txtSenha.Text = "Senha";
             this.txtSenha.Enter += new System.EventHandler(this.SenhaEnter);
             this.txtSenha.Leave += new System.EventHandler(this.SenhaLeave);
@@ -240,9 +266,13 @@
             this.tabela.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(10)))), ((int)(((byte)(4)))));
             this.tabela.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tabela.Location = new System.Drawing.Point(12, 237);
+            this.tabela.MultiSelect = false;
             this.tabela.Name = "tabela";
+            this.tabela.ReadOnly = true;
             this.tabela.Size = new System.Drawing.Size(856, 344);
-            this.tabela.TabIndex = 99;
+            this.tabela.TabIndex = 9;
+            this.tabela.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.deletarDados);
+            this.tabela.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.getDados);
             // 
             // shapeContainer2
             // 
@@ -265,27 +295,41 @@
             this.lineShape4.Y1 = 0;
             this.lineShape4.Y2 = 620;
             // 
-            // lbpass
+            // btnAtualizar
             // 
-            this.lbpass.AutoSize = true;
-            this.lbpass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.lbpass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbpass.Location = new System.Drawing.Point(344, 91);
-            this.lbpass.Name = "lbpass";
-            this.lbpass.Size = new System.Drawing.Size(16, 20);
-            this.lbpass.TabIndex = 108;
-            this.lbpass.Text = "*";
+            this.btnAtualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(10)))), ((int)(((byte)(4)))));
+            this.btnAtualizar.FlatAppearance.BorderSize = 0;
+            this.btnAtualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnAtualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(10)))), ((int)(((byte)(0)))));
+            this.btnAtualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAtualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnAtualizar.ForeColor = System.Drawing.Color.White;
+            this.btnAtualizar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnAtualizar.Location = new System.Drawing.Point(498, 138);
+            this.btnAtualizar.Name = "btnAtualizar";
+            this.btnAtualizar.Size = new System.Drawing.Size(331, 40);
+            this.btnAtualizar.TabIndex = 7;
+            this.btnAtualizar.Text = "Atualizar";
+            this.btnAtualizar.UseVisualStyleBackColor = false;
+            this.btnAtualizar.Click += new System.EventHandler(this.Atualizar);
             // 
-            // lbLogin
+            // btnCancelar
             // 
-            this.lbLogin.AutoSize = true;
-            this.lbLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.lbLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbLogin.Location = new System.Drawing.Point(814, 44);
-            this.lbLogin.Name = "lbLogin";
-            this.lbLogin.Size = new System.Drawing.Size(16, 20);
-            this.lbLogin.TabIndex = 109;
-            this.lbLogin.Text = "*";
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(10)))), ((int)(((byte)(4)))));
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(10)))), ((int)(((byte)(0)))));
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnCancelar.Location = new System.Drawing.Point(787, 80);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(40, 40);
+            this.btnCancelar.TabIndex = 8;
+            this.btnCancelar.Text = "X";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.CancelarAtualizar);
             // 
             // Cadastro
             // 
@@ -327,5 +371,7 @@
         private System.Windows.Forms.Label lbNome;
         private System.Windows.Forms.Label lbLogin;
         private System.Windows.Forms.Label lbpass;
+        private System.Windows.Forms.Button btnAtualizar;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }
