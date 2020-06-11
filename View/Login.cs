@@ -140,6 +140,7 @@ namespace ProtoMine
                 lbErro.Visible = true;
                 lbErro.Text = "   Credênciais inválidas, favor conferir.\n   usuário não encontrado";
                 txtSenha.Text = "SENHA";
+                txtUsuario.Focus();
             }
         }
 

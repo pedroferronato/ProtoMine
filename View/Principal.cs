@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualBasic.ApplicationServices;
+using Microsoft.VisualBasic.Devices;
 using ProtoMine.Cache;
 using ProtoMine.Controle;
 using ProtoMine.Modelo;
@@ -8,6 +9,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -40,6 +42,7 @@ namespace ProtoMine.View
             // Início do load de itens
             itemController.CarregarItens(this);
             itemController.CarregarItensEspeciais();
+            itemController.CarregarMercado();
             GerarDict();
 
             // labels de item
@@ -95,7 +98,7 @@ namespace ProtoMine.View
 
             foreach (ItemModel item in ItemCache.ListaItens)
             {
-                inventario.Add(new Item(ItemCache.ListaItens[index]));
+                inventario.Add(new Item(ItemCache.ListaItens[index], this));
                 AbrirTela(inventario[index], paineis[index]);
                 index++;
             }
@@ -192,5 +195,6 @@ namespace ProtoMine.View
             Loja telaLoja = new Loja(this);
             AbrirTela(telaLoja, panelPrincipal);
         }
+
     }
 }

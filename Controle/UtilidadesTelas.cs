@@ -21,5 +21,15 @@ namespace ProtoMine.Controle
 
             MessageBox.Show(message, caption, buttons);
         }
+
+        public bool MensagemDeConfirmacao(string message, string caption)
+        {
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+
+            DialogResult resposta = MessageBox.Show(message, caption, buttons);
+            if (resposta == DialogResult.Yes)
+                return true;
+            return false;
+        }
     }
 }

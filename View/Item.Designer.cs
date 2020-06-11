@@ -42,7 +42,7 @@
             // 
             this.labNome.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labNome.BackColor = System.Drawing.SystemColors.Control;
-            this.labNome.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labNome.Location = new System.Drawing.Point(10, 9);
             this.labNome.Name = "labNome";
             this.labNome.Size = new System.Drawing.Size(90, 19);
@@ -54,10 +54,10 @@
             // 
             this.labQuant.AutoSize = true;
             this.labQuant.BackColor = System.Drawing.Color.White;
-            this.labQuant.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labQuant.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labQuant.Location = new System.Drawing.Point(65, 105);
             this.labQuant.Name = "labQuant";
-            this.labQuant.Size = new System.Drawing.Size(36, 19);
+            this.labQuant.Size = new System.Drawing.Size(36, 20);
             this.labQuant.TabIndex = 2;
             this.labQuant.Text = "999";
             // 
@@ -71,6 +71,7 @@
             this.picImgItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picImgItem.TabIndex = 3;
             this.picImgItem.TabStop = false;
+            this.picImgItem.MouseClick += new System.Windows.Forms.MouseEventHandler(this.GenItemImg);
             // 
             // pictureBox1
             // 
@@ -81,12 +82,13 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.GenItemBg);
             // 
             // labPeso
             // 
             this.labPeso.AutoSize = true;
             this.labPeso.BackColor = System.Drawing.Color.White;
-            this.labPeso.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labPeso.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labPeso.Location = new System.Drawing.Point(9, 105);
             this.labPeso.Name = "labPeso";
             this.labPeso.Size = new System.Drawing.Size(28, 18);

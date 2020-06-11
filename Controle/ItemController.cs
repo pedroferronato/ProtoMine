@@ -18,6 +18,7 @@ namespace ProtoMine.Controle
     class ItemController
     {
         UtilidadesTelas util = new UtilidadesTelas();
+        ItemEspecialDAO itemEspecialDAO = new ItemEspecialDAO();
         public void CarregarItens(Principal principal)
         {
             
@@ -53,6 +54,25 @@ namespace ProtoMine.Controle
                 {
                     UserCache.Mochila.CalcularPeso(); 
                 }
+            }
+            catch (MySqlException exce)
+            {
+                util.MensagemDeTeste("Erro no load dos itens, falha na conexão ao banco de dados", "Erro!");
+                throw exce;
+            }
+            catch (Exception ex)
+            {
+                util.MensagemDeTeste("Erro não esperado no load dos itens:  " + ex.Message, "Erro!");
+                throw ex;
+            }
+        }
+        public void CarregarMercado()
+        {
+
+            ItemEspecialDAO itemDAO = new ItemEspecialDAO();
+            try
+            {
+                itemDAO.carregarItemEspecial();
             }
             catch (MySqlException exce)
             {
@@ -240,6 +260,41 @@ namespace ProtoMine.Controle
                 principal.panPesoBaixo.BackColor = Color.Yellow;
             else if (porcentagemAtual >= 0 && porcentagemAtual < 50)
                 principal.panPesoBaixo.BackColor = Color.Green;
+        }
+
+        public void DeletarItem(int id)
+        {
+            try
+            {
+                itemEspecialDAO.Deletar(id);
+            }
+            catch (MySqlException exce)
+            {
+                util.MensagemDeTeste("Erro ao deletar o item, falha na conexão ao banco de dados", "Erro!");
+                throw exce;
+            }
+            catch (Exception ex)
+            {
+                util.MensagemDeTeste("Erro não esperado ao deletar o item:  " + ex.Message, "Erro!");
+                throw ex;
+            }
+        }
+        public void AtribuirItem(int id)
+        {
+            try
+            {
+                itemEspecialDAO.Atribuir(id);
+            }
+            catch (MySqlException exce)
+            {
+                util.MensagemDeTeste("Erro ao atribuir o item, falha na conexão ao banco de dados", "Erro!");
+                throw exce;
+            }
+            catch (Exception ex)
+            {
+                util.MensagemDeTeste("Erro não esperado ao atribuir o item:  " + ex.Message, "Erro!");
+                throw ex;
+            }
         }
     }
 }
