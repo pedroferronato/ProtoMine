@@ -160,3 +160,4 @@ C:\Users\55699\source\repos\ProtoMine\obj\Debug\ProtoMine.View.Cadastro.resource
 C:\Users\pedro\source\repos\ProtomineGit\ProtoMine\obj\Debug\ProtoMine.View.Cadastro.resources
 C:\Users\pedro\source\repos\ProtomineGit\ProtoMine\obj\Debug\ProtoMine.View.Loja.resources
 C:\Users\pedro\source\repos\ProtomineGit\ProtoMine\obj\Debug\ProtoMine.View.ItemEspecialView.resources
+C:\Users\pedro\source\repos\ProtomineGit\ProtoMine\obj\Debug\ProtoMine.View.LojaPedidos.resources

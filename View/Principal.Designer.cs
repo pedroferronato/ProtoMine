@@ -172,6 +172,7 @@
             this.picLoja.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picLoja.TabIndex = 9;
             this.picLoja.TabStop = false;
+            this.picLoja.Click += new System.EventHandler(this.AbrirLoja);
             // 
             // picMinerar
             // 
@@ -407,7 +408,7 @@
 
         private System.Windows.Forms.Panel PanelTopo;
         private System.Windows.Forms.Panel panelEsquerdo;
-        private System.Windows.Forms.Panel panelPrincipal;
+        public System.Windows.Forms.Panel panelPrincipal;
         private Microsoft.VisualBasic.PowerPacks.OvalShape foto;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private System.Windows.Forms.Label lbNome;

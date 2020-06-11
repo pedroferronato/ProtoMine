@@ -140,7 +140,7 @@ namespace ProtoMine.View
             itemController.BuscarTodos();
         }
 
-        private void AbrirTela(object formGen, Panel fundoBase)
+        public void AbrirTela(object formGen, Panel fundoBase)
         {
             if (fundoBase.Controls.Count > 0)
                 fundoBase.Controls.RemoveAt(0);
@@ -185,6 +185,12 @@ namespace ProtoMine.View
         {
             Cadastro telaCadastro = new Cadastro(this);
             AbrirTela(telaCadastro, panelPrincipal);
+        }
+
+        private void AbrirLoja(object sender, EventArgs e)
+        {
+            Loja telaLoja = new Loja(this);
+            AbrirTela(telaLoja, panelPrincipal);
         }
     }
 }

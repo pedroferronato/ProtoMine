@@ -15,8 +15,9 @@ namespace ProtoMine.Modelo
         public ItemModel Item { get; set; }
         public Usuario Usuario { get; set; }
         public double ValorUnitario { get; set; }
+        public int Quantidade { get; set; }
 
-        public Pedido(int id, double valor, string tipo, ItemModel item, Usuario usuario, double valorUnitario)
+        public Pedido(int id, double valor, string tipo, ItemModel item, Usuario usuario, double valorUnitario, int quantidade)
         {
             Id = id;
             Valor = valor;
@@ -24,6 +25,7 @@ namespace ProtoMine.Modelo
             Item = item;
             Usuario = usuario;
             ValorUnitario = valorUnitario;
+            Quantidade = quantidade;
         }
 
         public Pedido()

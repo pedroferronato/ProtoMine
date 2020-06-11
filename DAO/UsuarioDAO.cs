@@ -111,6 +111,7 @@ namespace ProtoMine.DAO
             try
             {
                 abrirConexao();
+
                 DataTable dt = new DataTable();
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 comando = new MySqlCommand("SELECT nome,login,nivel,experiencia,moeda,peso,capacidade,role FROM usuario", conexao);
@@ -119,7 +120,6 @@ namespace ProtoMine.DAO
                 da.Fill(dt);
 
                 return dt;
-
             }
             catch (MySqlException exce)
             {

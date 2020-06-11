@@ -12,9 +12,17 @@ namespace ProtoMine.View
 {
     public partial class Loja : Form
     {
-        public Loja()
+        Principal telaPrincipal;
+        public Loja(Principal principal)
         {
             InitializeComponent();
+            telaPrincipal = principal;
+        }
+
+        private void AbrirPedidos(object sender, EventArgs e)
+        {
+            LojaPedidos telaPedidos = new LojaPedidos();
+            telaPrincipal.AbrirTela(telaPedidos, telaPrincipal.panelPrincipal);
         }
     }
 }

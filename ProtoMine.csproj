@@ -53,6 +53,7 @@
     <Compile Include="Cache\ItemCache.cs" />
     <Compile Include="Cache\UserCache.cs" />
     <Compile Include="Controle\ItemController.cs" />
+    <Compile Include="Controle\PedidosController.cs" />
     <Compile Include="Controle\UsuarioController.cs" />
     <Compile Include="Controle\UtilidadesTelas.cs" />
     <Compile Include="DAO\Conexao.cs" />
@@ -105,6 +106,12 @@
     <Compile Include="View\Loja.Designer.cs">
       <DependentUpon>Loja.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\LojaPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\LojaPedidos.Designer.cs">
+      <DependentUpon>LojaPedidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Minerar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Loja.resx">
       <DependentUpon>Loja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\LojaPedidos.resx">
+      <DependentUpon>LojaPedidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Minerar.resx">
       <DependentUpon>Minerar.cs</DependentUpon>
@@ -236,6 +246,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="icon\baseDourada.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\Loja.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\Loja-SemItens.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\Balao.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

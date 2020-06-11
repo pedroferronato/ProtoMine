@@ -73,6 +73,16 @@ namespace ProtoMine.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Balao {
+            get {
+                object obj = ResourceManager.GetObject("Balao", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap baseDourada {
             get {
                 object obj = ResourceManager.GetObject("baseDourada", resourceCulture);
@@ -156,6 +166,26 @@ namespace ProtoMine.Properties {
         internal static System.Drawing.Bitmap lines_menu_burger_icon_123889 {
             get {
                 object obj = ResourceManager.GetObject("lines_menu_burger_icon_123889", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Loja {
+            get {
+                object obj = ResourceManager.GetObject("Loja", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Loja_SemItens {
+            get {
+                object obj = ResourceManager.GetObject("Loja-SemItens", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -42,12 +42,12 @@ namespace ProtoMine.DAO
             }
             catch (MySqlException exce)
             {
-                util.MensagemDeTeste("Erro no load dos itens, falha na conexão ao banco de dados", "Erro!");
+                util.MensagemDeTeste("Erro no load das vendas, falha na conexão ao banco de dados", "Erro!");
                 throw exce;
             }
             catch (Exception ex)
             {
-                util.MensagemDeTeste("Erro não esperado no load dos itens:  " + ex.Message, "Erro!");
+                util.MensagemDeTeste("Erro não esperado no load das vendas:  " + ex.Message, "Erro!");
                 throw ex;
             }
             finally

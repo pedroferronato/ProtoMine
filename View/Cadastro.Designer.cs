@@ -62,7 +62,7 @@
             this.txtnomeUsu.Location = new System.Drawing.Point(30, 41);
             this.txtnomeUsu.Name = "txtnomeUsu";
             this.txtnomeUsu.Size = new System.Drawing.Size(330, 19);
-            this.txtnomeUsu.TabIndex = 1;
+            this.txtnomeUsu.TabIndex = 0;
             this.txtnomeUsu.Text = "Nome de Usuário";
             this.txtnomeUsu.Enter += new System.EventHandler(this.NomeEnter);
             this.txtnomeUsu.Leave += new System.EventHandler(this.NomeLeave);
@@ -75,7 +75,7 @@
             this.checkRole.Location = new System.Drawing.Point(500, 91);
             this.checkRole.Name = "checkRole";
             this.checkRole.Size = new System.Drawing.Size(131, 24);
-            this.checkRole.TabIndex = 5;
+            this.checkRole.TabIndex = 4;
             this.checkRole.Text = "Conta Admin";
             this.checkRole.UseVisualStyleBackColor = true;
             // 
@@ -116,7 +116,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(787, 80);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(40, 40);
-            this.btnCancelar.TabIndex = 8;
+            this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "X";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.CancelarAtualizar);
@@ -134,7 +134,7 @@
             this.btnAtualizar.Location = new System.Drawing.Point(499, 138);
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(331, 40);
-            this.btnAtualizar.TabIndex = 7;
+            this.btnAtualizar.TabIndex = 6;
             this.btnAtualizar.Text = "Atualizar";
             this.btnAtualizar.UseVisualStyleBackColor = false;
             this.btnAtualizar.Click += new System.EventHandler(this.Atualizar);
@@ -196,7 +196,7 @@
             this.btnCadastrar.Location = new System.Drawing.Point(499, 138);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(331, 40);
-            this.btnCadastrar.TabIndex = 6;
+            this.btnCadastrar.TabIndex = 5;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = false;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
@@ -210,7 +210,7 @@
             this.txtlogin.Location = new System.Drawing.Point(500, 42);
             this.txtlogin.Name = "txtlogin";
             this.txtlogin.Size = new System.Drawing.Size(330, 19);
-            this.txtlogin.TabIndex = 4;
+            this.txtlogin.TabIndex = 3;
             this.txtlogin.Text = "Login";
             this.txtlogin.Enter += new System.EventHandler(this.EnterLogin);
             this.txtlogin.Leave += new System.EventHandler(this.LeaveLogin);
@@ -224,7 +224,7 @@
             this.txtConfSenha.Location = new System.Drawing.Point(30, 145);
             this.txtConfSenha.Name = "txtConfSenha";
             this.txtConfSenha.Size = new System.Drawing.Size(330, 19);
-            this.txtConfSenha.TabIndex = 3;
+            this.txtConfSenha.TabIndex = 2;
             this.txtConfSenha.Text = "Confirme a senha";
             this.txtConfSenha.Enter += new System.EventHandler(this.EnterConfSenha);
             this.txtConfSenha.Leave += new System.EventHandler(this.LeaveConfSenha);
@@ -238,7 +238,7 @@
             this.txtSenha.Location = new System.Drawing.Point(30, 92);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(330, 19);
-            this.txtSenha.TabIndex = 2;
+            this.txtSenha.TabIndex = 1;
             this.txtSenha.Text = "Senha";
             this.txtSenha.Enter += new System.EventHandler(this.SenhaEnter);
             this.txtSenha.Leave += new System.EventHandler(this.SenhaLeave);
@@ -298,6 +298,7 @@
             // 
             // tabela
             // 
+            this.tabela.AllowUserToAddRows = false;
             this.tabela.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tabela.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(10)))), ((int)(((byte)(4)))));
             this.tabela.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
