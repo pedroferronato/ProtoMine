@@ -58,12 +58,16 @@
     <Compile Include="DAO\Conexao.cs" />
     <Compile Include="DAO\ItemBasicoDAO.cs" />
     <Compile Include="DAO\ItemEspecialDAO.cs" />
+    <Compile Include="DAO\PedidoDAO.cs" />
     <Compile Include="DAO\UsuarioDAO.cs" />
+    <Compile Include="DAO\VendaDAO.cs" />
     <Compile Include="Excecoes\LoginException.cs" />
     <Compile Include="Modelo\ItemEspecial.cs" />
     <Compile Include="Modelo\ItemAbstract.cs" />
     <Compile Include="Modelo\ItemModel.cs" />
+    <Compile Include="Modelo\Pedido.cs" />
     <Compile Include="Modelo\Usuario.cs" />
+    <Compile Include="Modelo\Venda.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
