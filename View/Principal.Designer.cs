@@ -424,7 +424,7 @@
         private System.Windows.Forms.Panel panelItem5;
         private System.Windows.Forms.Panel panelItem4;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label money;
+        public System.Windows.Forms.Label money;
         private System.Windows.Forms.PictureBox picRelogar;
         private System.Windows.Forms.PictureBox picDesligar;
         private System.Windows.Forms.PictureBox picLoja;

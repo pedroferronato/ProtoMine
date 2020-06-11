@@ -55,6 +55,7 @@
             this.panelb3.Name = "panelb3";
             this.panelb3.Size = new System.Drawing.Size(98, 94);
             this.panelb3.TabIndex = 1;
+            this.panelb3.Click += new System.EventHandler(this.ComprarBolsa3);
             // 
             // panelb2
             // 
@@ -64,6 +65,7 @@
             this.panelb2.Name = "panelb2";
             this.panelb2.Size = new System.Drawing.Size(101, 93);
             this.panelb2.TabIndex = 2;
+            this.panelb2.Click += new System.EventHandler(this.ComprarBolsa2);
             // 
             // panelb1
             // 
@@ -73,6 +75,7 @@
             this.panelb1.Name = "panelb1";
             this.panelb1.Size = new System.Drawing.Size(95, 89);
             this.panelb1.TabIndex = 3;
+            this.panelb1.Click += new System.EventHandler(this.ComprarBolsa1);
             // 
             // panelp3
             // 
@@ -82,6 +85,7 @@
             this.panelp3.Name = "panelp3";
             this.panelp3.Size = new System.Drawing.Size(92, 94);
             this.panelp3.TabIndex = 4;
+            this.panelp3.Click += new System.EventHandler(this.ComprarPicareta3);
             // 
             // panelp2
             // 
@@ -91,6 +95,7 @@
             this.panelp2.Name = "panelp2";
             this.panelp2.Size = new System.Drawing.Size(92, 93);
             this.panelp2.TabIndex = 5;
+            this.panelp2.Click += new System.EventHandler(this.ComprarPicareta2);
             // 
             // panelp1
             // 
@@ -100,6 +105,7 @@
             this.panelp1.Name = "panelp1";
             this.panelp1.Size = new System.Drawing.Size(92, 89);
             this.panelp1.TabIndex = 6;
+            this.panelp1.Click += new System.EventHandler(this.ComprarPicareta1);
             // 
             // Loja
             // 
