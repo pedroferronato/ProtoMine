@@ -16,5 +16,10 @@ namespace ProtoMine.Controle
         {
             vendaDAO.AdicionarVenda(venda);
         }
+
+        public int CalcularMedia(int i)
+        {
+           return vendaDAO.CalcularMedia(i);
+        }
     }
 }

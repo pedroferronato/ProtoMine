@@ -33,26 +33,38 @@ namespace ProtoMine.View
 
         private void JogarFora(object sender, EventArgs e)
         {
-            ItemCache.ListaItens[itemModel.Id - 1].Quantidade = 0;
-            prin.inventario[itemModel.Id - 1].labQuant.Text = "0";
-            UserCache.UsuarioLogado.Peso = 0;
-            foreach (ItemModel item in ItemCache.ListaItens)
+            Hide();
+            try
             {
-                itemController.AcrescentarPeso(item, prin);
+                Close();
             }
-            prin.lbPeso.Text = UserCache.UsuarioLogado.Peso.ToString()+ " Kg";
-            if (UserCache.UsuarioLogado.Capacidade > UserCache.UsuarioLogado.Peso)
+            catch (Exception)
             {
-                ItemCache.Carregado = false;
+                throw;
             }
-            Close();
+            finally
+            {
+                CriacaoPedido pedido = new CriacaoPedido(itemPedido, prin, "NPC");
+                pedido.ShowDialog();
+            }
         }
 
         private void AbrirPedidoVenda(object sender, EventArgs e)
         {
-            Close();
-            CriacaoPedido pedido = new CriacaoPedido(itemPedido, prin);
-            pedido.ShowDialog();
+            Hide();
+            try
+            {
+                Close();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                CriacaoPedido pedido = new CriacaoPedido(itemPedido, prin);
+                pedido.ShowDialog();
+            }
         }
     }
 }

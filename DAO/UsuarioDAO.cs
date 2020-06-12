@@ -10,6 +10,7 @@ using ProtoMine.Controle;
 using System.Data.SqlClient;
 using Microsoft.VisualBasic.ApplicationServices;
 using System.Security.Cryptography.X509Certificates;
+using ProtoMine.Cache;
 
 namespace ProtoMine.DAO
 {
@@ -179,6 +180,41 @@ namespace ProtoMine.DAO
             catch (Exception ex)
             {
                 util.MensagemDeTeste("Erro não esperado no login:  " + ex.Message, "Erro!");
+                throw ex;
+            }
+            finally
+            {
+                fecharConexao(); // Fecha a conexão
+            }
+        }
+
+        public void AtualizarUsuario()
+        {
+            try
+            {
+                abrirConexao();
+
+                comando = new MySqlCommand("update usuario set moeda = @moeda, " +
+                    "experiencia = @experiencia, peso = @peso, nivel = @nivel, " +
+                    "capacidade = @capacidade where id = @idUsuario", conexao);
+
+                comando.Parameters.AddWithValue("@moeda", UserCache.UsuarioLogado.Moeda);
+                comando.Parameters.AddWithValue("@experiencia", UserCache.UsuarioLogado.Experiencia);
+                comando.Parameters.AddWithValue("@peso", UserCache.UsuarioLogado.Peso);
+                comando.Parameters.AddWithValue("@nivel", UserCache.UsuarioLogado.Nivel);
+                comando.Parameters.AddWithValue("@capacidade", UserCache.UsuarioLogado.Capacidade);
+                comando.Parameters.AddWithValue("@idUsuario", UserCache.UsuarioLogado.Id);
+
+                comando.ExecuteNonQuery();
+            }
+            catch (MySqlException exce)
+            {
+                util.MensagemDeTeste("Erro no load do usuário, falha na conexão ao banco de dados", "Erro!");
+                throw exce;
+            }
+            catch (Exception ex)
+            {
+                util.MensagemDeTeste("Erro não esperado no load do usuário:  " + ex.Message, "Erro!");
                 throw ex;
             }
             finally

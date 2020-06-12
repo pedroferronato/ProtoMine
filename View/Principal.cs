@@ -37,6 +37,8 @@ namespace ProtoMine.View
         public Principal(Form login)
         {
             InitializeComponent();
+            UserCache.UsuarioLogado.Peso = 0;
+
             picPeso.BackColor = Color.Transparent;
 
             // Início do load de itens
@@ -159,7 +161,18 @@ namespace ProtoMine.View
         {
             if (MessageBox.Show("Deseja realmente sair?", "Sair", buttons) == DialogResult.Yes)
             {
-                Application.Exit();
+                try
+                {
+                    SalvarUsuario();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    Application.Exit();
+                }
             }
         }
 
@@ -167,7 +180,18 @@ namespace ProtoMine.View
         {
             if (MessageBox.Show("Deseja realmente desconectar?", "Desconectar", buttons) == DialogResult.Yes)
             {
-                Application.Restart();
+                try
+                {
+                    SalvarUsuario();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    Application.Restart();
+                }
             }
         }
 
@@ -194,6 +218,17 @@ namespace ProtoMine.View
         {
             Loja telaLoja = new Loja(this);
             AbrirTela(telaLoja, panelPrincipal);
+        }
+
+        private void SalvarUsuario()
+        {
+            ItemController itemController = new ItemController();
+            UsuarioController usuarioController = new UsuarioController();
+            usuarioController.AtualizarUsuario();
+            foreach (ItemModel item in ItemCache.ListaItens)
+            {
+                itemController.AtualizarItem(item);
+            }
         }
 
     }

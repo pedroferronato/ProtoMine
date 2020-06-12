@@ -90,5 +90,43 @@ namespace ProtoMine.DAO
                 fecharConexao();
             }
         }
+
+        public int CalcularMedia(int id)
+        {
+            try
+            {
+                abrirConexao();
+
+                comando = new MySqlCommand("select avg(valorUnitario) from venda where id_item = @id limit 50", conexao);
+
+                comando.Parameters.AddWithValue("@id", id);
+
+                MySqlDataReader reader = comando.ExecuteReader();
+
+                List<Venda> listaDeVendas = new List<Venda>();
+
+                int media = 0;
+
+                while (reader.Read())
+                {
+                    media = Convert.ToInt32(Math.Truncate(reader.GetDouble(0)));
+                }
+                return media;
+            }
+            catch (MySqlException exce)
+            {
+                util.MensagemDeTeste("Erro no load da média vendas, falha na conexão ao banco de dados", "Erro!");
+                throw exce;
+            }
+            catch (Exception ex)
+            {
+                util.MensagemDeTeste("Erro não esperado no load da média vendas:  " + ex.Message, "Erro!");
+                throw ex;
+            }
+            finally
+            {
+                fecharConexao();
+            }
+        }
     }
 }

@@ -296,5 +296,24 @@ namespace ProtoMine.Controle
                 throw ex;
             }
         }
+
+        public void AtualizarItem(ItemModel item)
+        {
+            ItemBasicoDAO itemDAO = new ItemBasicoDAO();
+            try
+            {
+                itemDAO.AtualizarItem(item);
+            }
+            catch (MySqlException exce)
+            {
+                util.MensagemDeTeste("Erro ao atribuir o item, falha na conexão ao banco de dados", "Erro!");
+                throw exce;
+            }
+            catch (Exception ex)
+            {
+                util.MensagemDeTeste("Erro não esperado ao atribuir o item:  " + ex.Message, "Erro!");
+                throw ex;
+            }
+        }
     }
 }

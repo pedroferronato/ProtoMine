@@ -96,5 +96,35 @@ namespace ProtoMine.DAO
             }
         }
 
+        public void AtualizarItem(ItemModel item)
+        {
+            try
+            {
+                abrirConexao();
+
+                comando = new MySqlCommand("update usuarioitem set quantidade = @quantidade " +
+                    "where id_item = @idItem and id_usuario = @idUsu", conexao);
+
+                comando.Parameters.AddWithValue("@quantidade", item.Quantidade);
+                comando.Parameters.AddWithValue("@idItem", item.Id);
+                comando.Parameters.AddWithValue("@idUsu", UserCache.UsuarioLogado.Id);
+                comando.ExecuteNonQuery();
+            }
+            catch (MySqlException exce)
+            {
+                util.MensagemDeTeste("Erro no load dos itens, falha na conexão ao banco de dados", "Erro!");
+                throw exce;
+            }
+            catch (Exception ex)
+            {
+                util.MensagemDeTeste("Erro não esperado no load dos itens:  " + ex.Message, "Erro!");
+                throw ex;
+            }
+            finally
+            {
+                fecharConexao(); // Fecha a conexão
+            }
+        }
+
     }
 }

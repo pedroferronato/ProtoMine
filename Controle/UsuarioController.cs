@@ -117,5 +117,10 @@ namespace ProtoMine.Controle
                 throw ex;
             }
         }
+
+        public void AtualizarUsuario()
+        {
+            userDAO.AtualizarUsuario();
+        }
     }
 }

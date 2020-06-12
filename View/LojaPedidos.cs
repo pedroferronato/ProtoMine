@@ -22,7 +22,15 @@ namespace ProtoMine.View
         public LojaPedidos(Principal pri)
         {
             InitializeComponent();
-            tabela.DataSource = pedidosController.GerarTabela(cbTIpo.SelectedIndex);
+            try
+            {
+                tabela.DataSource = pedidosController.GerarTabela(cbTIpo.SelectedIndex);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
             cbTIpo.Items.Insert(0, "Compra/Venda");
             cbTIpo.Items.Insert(1, "Compra");
             cbTIpo.Items.Insert(2, "Venda");
@@ -42,16 +50,9 @@ namespace ProtoMine.View
             tabela.DataSource = pedidosController.GerarTabela(cbTIpo.SelectedIndex);
         }
 
-        private void ComprarPedido(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
         private void ComprarPedidoVenda(object sender, DataGridViewCellMouseEventArgs e)
         {
             UtilidadesTelas util = new UtilidadesTelas();
-            int index = tabela.CurrentRow.Index;
-            util.MensagemDeTeste(index.ToString(),"index");
             bool resposta = util.MensagemDeConfirmacao("Deseja realmente comprar o item: " + tabela.CurrentRow.Cells[0].Value, "Confirmação");
             if (resposta)
             {
@@ -83,7 +84,6 @@ namespace ProtoMine.View
                     }
                     catch (Exception)
                     {
-
                         throw;
                     }
                     finally
@@ -97,9 +97,19 @@ namespace ProtoMine.View
                         UserCache.UsuarioLogado.Peso +=
                             ItemCache.ListaGeral[venda.Item.Id].Peso *
                             Convert.ToInt32(tabela.CurrentRow.Cells[1].Value);
-                        principal.lbPeso.Text = UserCache.UsuarioLogado.Peso.ToString();
+                        principal.lbPeso.Text = UserCache.UsuarioLogado.Peso.ToString() + " Kg";
                         ItemController iContro = new ItemController();
                         iContro.VerificarCor(principal);
+                        try
+                        {
+                            PedidosController pedidosController = new PedidosController();
+                            pedidosController.ExcluirPedido(venda.Pedido.Id);
+                            tabela.DataSource = pedidosController.GerarTabela(cbTIpo.SelectedIndex);
+                        }
+                        catch (Exception)
+                        {
+                            throw;
+                        }
                     }
                 }
             }

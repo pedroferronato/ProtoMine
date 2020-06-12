@@ -93,5 +93,32 @@ namespace ProtoMine.DAO
                 fecharConexao();
             }
         }
+
+        public void ExcluirPedido(int id)
+        {
+            try
+            {
+                abrirConexao();
+
+                comando = new MySqlCommand("DELETE FROM pedido WHERE id = @id", conexao);
+                comando.Parameters.AddWithValue("@id", id);
+                comando.ExecuteNonQuery();
+
+            }
+            catch (MySqlException exce)
+            {
+                util.MensagemDeTeste("Erro ao excluir pedido, falha na conexão ao banco de dados", "Erro!");
+                throw exce;
+            }
+            catch (Exception ex)
+            {
+                util.MensagemDeTeste("Erro inesperado no delete de pedido:  " + ex.Message, "Erro!");
+                throw ex;
+            }
+            finally
+            {
+                fecharConexao();
+            }
+        }
     }
 }

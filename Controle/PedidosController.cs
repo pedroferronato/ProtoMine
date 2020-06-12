@@ -22,5 +22,10 @@ namespace ProtoMine.Controle
         {
             pedidoDAO.AdicionarPedido(pedido, idItem);
         }
+
+        public void ExcluirPedido(int i)
+        {
+            pedidoDAO.ExcluirPedido(i);
+        }
     }
 }
