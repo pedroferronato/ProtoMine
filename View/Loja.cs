@@ -80,6 +80,10 @@ namespace ProtoMine.View
                         telaPrincipal.money.Text = UserCache.UsuarioLogado.Moeda + " $";
                         itemController.AtribuirItem(UserCache.Mochila.Id);
                         UserCache.Mochila.CalcularPeso();
+                        if (UserCache.UsuarioLogado.Peso < UserCache.UsuarioLogado.Capacidade)
+                            ItemCache.Carregado = false;
+                        else
+                            ItemCache.Carregado = true;
                     }
                     else if (UserCache.Mochila.Nome == item)
                     {
@@ -96,6 +100,10 @@ namespace ProtoMine.View
                         itemController.AtribuirItem(UserCache.Mochila.Id);
                         UserCache.Mochila.CalcularPeso();
                         UserCache.UsuarioLogado.Capacidade -= capacidadeAntiga;
+                        if (UserCache.UsuarioLogado.Peso < UserCache.UsuarioLogado.Capacidade)
+                            ItemCache.Carregado = false;
+                        else
+                            ItemCache.Carregado = true;
                     }
                 }
             }

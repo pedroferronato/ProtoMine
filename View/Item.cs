@@ -30,7 +30,7 @@ namespace ProtoMine.View
 
         private void GenItem()
         {
-            GerenciarItem gerenciarItem = new GerenciarItem(itemModel.Id, prin);
+            GerenciarItem gerenciarItem = new GerenciarItem(itemModel.Id, prin, itemModel);
             gerenciarItem.ShowDialog();
         }
 

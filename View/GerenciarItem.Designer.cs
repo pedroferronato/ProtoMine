@@ -43,7 +43,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(339, 19);
             this.label1.TabIndex = 0;
-            this.label1.Text = "O que deseja fazer com o Item?";
+            this.label1.Text = "O que deseja fazer com o item?";
             // 
             // button1
             // 
@@ -53,6 +53,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "VENDER";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.AbrirPedidoVenda);
             // 
             // button2
             // 

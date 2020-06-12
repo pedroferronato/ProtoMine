@@ -80,6 +80,12 @@
     <Compile Include="View\Cadastro.Designer.cs">
       <DependentUpon>Cadastro.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\CriacaoPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CriacaoPedido.Designer.cs">
+      <DependentUpon>CriacaoPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\GerenciarItem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +144,9 @@
     </Compile>
     <EmbeddedResource Include="View\Cadastro.resx">
       <DependentUpon>Cadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\CriacaoPedido.resx">
+      <DependentUpon>CriacaoPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\GerenciarItem.resx">
       <DependentUpon>GerenciarItem.cs</DependentUpon>

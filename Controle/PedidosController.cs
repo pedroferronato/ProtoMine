@@ -1,4 +1,5 @@
 ﻿using ProtoMine.DAO;
+using ProtoMine.Modelo;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -15,6 +16,11 @@ namespace ProtoMine.Controle
         public DataTable GerarTabela(int tipo)
         {
             return pedidoDAO.BuscarPedidos(tipo);
+        }
+
+        public void InserirPedido(Pedido pedido, int idItem)
+        {
+            pedidoDAO.AdicionarPedido(pedido, idItem);
         }
     }
 }

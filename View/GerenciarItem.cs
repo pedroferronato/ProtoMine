@@ -18,12 +18,13 @@ namespace ProtoMine.View
         ItemModel itemModel = new ItemModel();
         ItemController itemController = new ItemController();
         Principal prin;
-        public GerenciarItem(int id, Principal principal)
+        ItemModel itemPedido;
+        public GerenciarItem(int id, Principal principal, ItemModel item)
         {
             InitializeComponent();
             itemModel.Id = id;
             prin = principal;
-
+            itemPedido = item;
         }
         private void FecharTela(object sender, EventArgs e)
         {
@@ -45,6 +46,13 @@ namespace ProtoMine.View
                 ItemCache.Carregado = false;
             }
             Close();
+        }
+
+        private void AbrirPedidoVenda(object sender, EventArgs e)
+        {
+            Close();
+            CriacaoPedido pedido = new CriacaoPedido(itemPedido, prin);
+            pedido.ShowDialog();
         }
     }
 }

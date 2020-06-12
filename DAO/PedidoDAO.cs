@@ -58,5 +58,40 @@ namespace ProtoMine.DAO
                 fecharConexao(); // Fecha a conexão
             }
         }
+
+        public void AdicionarPedido(Pedido pedido, int idItem)
+        {
+            try
+            {
+                abrirConexao();
+
+                comando = new MySqlCommand("INSERT INTO pedido (valor, tipo, id_usuario, " +
+                    "id_item, valorUnitario, quantidade) " +
+                    "VALUES (@valor, @tipo, @idUsu, @idItem, @valUnit, @qtd)", conexao);
+
+                comando.Parameters.AddWithValue("@valor", pedido.Valor);
+                comando.Parameters.AddWithValue("@tipo", "Venda");
+                comando.Parameters.AddWithValue("@idUsu", UserCache.UsuarioLogado.Id);
+                comando.Parameters.AddWithValue("@idItem", idItem);
+                comando.Parameters.AddWithValue("@valUnit", pedido.ValorUnitario);
+                comando.Parameters.AddWithValue("@qtd", pedido.Quantidade);
+
+                comando.ExecuteNonQuery();
+            }
+            catch (MySqlException exce)
+            {
+                util.MensagemDeTeste("Erro na criação de pedido, falha na conexão ao banco de dados", "Erro!");
+                throw exce;
+            }
+            catch (Exception ex)
+            {
+                util.MensagemDeTeste("Erro não esperado na criação de pedido:  " + ex.Message, "Erro!");
+                throw ex;
+            }
+            finally
+            {
+                fecharConexao();
+            }
+        }
     }
 }
