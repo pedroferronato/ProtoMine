@@ -1,4 +1,5 @@
-﻿using MySqlX.XDevAPI.Relational;
+﻿using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI.Relational;
 using ProtoMine.Cache;
 using ProtoMine.Controle;
 using ProtoMine.Modelo;
@@ -18,7 +19,10 @@ namespace ProtoMine.View
     {
         readonly PedidosController pedidosController = new PedidosController();
 
-        Principal principal;
+        readonly Principal principal;
+
+        readonly UtilidadesTelas util = new UtilidadesTelas();
+
         public LojaPedidos(Principal pri)
         {
             InitializeComponent();
@@ -26,33 +30,54 @@ namespace ProtoMine.View
             {
                 tabela.DataSource = pedidosController.GerarTabela(cbTIpo.SelectedIndex);
             }
-            catch (Exception)
+            catch (MySqlException exce)
             {
-
-                throw;
+                util.MensagemDeTeste("Erro ao carregar pedidos, falha na conexão ao banco de dados", "Erro!");
+                throw exce;
             }
+            catch (Exception ex)
+            {
+                util.MensagemDeTeste("Erro não esperado ao carregar pedidos:  " + ex.Message, "Erro!");
+                throw ex;
+            }
+
             cbTIpo.Items.Insert(0, "Compra/Venda");
             cbTIpo.Items.Insert(1, "Compra");
             cbTIpo.Items.Insert(2, "Venda");
             cbTIpo.SelectedIndex = 0;
+
             tabela.Columns[0].HeaderText = "Nome";
             tabela.Columns[1].HeaderText = "Quantidade";
             tabela.Columns[2].HeaderText = "Valor";
             tabela.Columns[3].HeaderText = "Tipo";
+
             tabela.Columns[4].Visible = false;
             tabela.Columns[5].Visible = false;
             tabela.Columns[6].Visible = false;
+
             principal = pri;
         }
 
         private void AlterarBusca(object sender, EventArgs e)
         {
-            tabela.DataSource = pedidosController.GerarTabela(cbTIpo.SelectedIndex);
+            try
+            {
+                tabela.DataSource = pedidosController.GerarTabela(cbTIpo.SelectedIndex);
+            }
+            catch (MySqlException exce)
+            {
+                util.MensagemDeTeste("Erro ao carregar pedidos, falha na conexão ao banco de dados", "Erro!");
+                throw exce;
+            }
+            catch (Exception ex)
+            {
+                util.MensagemDeTeste("Erro não esperado ao carregar pedidos:  " + ex.Message, "Erro!");
+                throw ex;
+            }
         }
 
         private void ComprarPedidoVenda(object sender, DataGridViewCellMouseEventArgs e)
         {
-            UtilidadesTelas util = new UtilidadesTelas();
             bool resposta = util.MensagemDeConfirmacao("Deseja realmente comprar o item: " + tabela.CurrentRow.Cells[0].Value, "Confirmação");
             if (resposta)
             {
@@ -71,6 +96,7 @@ namespace ProtoMine.View
                 venda.Pedido.Id = Convert.ToInt32(tabela.CurrentRow.Cells[4].Value);
                 venda.Valor = Convert.ToDouble(tabela.CurrentRow.Cells[2].Value);
                 venda.ValorUnitario = venda.Valor / Convert.ToInt32(tabela.CurrentRow.Cells[1].Value);
+                
                 if (ItemCache.Carregado)
                     util.MensagemDeTeste("Você não pode comprar itens com inventário cheio", "Ameãças");
                 else if (UserCache.UsuarioLogado.Moeda < venda.Valor)
@@ -82,9 +108,15 @@ namespace ProtoMine.View
                         VendaController vendaController = new VendaController();
                         vendaController.AdicionarVenda(venda);
                     }
-                    catch (Exception)
+                    catch (MySqlException exce)
                     {
-                        throw;
+                        util.MensagemDeTeste("Erro ao criar venda, falha na conexão ao banco de dados", "Erro!");
+                        throw exce;
+                    }
+                    catch (Exception ex)
+                    {
+                        util.MensagemDeTeste("Erro não esperado ao criar venda:  " + ex.Message, "Erro!");
+                        throw ex;
                     }
                     finally
                     {
@@ -106,9 +138,15 @@ namespace ProtoMine.View
                             pedidosController.ExcluirPedido(venda.Pedido.Id);
                             tabela.DataSource = pedidosController.GerarTabela(cbTIpo.SelectedIndex);
                         }
-                        catch (Exception)
+                        catch (MySqlException exce)
                         {
-                            throw;
+                            util.MensagemDeTeste("Erro ao excluir pedidos, falha na conexão ao banco de dados", "Erro!");
+                            throw exce;
+                        }
+                        catch (Exception ex)
+                        {
+                            util.MensagemDeTeste("Erro não esperado ao excluir pedidos:  " + ex.Message, "Erro!");
+                            throw ex;
                         }
                     }
                 }

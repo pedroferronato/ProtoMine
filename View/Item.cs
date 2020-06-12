@@ -14,9 +14,10 @@ namespace ProtoMine.View
 {
     public partial class Item : Form
     {
-        UtilidadesTelas util = new UtilidadesTelas();
-        ItemModel itemModel = new ItemModel();
-        Principal prin;
+        readonly ItemModel itemModel = new ItemModel();
+
+        readonly Principal prin;
+
         public Item(ItemModel item, Principal principal)
         {
             InitializeComponent();

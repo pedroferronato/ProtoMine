@@ -11,7 +11,7 @@ namespace ProtoMine.Controle
 {
     class PedidosController
     {
-        PedidoDAO pedidoDAO = new PedidoDAO();
+        readonly PedidoDAO pedidoDAO = new PedidoDAO();
 
         public DataTable GerarTabela(int tipo)
         {

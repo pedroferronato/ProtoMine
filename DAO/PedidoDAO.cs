@@ -14,15 +14,15 @@ namespace ProtoMine.DAO
     class PedidoDAO : Conexao
     {
         MySqlCommand comando = null;
-        UtilidadesTelas util = new UtilidadesTelas();
-
+        readonly UtilidadesTelas util = new UtilidadesTelas();
         public DataTable BuscarPedidos(int tipo)
         {
             try
             {
-                abrirConexao();
+                AbrirConexao();
 
                 DataTable dt = new DataTable();
+
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 comando = new MySqlCommand("select item.nome, pedido.quantidade, pedido.valor, pedido.tipo, pedido.id, pedido.id_usuario, item.id from pedido" +
                     " join item on item.id = pedido.id_item" +
@@ -31,12 +31,14 @@ namespace ProtoMine.DAO
                     " order by pedido.valor ASC limit 20", conexao);
 
                 comando.Parameters.AddWithValue("@id", UserCache.UsuarioLogado.Id);
+
                 if (tipo == 0)
                     comando.Parameters.AddWithValue("@tipo", "tipo");
                 else if (tipo == 1)
                     comando.Parameters.AddWithValue("@tipo", "Venda");
                 else
                     comando.Parameters.AddWithValue("@tipo", "Compra");
+
                 da.SelectCommand = comando;
                 da.Fill(dt);
 
@@ -55,7 +57,7 @@ namespace ProtoMine.DAO
             }
             finally
             {
-                fecharConexao(); // Fecha a conexão
+                FecharConexao();
             }
         }
 
@@ -63,7 +65,7 @@ namespace ProtoMine.DAO
         {
             try
             {
-                abrirConexao();
+                AbrirConexao();
 
                 comando = new MySqlCommand("INSERT INTO pedido (valor, tipo, id_usuario, " +
                     "id_item, valorUnitario, quantidade) " +
@@ -90,7 +92,7 @@ namespace ProtoMine.DAO
             }
             finally
             {
-                fecharConexao();
+                FecharConexao();
             }
         }
 
@@ -98,10 +100,12 @@ namespace ProtoMine.DAO
         {
             try
             {
-                abrirConexao();
+                AbrirConexao();
 
                 comando = new MySqlCommand("DELETE FROM pedido WHERE id = @id", conexao);
+
                 comando.Parameters.AddWithValue("@id", id);
+
                 comando.ExecuteNonQuery();
 
             }
@@ -112,12 +116,12 @@ namespace ProtoMine.DAO
             }
             catch (Exception ex)
             {
-                util.MensagemDeTeste("Erro inesperado no delete de pedido:  " + ex.Message, "Erro!");
+                util.MensagemDeTeste("Erro inesperado no delete de pedido: " + ex.Message, "Erro!");
                 throw ex;
             }
             finally
             {
-                fecharConexao();
+                FecharConexao();
             }
         }
     }

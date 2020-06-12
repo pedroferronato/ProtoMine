@@ -15,13 +15,13 @@ namespace ProtoMine.DAO
     class ItemBasicoDAO : Conexao
     {
         MySqlCommand comando = null;
-        UtilidadesTelas util = new UtilidadesTelas();
+        readonly UtilidadesTelas util = new UtilidadesTelas();
 
-        public void carregarItensSimples(int id)
+        public void CarregarItensSimples(int id)
         {
             try
             {
-                abrirConexao();
+                AbrirConexao();
 
                 comando = new MySqlCommand("select item.*, quantidade from usuarioitem "
                     + "join usuario on usuario.id = usuarioitem.id_usuario "
@@ -35,12 +35,14 @@ namespace ProtoMine.DAO
                 
                 while (reader.Read())
                 {
-                    ItemModel itemTemp = new ItemModel();
-                    itemTemp.Id = reader.GetInt32(0);
-                    itemTemp.Nome = reader.GetString(1);
-                    itemTemp.Peso = reader.GetDouble(2);
-                    itemTemp.UrlImg = reader.GetString(3);
-                    itemTemp.Quantidade = reader.GetInt32(5);
+                    ItemModel itemTemp = new ItemModel
+                    {
+                        Id = reader.GetInt32(0),
+                        Nome = reader.GetString(1),
+                        Peso = reader.GetDouble(2),
+                        UrlImg = reader.GetString(3),
+                        Quantidade = reader.GetInt32(5)
+                    };
                     ItemCache.ListaItens.Add(itemTemp);
                 }
             }
@@ -56,7 +58,7 @@ namespace ProtoMine.DAO
             }
             finally
             {
-                fecharConexao(); // Fecha a conexão
+                FecharConexao(); 
             }
         }
 
@@ -64,7 +66,7 @@ namespace ProtoMine.DAO
         {
             try
             {
-                abrirConexao();
+                AbrirConexao();
 
                 comando = new MySqlCommand("select * from item", conexao);
 
@@ -72,11 +74,13 @@ namespace ProtoMine.DAO
 
                 while (reader.Read())
                 {
-                    ItemModel itemTemp = new ItemModel();
-                    itemTemp.Id = reader.GetInt32(0);
-                    itemTemp.Nome = reader.GetString(1);
-                    itemTemp.Peso = reader.GetDouble(2);
-                    itemTemp.UrlImg = reader.GetString(3);
+                    ItemModel itemTemp = new ItemModel
+                    {
+                        Id = reader.GetInt32(0),
+                        Nome = reader.GetString(1),
+                        Peso = reader.GetDouble(2),
+                        UrlImg = reader.GetString(3)
+                    };
                     ItemCache.ListaGeral.Add(itemTemp.Id, itemTemp);
                 }
             }
@@ -92,7 +96,7 @@ namespace ProtoMine.DAO
             }
             finally
             {
-                fecharConexao(); // Fecha a conexão
+                FecharConexao(); 
             }
         }
 
@@ -100,7 +104,7 @@ namespace ProtoMine.DAO
         {
             try
             {
-                abrirConexao();
+                AbrirConexao();
 
                 comando = new MySqlCommand("update usuarioitem set quantidade = @quantidade " +
                     "where id_item = @idItem and id_usuario = @idUsu", conexao);
@@ -108,21 +112,22 @@ namespace ProtoMine.DAO
                 comando.Parameters.AddWithValue("@quantidade", item.Quantidade);
                 comando.Parameters.AddWithValue("@idItem", item.Id);
                 comando.Parameters.AddWithValue("@idUsu", UserCache.UsuarioLogado.Id);
+
                 comando.ExecuteNonQuery();
             }
             catch (MySqlException exce)
             {
-                util.MensagemDeTeste("Erro no load dos itens, falha na conexão ao banco de dados", "Erro!");
+                util.MensagemDeTeste("Erro ao atualizar os itens, falha na conexão ao banco de dados", "Erro!");
                 throw exce;
             }
             catch (Exception ex)
             {
-                util.MensagemDeTeste("Erro não esperado no load dos itens:  " + ex.Message, "Erro!");
+                util.MensagemDeTeste("Erro não esperado ao atualizar os itens:  " + ex.Message, "Erro!");
                 throw ex;
             }
             finally
             {
-                fecharConexao(); // Fecha a conexão
+                FecharConexao();
             }
         }
 

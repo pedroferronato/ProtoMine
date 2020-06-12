@@ -17,13 +17,12 @@ namespace ProtoMine.DAO
     class UsuarioDAO : Conexao
     {
         MySqlCommand comando = null;
-        UtilidadesTelas util = new UtilidadesTelas();
-
+        readonly UtilidadesTelas util = new UtilidadesTelas();
         public void Cadastro(Usuario user)
         {
             try
             {
-                abrirConexao();
+                AbrirConexao();
 
                 comando = new MySqlCommand("INSERT INTO usuario (nome,login,senha,role)" +
                     "VALUES (@nome, @login, @senha,@role)", conexao);
@@ -32,6 +31,7 @@ namespace ProtoMine.DAO
                 comando.Parameters.AddWithValue("@login", user.Login);
                 comando.Parameters.AddWithValue("@senha", user.Senha);
                 comando.Parameters.AddWithValue("@role", user.Role);
+
                 comando.ExecuteNonQuery();
             }
             catch (MySqlException exce)
@@ -46,7 +46,7 @@ namespace ProtoMine.DAO
             }
             finally
             {
-                fecharConexao();
+                FecharConexao();
             }
         }
 
@@ -54,7 +54,8 @@ namespace ProtoMine.DAO
         {
             try
             {
-                abrirConexao();
+                AbrirConexao();
+
                 comando = new MySqlCommand("UPDATE usuario SET nome = @nome, login = @login, senha = @senha ,role = @role " +
                     "WHERE login = @login", conexao);
 
@@ -62,6 +63,7 @@ namespace ProtoMine.DAO
                 comando.Parameters.AddWithValue("@login", user.Login);
                 comando.Parameters.AddWithValue("@senha", user.Senha);
                 comando.Parameters.AddWithValue("@role", user.Role);
+
                 comando.ExecuteNonQuery();
             }
             catch (MySqlException exce)
@@ -76,7 +78,7 @@ namespace ProtoMine.DAO
             }
             finally
             {
-                fecharConexao();
+                FecharConexao();
             }
         }
 
@@ -84,10 +86,14 @@ namespace ProtoMine.DAO
         {
             try
             {
-                abrirConexao();
+                AbrirConexao();
+
                 comando = new MySqlCommand("DELETE FROM usuario WHERE login = @login", conexao);
+
                 comando.Parameters.AddWithValue("@login", user.Login);
+
                 comando.ExecuteNonQuery();
+
                 util.MensagemDeTeste("O usuário foi excluido do jogo", "Delete Realizado");
             }
             catch (MySqlException exce)
@@ -102,7 +108,7 @@ namespace ProtoMine.DAO
             }
             finally
             {
-                fecharConexao();
+                FecharConexao();
             }
         }
 
@@ -111,13 +117,16 @@ namespace ProtoMine.DAO
         {
             try
             {
-                abrirConexao();
+                AbrirConexao();
 
                 DataTable dt = new DataTable();
+
                 MySqlDataAdapter da = new MySqlDataAdapter();
+
                 comando = new MySqlCommand("SELECT nome,login,nivel,experiencia,moeda,peso,capacidade,role FROM usuario", conexao);
 
                 da.SelectCommand = comando;
+
                 da.Fill(dt);
 
                 return dt;
@@ -134,15 +143,15 @@ namespace ProtoMine.DAO
             }
             finally
             {
-                fecharConexao();
+                FecharConexao();
             }
         }
 
-        public Usuario buscarLogin(string login, string senha) // Recebe Login e senha e conecta-se à base de dados 
+        public Usuario BuscarLogin(string login, string senha) // Recebe Login e senha e conecta-se à base de dados 
         {
             try // Tenta conectar-se e realziar a busca
             {
-                abrirConexao(); // Abre a conexão
+                AbrirConexao(); // Abre a conexão
 
                 comando = new MySqlCommand("select * from usuario where login = @LOGIN and senha = @SENHA", conexao);
                 // Define o comando SQL
@@ -169,6 +178,7 @@ namespace ProtoMine.DAO
                     user.Peso = reader.GetDouble(8);
                     user.Nivel = reader.GetInt32(9);
                 }
+
                 return user; // Retorna o usuario preenchido caso exista e somente com login e senha caso não exista 
                 //(o importante para verificação se trata do login ser diferente de 0 "valor padrão e nunca existente no banco de dados")
             }
@@ -184,15 +194,14 @@ namespace ProtoMine.DAO
             }
             finally
             {
-                fecharConexao(); // Fecha a conexão
+                FecharConexao(); // Fecha a conexão
             }
         }
-
         public void AtualizarUsuario()
         {
             try
             {
-                abrirConexao();
+                AbrirConexao();
 
                 comando = new MySqlCommand("update usuario set moeda = @moeda, " +
                     "experiencia = @experiencia, peso = @peso, nivel = @nivel, " +
@@ -219,7 +228,7 @@ namespace ProtoMine.DAO
             }
             finally
             {
-                fecharConexao(); // Fecha a conexão
+                FecharConexao(); // Fecha a conexão
             }
         }
     }

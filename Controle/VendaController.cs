@@ -10,7 +10,7 @@ namespace ProtoMine.Controle
 {
     class VendaController
     {
-        VendaDAO vendaDAO = new VendaDAO();
+        readonly VendaDAO vendaDAO = new VendaDAO();
 
         public void AdicionarVenda(Venda venda)
         {

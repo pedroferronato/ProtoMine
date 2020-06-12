@@ -17,15 +17,17 @@ namespace ProtoMine.Controle
 {
     class ItemController
     {
-        UtilidadesTelas util = new UtilidadesTelas();
-        ItemEspecialDAO itemEspecialDAO = new ItemEspecialDAO();
+        readonly UtilidadesTelas util = new UtilidadesTelas();
+
+        readonly ItemEspecialDAO itemEspecialDAO = new ItemEspecialDAO();
+
+        readonly ItemBasicoDAO itemDAO = new ItemBasicoDAO();
+
         public void CarregarItens(Principal principal)
         {
-            
-            ItemBasicoDAO itemDAO = new ItemBasicoDAO();
             try
             {
-                itemDAO.carregarItensSimples(UserCache.UsuarioLogado.Id);
+                itemDAO.CarregarItensSimples(UserCache.UsuarioLogado.Id);
                 foreach (ItemModel item in ItemCache.ListaItens)
                 {
                     AcrescentarPeso(item, principal);
@@ -45,11 +47,9 @@ namespace ProtoMine.Controle
 
         public void CarregarItensEspeciais()
         {
-
-            ItemEspecialDAO itemDAO = new ItemEspecialDAO();
             try
             {
-                itemDAO.carregarItensEspeciais();
+                itemEspecialDAO.CarregarItensEspeciais();
                 if (UserCache.Mochila != null)
                 {
                     UserCache.Mochila.CalcularPeso(); 
@@ -66,13 +66,12 @@ namespace ProtoMine.Controle
                 throw ex;
             }
         }
+
         public void CarregarMercado()
         {
-
-            ItemEspecialDAO itemDAO = new ItemEspecialDAO();
             try
             {
-                itemDAO.carregarItemEspecial();
+                itemEspecialDAO.CarregarItemEspecial();
             }
             catch (MySqlException exce)
             {
@@ -88,7 +87,6 @@ namespace ProtoMine.Controle
 
         public void BuscarTodos()
         {
-            ItemBasicoDAO itemDAO = new ItemBasicoDAO();
             try
             {
                 itemDAO.BuscarTodos();
@@ -122,8 +120,7 @@ namespace ProtoMine.Controle
                 foreach (ItemModel i in dropados)
                 {
                     if (ItemCache.ListaItens.Any(it => it.Id == i.Id))
-                    {
-
+                    { 
                         if (UserCache.UsuarioLogado.Peso + i.Quantidade > UserCache.UsuarioLogado.Capacidade)
                         {
                             util.MensagemDeTeste("O limite de peso excedeu!", "Atenção!");
@@ -183,7 +180,7 @@ namespace ProtoMine.Controle
             }
             else
             {
-                util.MensagemDeTeste("By: Carrinho", "Não suporto mais");
+                util.MensagemDeTeste("Limite da capacidade alcançado", "Capacidade");
             }
         }
 
@@ -279,6 +276,7 @@ namespace ProtoMine.Controle
                 throw ex;
             }
         }
+
         public void AtribuirItem(int id)
         {
             try

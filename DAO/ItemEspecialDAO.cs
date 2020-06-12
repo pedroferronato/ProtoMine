@@ -15,12 +15,12 @@ namespace ProtoMine.DAO
     class ItemEspecialDAO : Conexao
     {
         MySqlCommand comando = null;
-        UtilidadesTelas util = new UtilidadesTelas();
-        public void carregarItensEspeciais()
+        readonly UtilidadesTelas util = new UtilidadesTelas();
+        public void CarregarItensEspeciais()
         {
             try
             {
-                abrirConexao();
+                AbrirConexao();
 
                 comando = new MySqlCommand("select item.* from item "
                     + "join usuarioitem on item.id = usuarioitem.id_item "
@@ -34,12 +34,15 @@ namespace ProtoMine.DAO
 
                 while (reader.Read())
                 {
-                    ItemEspecial itemTemp = new ItemEspecial();
-                    itemTemp.Id = reader.GetInt32(0);
-                    itemTemp.Nome = reader.GetString(1);
-                    itemTemp.Peso = reader.GetDouble(2);
-                    itemTemp.UrlImg = reader.GetString(3);
-                    itemTemp.Tipo = reader.GetString(4);
+                    ItemEspecial itemTemp = new ItemEspecial
+                    {
+                        Id = reader.GetInt32(0),
+                        Nome = reader.GetString(1),
+                        Peso = reader.GetDouble(2),
+                        UrlImg = reader.GetString(3),
+                        Tipo = reader.GetString(4)
+                    };
+
                     if (itemTemp.Tipo == "pic")
                         UserCache.Picareta = itemTemp;
                     else
@@ -58,15 +61,15 @@ namespace ProtoMine.DAO
             }
             finally
             {
-                fecharConexao(); // Fecha a conexão
+                FecharConexao();
             }
 
         }
-        public void carregarItemEspecial()
+        public void CarregarItemEspecial()
         {
             try
             {
-                abrirConexao();
+                AbrirConexao();
 
                 comando = new MySqlCommand("select * from item "
                     + "where item.tipo != @TIPO", conexao);
@@ -78,12 +81,14 @@ namespace ProtoMine.DAO
 
                 while (reader.Read())
                 {
-                    ItemEspecial itemTemp = new ItemEspecial();
-                    itemTemp.Id = reader.GetInt32(0);
-                    itemTemp.Nome = reader.GetString(1);
-                    itemTemp.Peso = reader.GetDouble(2);
-                    itemTemp.UrlImg = reader.GetString(3);
-                    itemTemp.Tipo = reader.GetString(4);
+                    ItemEspecial itemTemp = new ItemEspecial
+                    {
+                        Id = reader.GetInt32(0),
+                        Nome = reader.GetString(1),
+                        Peso = reader.GetDouble(2),
+                        UrlImg = reader.GetString(3),
+                        Tipo = reader.GetString(4)
+                    };
                     ItemCache.ListaItensEspeciais.Add(itemTemp);
                 }
             }
@@ -99,7 +104,7 @@ namespace ProtoMine.DAO
             }
             finally
             {
-                fecharConexao(); // Fecha a conexão
+                FecharConexao();
             }
 
         }
@@ -107,7 +112,7 @@ namespace ProtoMine.DAO
         {
             try
             {
-                abrirConexao();
+                AbrirConexao();
 
                 comando = new MySqlCommand("Delete from usuarioitem "
                     + "where id_usuario = @id_usuario and id_item = @id_item", conexao);
@@ -129,7 +134,7 @@ namespace ProtoMine.DAO
             }
             finally
             {
-                fecharConexao(); // Fecha a conexão
+                FecharConexao();
             }
 
         }
@@ -138,7 +143,7 @@ namespace ProtoMine.DAO
         {
             try
             {
-                abrirConexao();
+                AbrirConexao();
 
                 comando = new MySqlCommand("INSERT INTO usuarioitem (id_usuario,id_item,quantidade)"
                     + "VALUES(@id_usuario,@id_item,@quantidade)", conexao);
@@ -161,7 +166,7 @@ namespace ProtoMine.DAO
             }
             finally
             {
-                fecharConexao(); // Fecha a conexão
+                FecharConexao();
             }
         }
     }

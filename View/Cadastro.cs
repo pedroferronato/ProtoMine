@@ -15,34 +15,35 @@ namespace ProtoMine.View
 {
     public partial class Cadastro : Form
     {
-        UtilidadesTelas util = new UtilidadesTelas();
-        Principal prin;
-        UsuarioController userController = new UsuarioController();
+        readonly UtilidadesTelas util = new UtilidadesTelas();
 
-        public Cadastro(Principal form)
+        readonly UsuarioController userController = new UsuarioController();
+
+        public Cadastro()
         {
-            
-            prin = form;
             InitializeComponent();
+
             try
             {
                 tabela.DataSource = userController.Listar();
             }
             catch (MySqlException exce)
             {
-                util.MensagemDeTeste("Erro no login, falha na conexão ao banco de dados", "Erro!");
+                util.MensagemDeTeste("Erro no load de usuários, falha na conexão ao banco de dados", "Erro!");
                 throw exce;
             }
             catch (Exception ex)
             {
-                util.MensagemDeTeste("Erro inesperado no load dos cadastros:  " + ex.Message, "Erro!");
+                util.MensagemDeTeste("Erro inesperado no load de usuários:  " + ex.Message, "Erro!");
                 throw ex;
             }
+
             lbNome.Visible = false;
             lbpass.Visible = false;
             lbConf.Visible = false;
             lbLogin.Visible = false;
             btnAtualizar.Visible = false;
+
             tabela.Columns[0].HeaderText = "Nome";
             tabela.Columns[1].HeaderText = "Login";
             tabela.Columns[2].HeaderText = "Nível";
@@ -56,29 +57,21 @@ namespace ProtoMine.View
         private void NomeEnter(object sender, EventArgs e)
         {
             if (lbNome.Visible)
-            {
                 lbNome.Visible = false;
-            }
             if (txtnomeUsu.Text == "Nome de Usuário")
-            {
                 txtnomeUsu.Text = "";
-            }
         }
 
         private void NomeLeave(object sender, EventArgs e)
         {
             if (txtnomeUsu.Text == "")
-            {
                 txtnomeUsu.Text = "Nome de Usuário";
-            }
         }
 
         private void SenhaEnter(object sender, EventArgs e)
         {
             if (lbpass.Visible)
-            {
                 lbpass.Visible = false;
-            }
             if (txtSenha.Text == "Senha")
             {
                 txtSenha.Text = "";
@@ -98,9 +91,7 @@ namespace ProtoMine.View
         private void EnterConfSenha(object sender, EventArgs e)
         {
             if (lbConf.Visible)
-            {
                 lbConf.Visible = false;
-            }
             if (txtConfSenha.Text == "Confirme a senha")
             {
                 txtConfSenha.Text = "";
@@ -120,9 +111,7 @@ namespace ProtoMine.View
         private void EnterLogin(object sender, EventArgs e)
         {
             if (lbLogin.Visible)
-            {
                 lbLogin.Visible = false;
-            }
             if (txtlogin.Text == "Login")
             {
                 txtlogin.Text = "";
@@ -132,38 +121,31 @@ namespace ProtoMine.View
         private void LeaveLogin(object sender, EventArgs e)
         {
             if (txtlogin.Text == "")
-            {
                 txtlogin.Text = "Login";
-            }
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             if (txtlogin.Text == "Login")
-            {
                 lbLogin.Visible = true;
-            }
             if (txtSenha.Text == "Senha")
-            {
                 lbpass.Visible = true;
-            }
             if (txtConfSenha.Text == "Confirme a senha")
-            {
                 lbConf.Visible = true;
-            }
             if (txtnomeUsu.Text == "Nome de Usuário")
-            {
                 lbNome.Visible = true;
-            }
 
             if (!(lbNome.Visible || lbConf.Visible || lbpass.Visible || lbLogin.Visible))
             {
                 if (txtConfSenha.Text == txtSenha.Text)
                 {
-                    Usuario novoUsuario = new Usuario();
-                    novoUsuario.Login = txtlogin.Text;
-                    novoUsuario.Senha = txtSenha.Text;
-                    novoUsuario.Nome = txtnomeUsu.Text;
+                    Usuario novoUsuario = new Usuario
+                    {
+                        Login = txtlogin.Text,
+                        Senha = txtSenha.Text,
+                        Nome = txtnomeUsu.Text
+                    };
+
                     if (checkRole.Checked)
                         novoUsuario.Role = "admin";
                     else
@@ -205,20 +187,20 @@ namespace ProtoMine.View
             }
         }
 
-
         private void getDados(object sender, DataGridViewCellMouseEventArgs e)
         {
             txtnomeUsu.Text = tabela.CurrentRow.Cells[0].Value.ToString();
             txtlogin.Text = tabela.CurrentRow.Cells[1].Value.ToString();
             txtSenha.Text = "Senha";
             txtConfSenha.Text = "Confirme a senha";
+
             if (tabela.CurrentRow.Cells[7].Value.ToString() == "admin")
                 checkRole.Checked = true;
             else
                 checkRole.Checked = false;
+
             btnAtualizar.Visible = true;
             btnCadastrar.Visible = false;
-
         }
 
         private void deletarDados(object sender, DataGridViewCellEventArgs e)
@@ -232,8 +214,10 @@ namespace ProtoMine.View
             {
                 if (confirmResult == DialogResult.Yes)
                 {
-                    Usuario user = new Usuario();
-                    user.Login = tabela.CurrentRow.Cells[1].Value.ToString();
+                    Usuario user = new Usuario
+                    {
+                        Login = tabela.CurrentRow.Cells[1].Value.ToString()
+                    };
                     userController.Deletar(user);
                     tabela.DataSource = usuarioController.Listar();
                 }
@@ -254,30 +238,25 @@ namespace ProtoMine.View
         private void Atualizar(object sender, EventArgs e)
         {
             if (txtlogin.Text == "Login")
-            {
                 lbLogin.Visible = true;
-            }
             if (txtSenha.Text == "Senha")
-            {
                 lbpass.Visible = true;
-            }
             if (txtConfSenha.Text == "Confirme a senha")
-            {
                 lbConf.Visible = true;
-            }
             if (txtnomeUsu.Text == "Nome de Usuário")
-            {
                 lbNome.Visible = true;
-            }
 
             if (!(lbNome.Visible || lbConf.Visible || lbpass.Visible || lbLogin.Visible))
             {
                 if (txtConfSenha.Text == txtSenha.Text)
                 {
-                    Usuario novoUsuario = new Usuario();
-                    novoUsuario.Login = txtlogin.Text;
-                    novoUsuario.Senha = txtSenha.Text;
-                    novoUsuario.Nome = txtnomeUsu.Text;
+                    Usuario novoUsuario = new Usuario
+                    {
+                        Login = txtlogin.Text,
+                        Senha = txtSenha.Text,
+                        Nome = txtnomeUsu.Text
+                    };
+
                     if (checkRole.Checked)
                         novoUsuario.Role = "admin";
                     else
@@ -325,6 +304,7 @@ namespace ProtoMine.View
             txtnomeUsu.Text = "Nome de Usuário";
             txtSenha.Text = "Senha";
             txtConfSenha.Text = "Confirme a senha";
+
             checkRole.Checked = false;
             btnAtualizar.Visible = false;
             btnCadastrar.Visible = true;

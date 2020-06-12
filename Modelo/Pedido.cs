@@ -28,8 +28,6 @@ namespace ProtoMine.Modelo
             Quantidade = quantidade;
         }
 
-        public Pedido()
-        {
-        }
+        public Pedido() { }
     }
 }

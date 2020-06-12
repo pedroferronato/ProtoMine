@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualBasic.ApplicationServices;
+using MySql.Data.MySqlClient;
 using ProtoMine.Cache;
 using ProtoMine.Controle;
 using ProtoMine.Modelo;
@@ -16,15 +17,16 @@ namespace ProtoMine.View
 {
     public partial class Loja : Form
     {
-        Principal telaPrincipal;
-        UtilidadesTelas util = new UtilidadesTelas();
-        ItemController itemController = new ItemController();
+        readonly Principal telaPrincipal;
+
+        readonly UtilidadesTelas util = new UtilidadesTelas();
+
+        readonly ItemController itemController = new ItemController();
 
         public Loja(Principal principal)
         {
             InitializeComponent();
             telaPrincipal = principal;
-            
         }
 
         private void AbrirPedidos(object sender, EventArgs e)
@@ -70,7 +72,6 @@ namespace ProtoMine.View
                 bool resposta = util.MensagemDeConfirmacao("Deseja comprar ?", "Compra");
                 if (resposta)
                 {
-
                     if (telaPrincipal.itensEspeciais.Count == 1)
                     {
                         UserCache.Mochila = ItemCache.ListaItensEspeciais.Find(l => l.Nome == item);
@@ -78,8 +79,24 @@ namespace ProtoMine.View
                         telaPrincipal.AbrirTela(telaPrincipal.itensEspeciais[1], telaPrincipal.lbEspeciais[1]);
                         UserCache.UsuarioLogado.Moeda -= valor;
                         telaPrincipal.money.Text = UserCache.UsuarioLogado.Moeda + " $";
-                        itemController.AtribuirItem(UserCache.Mochila.Id);
+
+                        try
+                        {
+                            itemController.AtribuirItem(UserCache.Mochila.Id);
+                        }
+                        catch (MySqlException exce)
+                        {
+                            util.MensagemDeTeste("Erro ao atribuir itens, falha na conexão ao banco de dados", "Erro!");
+                            throw exce;
+                        }
+                        catch (Exception ex)
+                        {
+                            util.MensagemDeTeste("Erro não esperado ao atribuir itens:  " + ex.Message, "Erro!");
+                            throw ex;
+                        }
+
                         UserCache.Mochila.CalcularPeso();
+
                         if (UserCache.UsuarioLogado.Peso < UserCache.UsuarioLogado.Capacidade)
                             ItemCache.Carregado = false;
                         else
@@ -92,14 +109,44 @@ namespace ProtoMine.View
                     else
                     {
                         double capacidadeAntiga = UserCache.Mochila.Peso * 100;
-                        itemController.DeletarItem(UserCache.Mochila.Id);
+
+                        try
+                        {
+                            itemController.DeletarItem(UserCache.Mochila.Id);
+                        }
+                        catch (MySqlException exce)
+                        {
+                            util.MensagemDeTeste("Erro ao excluir itens, falha na conexão ao banco de dados", "Erro!");
+                            throw exce;
+                        }
+                        catch (Exception ex)
+                        {
+                            util.MensagemDeTeste("Erro não esperado ao excluir itens:  " + ex.Message, "Erro!");
+                            throw ex;
+                        }
+
                         UserCache.Mochila = ItemCache.ListaItensEspeciais.Find(l => l.Nome == item);
                         UserCache.UsuarioLogado.Moeda -= valor;
                         telaPrincipal.AbrirTela(new ItemEspecialView(UserCache.Mochila), telaPrincipal.lbEspeciais[1]);
                         telaPrincipal.money.Text = UserCache.UsuarioLogado.Moeda + " $";
-                        itemController.AtribuirItem(UserCache.Mochila.Id);
+                        try
+                        {
+                            itemController.AtribuirItem(UserCache.Mochila.Id);
+                        }
+                        catch (MySqlException exce)
+                        {
+                            util.MensagemDeTeste("Erro ao atribuir itens, falha na conexão ao banco de dados", "Erro!");
+                            throw exce;
+                        }
+                        catch (Exception ex)
+                        {
+                            util.MensagemDeTeste("Erro não esperado ao atribuir itens:  " + ex.Message, "Erro!");
+                            throw ex;
+                        }
+
                         UserCache.Mochila.CalcularPeso();
                         UserCache.UsuarioLogado.Capacidade -= capacidadeAntiga;
+
                         if (UserCache.UsuarioLogado.Peso < UserCache.UsuarioLogado.Capacidade)
                             ItemCache.Carregado = false;
                         else
@@ -125,12 +172,38 @@ namespace ProtoMine.View
                     }
                     else
                     {
-                        itemController.DeletarItem(UserCache.Picareta.Id);
+                        try
+                        {
+                            itemController.DeletarItem(UserCache.Picareta.Id);
+                        }
+                        catch (MySqlException exce)
+                        {
+                            util.MensagemDeTeste("Erro ao excluir itens, falha na conexão ao banco de dados", "Erro!");
+                            throw exce;
+                        }
+                        catch (Exception ex)
+                        {
+                            util.MensagemDeTeste("Erro não esperado ao excluir itens:  " + ex.Message, "Erro!");
+                            throw ex;
+                        }
                         UserCache.Picareta = ItemCache.ListaItensEspeciais.Find(l => l.Nome == item);
                         UserCache.UsuarioLogado.Moeda -= valor;
                         telaPrincipal.AbrirTela(new ItemEspecialView(UserCache.Picareta), telaPrincipal.lbEspeciais[0]);
                         telaPrincipal.money.Text = UserCache.UsuarioLogado.Moeda + " $";
-                        itemController.AtribuirItem(UserCache.Picareta.Id);
+                        try
+                        {
+                            itemController.AtribuirItem(UserCache.Picareta.Id);
+                        }
+                        catch (MySqlException exce)
+                        {
+                            util.MensagemDeTeste("Erro ao atribuir itens, falha na conexão ao banco de dados", "Erro!");
+                            throw exce;
+                        }
+                        catch (Exception ex)
+                        {
+                            util.MensagemDeTeste("Erro não esperado ao atribuir itens:  " + ex.Message, "Erro!");
+                            throw ex;
+                        }
                     }
                 }
             }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualBasic.ApplicationServices;
 using Microsoft.VisualBasic.Devices;
+using MySql.Data.MySqlClient;
 using ProtoMine.Cache;
 using ProtoMine.Controle;
 using ProtoMine.Modelo;
@@ -26,15 +27,15 @@ namespace ProtoMine.View
         
         public List<Panel> lbEspeciais = new List<Panel>();
 
-        ItemController itemController = new ItemController();
+        readonly ItemController itemController = new ItemController();
 
-        UtilidadesTelas util = new UtilidadesTelas();
+        readonly UtilidadesTelas util = new UtilidadesTelas();
 
         int pepega = 1;
 
-        Usuario usuLogado = UserCache.UsuarioLogado;
+        readonly Usuario usuLogado = UserCache.UsuarioLogado;
 
-        public Principal(Form login)
+        public Principal()
         {
             InitializeComponent();
             UserCache.UsuarioLogado.Peso = 0;
@@ -129,20 +130,24 @@ namespace ProtoMine.View
             }
         }
 
-        MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-        
-        private void FecharAplicacao(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Deseja realmente sair?", "Sair", buttons) == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-        }
+        readonly MessageBoxButtons buttons = MessageBoxButtons.YesNo;
 
         public void GerarDict()
         {
-            ItemController itemController = new ItemController();
-            itemController.BuscarTodos();
+            try
+            {
+                itemController.BuscarTodos();
+            }
+            catch (MySqlException exce)
+            {
+                util.MensagemDeTeste("Erro ao buscar itens, falha na conexão ao banco de dados", "Erro!");
+                throw exce;
+            }
+            catch (Exception ex)
+            {
+                util.MensagemDeTeste("Erro não esperado ao buscar itens:  " + ex.Message, "Erro!");
+                throw ex;
+            }
         }
 
         public void AbrirTela(object formGen, Panel fundoBase)
@@ -165,9 +170,15 @@ namespace ProtoMine.View
                 {
                     SalvarUsuario();
                 }
-                catch (Exception)
+                catch (MySqlException exce)
                 {
-                    throw;
+                    util.MensagemDeTeste("Erro ao salvar usuario, falha na conexão ao banco de dados", "Erro!");
+                    throw exce;
+                }
+                catch (Exception ex)
+                {
+                    util.MensagemDeTeste("Erro não esperado ao salvar usuario:  " + ex.Message, "Erro!");
+                    throw ex;
                 }
                 finally
                 {
@@ -184,9 +195,15 @@ namespace ProtoMine.View
                 {
                     SalvarUsuario();
                 }
-                catch (Exception)
+                catch (MySqlException exce)
                 {
-                    throw;
+                    util.MensagemDeTeste("Erro ao salvar usuario, falha na conexão ao banco de dados", "Erro!");
+                    throw exce;
+                }
+                catch (Exception ex)
+                {
+                    util.MensagemDeTeste("Erro não esperado ao salvar usuario:  " + ex.Message, "Erro!");
+                    throw ex;
                 }
                 finally
                 {
@@ -199,7 +216,7 @@ namespace ProtoMine.View
         {
             Minerar miner = new Minerar(this);
             pepega++;
-            if (pepega >= 10)
+            if (pepega >= 20)
             {
                 Pepega easter = new Pepega();
                 AbrirTela(easter, panelPrincipal);
@@ -210,7 +227,7 @@ namespace ProtoMine.View
 
         private void Cadastrar(object sender, EventArgs e)
         {
-            Cadastro telaCadastro = new Cadastro(this);
+            Cadastro telaCadastro = new Cadastro();
             AbrirTela(telaCadastro, panelPrincipal);
         }
 
@@ -222,12 +239,38 @@ namespace ProtoMine.View
 
         private void SalvarUsuario()
         {
-            ItemController itemController = new ItemController();
             UsuarioController usuarioController = new UsuarioController();
-            usuarioController.AtualizarUsuario();
+            try
+            {
+                usuarioController.AtualizarUsuario();
+            }
+            catch (MySqlException exce)
+            {
+                util.MensagemDeTeste("Erro ao salvar usuario, falha na conexão ao banco de dados", "Erro!");
+                throw exce;
+            }
+            catch (Exception ex)
+            {
+                util.MensagemDeTeste("Erro não esperado ao salvar usuario:  " + ex.Message, "Erro!");
+                throw ex;
+            }
+            
             foreach (ItemModel item in ItemCache.ListaItens)
             {
-                itemController.AtualizarItem(item);
+                try
+                {
+                    itemController.AtualizarItem(item);
+                }
+                catch (MySqlException exce)
+                {
+                    util.MensagemDeTeste("Erro ao atualizar item, falha na conexão ao banco de dados", "Erro!");
+                    throw exce;
+                }
+                catch (Exception ex)
+                {
+                    util.MensagemDeTeste("Erro não esperado ao atualizar item:  " + ex.Message, "Erro!");
+                    throw ex;
+                }
             }
         }
 

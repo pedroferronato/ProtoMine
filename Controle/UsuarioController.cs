@@ -15,8 +15,10 @@ namespace ProtoMine.Controle
     class UsuarioController
     {
         Usuario user = new Usuario();
-        UtilidadesTelas util = new UtilidadesTelas();
-        UsuarioDAO userDAO = new UsuarioDAO();
+
+        readonly UtilidadesTelas util = new UtilidadesTelas();
+
+        readonly UsuarioDAO userDAO = new UsuarioDAO();
 
         public void Cadastrar(Usuario usuario)
         {
@@ -35,6 +37,7 @@ namespace ProtoMine.Controle
                 throw ex;
             }
         }
+
         public void Alterar(Usuario usuario)
         {
             try
@@ -52,6 +55,7 @@ namespace ProtoMine.Controle
                 throw ex;
             }
         }
+
         public void Deletar(Usuario usuario)
         {
             try
@@ -94,14 +98,12 @@ namespace ProtoMine.Controle
         {
 			try
 			{
-				user = userDAO.buscarLogin(login, senha); // Realiza a conexão da tela com o DAO
+				user = userDAO.BuscarLogin(login, senha); // Realiza a conexão da tela com o DAO
                 if (user.Id != 0)
                 {
                     UserCache.UsuarioLogado = user;
                     if (user.Nivel == 20)
-                    {
                         UserCache.Mestre = true;
-                    }
                     return true;
                 }
                 return false;

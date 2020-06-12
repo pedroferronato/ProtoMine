@@ -15,10 +15,12 @@ namespace ProtoMine.View
 {
     public partial class GerenciarItem : Form
     {
-        ItemModel itemModel = new ItemModel();
-        ItemController itemController = new ItemController();
-        Principal prin;
-        ItemModel itemPedido;
+        readonly ItemModel itemModel = new ItemModel();
+
+        readonly Principal prin;
+
+        readonly ItemModel itemPedido;
+
         public GerenciarItem(int id, Principal principal, ItemModel item)
         {
             InitializeComponent();
@@ -26,6 +28,7 @@ namespace ProtoMine.View
             prin = principal;
             itemPedido = item;
         }
+
         private void FecharTela(object sender, EventArgs e)
         {
             Close();

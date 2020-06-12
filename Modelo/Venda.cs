@@ -27,8 +27,6 @@ namespace ProtoMine.Modelo
             Pedido = pedido;
         }
 
-        public Venda()
-        {
-        }
+        public Venda() { }
     }
 }

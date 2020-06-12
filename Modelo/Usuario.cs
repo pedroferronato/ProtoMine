@@ -20,10 +20,7 @@ namespace ProtoMine.Modelo
         public double Peso { get; set; }
         public int Nivel { get; set; }
 
-        public Usuario ()
-        {
-
-        }
+        public Usuario () { }
 
         public Usuario (string login, string senha)
         {

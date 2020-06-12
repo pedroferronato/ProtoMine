@@ -8,10 +8,7 @@ namespace ProtoMine.Modelo
 {
     public class ItemModel : ItemAbstract
     {
-        public ItemModel()
-        {
-            Tipo = "Comum";
-        }
+        public ItemModel() { }
 
         public ItemModel(int id, string nome, double peso, string urlImg, int quantidade)
         {
@@ -20,7 +17,6 @@ namespace ProtoMine.Modelo
             Peso = peso;
             UrlImg = urlImg;
             Quantidade = quantidade;
-            Tipo = "Comum";
         }
 
         public override double CalcularPeso()

@@ -19,7 +19,7 @@ namespace ProtoMine
 {
     public partial class Login : Form
     {
-        UtilidadesTelas util = new UtilidadesTelas();
+        readonly UtilidadesTelas util = new UtilidadesTelas();
         public Login()
         {
             InitializeComponent();
@@ -29,6 +29,7 @@ namespace ProtoMine
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+
         private extern static void SendMessage(IntPtr hwmd, int wmsg, int wparam, int lparam);
 
         private void onClickSair(object sender, EventArgs e)
@@ -39,9 +40,7 @@ namespace ProtoMine
         private void txtUsuario_Enter(object sender, EventArgs e)
         {
             if (txtUsuario.Text == "USUARIO")
-            {
                 txtUsuario.Text = "";
-            }
         }
 
         private void txtUsuario_Leave(object sender, EventArgs e)
@@ -130,7 +129,7 @@ namespace ProtoMine
             if (logado) // Caso login válido
             {
                 this.Hide(); // Esconde tela de login
-                Principal p = new Principal(this); // Instancia tela principal
+                Principal p = new Principal(); // Instancia tela principal
                 p.ShowDialog(); // Apresenta tela principal
             }
             else // Caso login inválido

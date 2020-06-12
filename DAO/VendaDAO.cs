@@ -12,13 +12,13 @@ namespace ProtoMine.DAO
     class VendaDAO : Conexao
     {
         MySqlCommand comando = null;
-        UtilidadesTelas util = new UtilidadesTelas();
+        readonly UtilidadesTelas util = new UtilidadesTelas();
 
         public List<Venda> BuscarVendas()
         {
             try
             {
-                abrirConexao();
+                AbrirConexao();
 
                 comando = new MySqlCommand("select * from venda ", conexao);
 
@@ -28,9 +28,11 @@ namespace ProtoMine.DAO
 
                 while (reader.Read())
                 {
-                    Venda venda = new Venda();
-                    venda.Id = reader.GetInt32(0);
-                    venda.Valor = reader.GetDouble(1);
+                    Venda venda = new Venda
+                    {
+                        Id = reader.GetInt32(0),
+                        Valor = reader.GetDouble(1)
+                    };
                     venda.Comprador.Id = reader.GetInt32(2);
                     venda.Vendedor.Id = reader.GetInt32(3);
                     venda.Item.Id = reader.GetInt32(4);
@@ -38,6 +40,7 @@ namespace ProtoMine.DAO
                     venda.Pedido.Id = reader.GetInt32(6);
                     listaDeVendas.Add(venda);
                 }
+
                 return listaDeVendas;
             }
             catch (MySqlException exce)
@@ -52,7 +55,7 @@ namespace ProtoMine.DAO
             }
             finally
             {
-                fecharConexao();
+                FecharConexao();
             }
         }
 
@@ -60,7 +63,7 @@ namespace ProtoMine.DAO
         {
             try
             {
-                abrirConexao();
+                AbrirConexao();
 
                 comando = new MySqlCommand("INSERT INTO venda (valor, id_comprador, id_vendedor, " +
                     "id_item, valorUnitario, id_pedido) " +
@@ -87,7 +90,7 @@ namespace ProtoMine.DAO
             }
             finally
             {
-                fecharConexao();
+                FecharConexao();
             }
         }
 
@@ -95,7 +98,7 @@ namespace ProtoMine.DAO
         {
             try
             {
-                abrirConexao();
+                AbrirConexao();
 
                 comando = new MySqlCommand("select avg(valorUnitario) from venda where id_item = @id limit 50", conexao);
 
@@ -111,6 +114,7 @@ namespace ProtoMine.DAO
                 {
                     media = Convert.ToInt32(Math.Truncate(reader.GetDouble(0)));
                 }
+
                 return media;
             }
             catch (MySqlException exce)
@@ -125,7 +129,7 @@ namespace ProtoMine.DAO
             }
             finally
             {
-                fecharConexao();
+                FecharConexao();
             }
         }
     }
