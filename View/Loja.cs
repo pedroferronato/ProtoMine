@@ -29,7 +29,7 @@ namespace ProtoMine.View
 
         private void AbrirPedidos(object sender, EventArgs e)
         {
-            LojaPedidos telaPedidos = new LojaPedidos();
+            LojaPedidos telaPedidos = new LojaPedidos(telaPrincipal);
             telaPrincipal.AbrirTela(telaPedidos, telaPrincipal.panelPrincipal);
         }
 

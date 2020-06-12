@@ -24,7 +24,7 @@ namespace ProtoMine.DAO
 
                 DataTable dt = new DataTable();
                 MySqlDataAdapter da = new MySqlDataAdapter();
-                comando = new MySqlCommand("select item.nome, pedido.quantidade, pedido.valor, pedido.tipo from pedido" +
+                comando = new MySqlCommand("select item.nome, pedido.quantidade, pedido.valor, pedido.tipo, pedido.id, pedido.id_usuario, item.id from pedido" +
                     " join item on item.id = pedido.id_item" +
                     " where pedido.id_usuario != @id" +
                     " and pedido.tipo != @tipo" +

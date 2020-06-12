@@ -43,6 +43,14 @@ namespace ProtoMine.View
             lbConf.Visible = false;
             lbLogin.Visible = false;
             btnAtualizar.Visible = false;
+            tabela.Columns[0].HeaderText = "Nome";
+            tabela.Columns[1].HeaderText = "Login";
+            tabela.Columns[2].HeaderText = "Nível";
+            tabela.Columns[3].HeaderText = "Experiência";
+            tabela.Columns[4].HeaderText = "Moeda";
+            tabela.Columns[5].HeaderText = "Peso";
+            tabela.Columns[6].HeaderText = "Capacidade";
+            tabela.Columns[7].HeaderText = "Permissão";
         }
 
         private void NomeEnter(object sender, EventArgs e)

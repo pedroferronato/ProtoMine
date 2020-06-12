@@ -56,6 +56,7 @@
     <Compile Include="Controle\PedidosController.cs" />
     <Compile Include="Controle\UsuarioController.cs" />
     <Compile Include="Controle\UtilidadesTelas.cs" />
+    <Compile Include="Controle\VendaController.cs" />
     <Compile Include="DAO\Conexao.cs" />
     <Compile Include="DAO\ItemBasicoDAO.cs" />
     <Compile Include="DAO\ItemEspecialDAO.cs" />

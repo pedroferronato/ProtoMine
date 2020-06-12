@@ -52,7 +52,42 @@ namespace ProtoMine.DAO
             }
             finally
             {
-                fecharConexao(); // Fecha a conexão
+                fecharConexao();
+            }
+        }
+
+        public void AdicionarVenda(Venda venda)
+        {
+            try
+            {
+                abrirConexao();
+
+                comando = new MySqlCommand("INSERT INTO venda (valor, id_comprador, id_vendedor, " +
+                    "id_item, valorUnitario, id_pedido) " +
+                    "VALUES (@valor, @idComprador, @idVendedor, @idItem, @valUnit, @idPedido)", conexao);
+
+                comando.Parameters.AddWithValue("@valor", venda.Valor);
+                comando.Parameters.AddWithValue("@idComprador", venda.Comprador.Id);
+                comando.Parameters.AddWithValue("@idVendedor", venda.Vendedor.Id);
+                comando.Parameters.AddWithValue("@idItem", venda.Item.Id);
+                comando.Parameters.AddWithValue("@valUnit", venda.ValorUnitario);
+                comando.Parameters.AddWithValue("@idPedido", venda.Pedido.Id);
+
+                comando.ExecuteNonQuery();
+            }
+            catch (MySqlException exce)
+            {
+                util.MensagemDeTeste("Erro na criação de venda, falha na conexão ao banco de dados", "Erro!");
+                throw exce;
+            }
+            catch (Exception ex)
+            {
+                util.MensagemDeTeste("Erro não esperado na criação de venda:  " + ex.Message, "Erro!");
+                throw ex;
+            }
+            finally
+            {
+                fecharConexao();
             }
         }
     }

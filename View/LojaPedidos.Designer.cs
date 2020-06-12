@@ -42,6 +42,8 @@
             this.tabela.Name = "tabela";
             this.tabela.Size = new System.Drawing.Size(450, 267);
             this.tabela.TabIndex = 0;
+            this.tabela.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ComprarPedido);
+            this.tabela.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ComprarPedidoVenda);
             // 
             // cbTIpo
             // 
