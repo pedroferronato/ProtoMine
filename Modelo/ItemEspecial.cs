@@ -27,7 +27,7 @@ namespace ProtoMine.Modelo
         public override double CalcularPeso() {
             if (Tipo == "bag")
             {
-                UserCache.UsuarioLogado.Capacidade += (Peso * 100);
+                UserCache.UsuarioLogado.Capacidade = (Peso * 100);
             }
             return 0.0;
         }
