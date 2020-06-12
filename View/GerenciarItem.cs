@@ -33,7 +33,6 @@ namespace ProtoMine.View
 
         private void JogarFora(object sender, EventArgs e)
         {
-            Hide();
             try
             {
                 Close();
@@ -51,7 +50,6 @@ namespace ProtoMine.View
 
         private void AbrirPedidoVenda(object sender, EventArgs e)
         {
-            Hide();
             try
             {
                 Close();

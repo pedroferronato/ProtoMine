@@ -68,14 +68,16 @@ namespace ProtoMine.View
                     TelaPrincipal.inventario[itemEscolhido.Id - 1].labQuant.Text =
                         (Convert.ToInt32(TelaPrincipal.inventario[itemEscolhido.Id - 1].labQuant.Text) - pedido.Quantidade).ToString();
                     ItemCache.ListaItens[itemEscolhido.Id - 1].Quantidade -= pedido.Quantidade;
-                    UserCache.UsuarioLogado.Peso -= itemEscolhido.Peso * pedido.Quantidade;
-                    TelaPrincipal.lbPeso.Text = UserCache.UsuarioLogado.Peso.ToString() + " Kg";
+                    UserCache.UsuarioLogado.Peso -= Math.Truncate(itemEscolhido.Peso * pedido.Quantidade);
                     ItemController itemController = new ItemController();
                     itemController.VerificarCor(TelaPrincipal);
                     if (UserCache.UsuarioLogado.Peso < UserCache.UsuarioLogado.Capacidade)
                         ItemCache.Carregado = false;
                     else
                         ItemCache.Carregado = true;
+                    if (UserCache.UsuarioLogado.Peso < 0)
+                        UserCache.UsuarioLogado.Peso = 0.0;
+                    TelaPrincipal.lbPeso.Text = Convert.ToInt32(UserCache.UsuarioLogado.Peso).ToString() + " Kg";
                 }
                 catch (Exception)
                 {
@@ -87,13 +89,20 @@ namespace ProtoMine.View
             {
                 ItemCache.ListaItens[itemEscolhido.Id - 1].Quantidade -= Convert.ToInt32(numQuantidade.Value);
                 UserCache.UsuarioLogado.Peso -= itemEscolhido.Peso * Convert.ToInt32(numQuantidade.Value);
-                TelaPrincipal.lbPeso.Text = UserCache.UsuarioLogado.Peso.ToString() + " Kg";
                 ItemController itemController = new ItemController();
                 itemController.VerificarCor(TelaPrincipal);
                 TelaPrincipal.inventario[itemEscolhido.Id - 1].labQuant.Text =
                         (Convert.ToInt32(TelaPrincipal.inventario[itemEscolhido.Id - 1].labQuant.Text) - Convert.ToInt32(numQuantidade.Value)).ToString();
                 UserCache.UsuarioLogado.Moeda += Convert.ToInt32(txtValorTotal.Text);
                 TelaPrincipal.money.Text = UserCache.UsuarioLogado.Moeda.ToString() + " $";
+                if (UserCache.UsuarioLogado.Peso < UserCache.UsuarioLogado.Capacidade)
+                    ItemCache.Carregado = false;
+                else
+                    ItemCache.Carregado = true;
+                if (UserCache.UsuarioLogado.Peso < 0)
+                    UserCache.UsuarioLogado.Peso = 0.0;
+                TelaPrincipal.lbPeso.Text = UserCache.UsuarioLogado.Peso.ToString() + " Kg";
+
             }
             Close();
         }

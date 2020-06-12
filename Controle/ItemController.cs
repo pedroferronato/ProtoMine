@@ -126,7 +126,7 @@ namespace ProtoMine.Controle
 
                         if (UserCache.UsuarioLogado.Peso + i.Quantidade > UserCache.UsuarioLogado.Capacidade)
                         {
-                            util.MensagemDeTeste("Peso estourou", "Aaaaa");
+                            util.MensagemDeTeste("O limite de peso excedeu!", "Atenção!");
                             ItemCache.ListaItens[i.Id - 1].Quantidade += i.Quantidade;
                             ItemCache.Carregado = true;
                             listaDrops[i.Id - 1].Text = i.Quantidade.ToString();

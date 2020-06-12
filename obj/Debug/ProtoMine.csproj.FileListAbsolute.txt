@@ -206,3 +206,4 @@ C:\Users\pedro\Desktop\ProtomineGitHub\ProtoMine\obj\Debug\ProtoMine.csproj.Copy
 C:\Users\pedro\Desktop\ProtomineGitHub\ProtoMine\obj\Debug\ProtoMine.exe
 C:\Users\pedro\Desktop\ProtomineGitHub\ProtoMine\obj\Debug\ProtoMine.pdb
 C:\Users\pedro\Desktop\ProtomineGitHub\ProtoMine\obj\Debug\ProtoMine.View.CriacaoPedido.resources
+C:\Users\55699\source\repos\ProtoMine\obj\Debug\ProtoMine.View.CriacaoPedido.resources
