@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.PanelTopo = new System.Windows.Forms.Panel();
             this.lbNivel = new System.Windows.Forms.Label();
@@ -57,6 +58,11 @@
             this.panelExpecial2 = new System.Windows.Forms.Panel();
             this.panelExpecial1 = new System.Windows.Forms.Panel();
             this.panelPrincipal = new System.Windows.Forms.Panel();
+            this.toolTipAdm = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipMinerar = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipLoja = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipReiniciar = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipDesligar = new System.Windows.Forms.ToolTip(this.components);
             this.PanelTopo.SuspendLayout();
             this.panPesoBaixo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPeso)).BeginInit();
@@ -374,6 +380,26 @@
             this.panelPrincipal.Size = new System.Drawing.Size(880, 620);
             this.panelPrincipal.TabIndex = 2;
             // 
+            // toolTipAdm
+            // 
+            this.toolTipAdm.ToolTipTitle = "Administração";
+            // 
+            // toolTipMinerar
+            // 
+            this.toolTipMinerar.ToolTipTitle = "Minerar";
+            // 
+            // toolTipLoja
+            // 
+            this.toolTipLoja.ToolTipTitle = "Loja";
+            // 
+            // toolTipReiniciar
+            // 
+            this.toolTipReiniciar.ToolTipTitle = "Reiniciar";
+            // 
+            // toolTipDesligar
+            // 
+            this.toolTipDesligar.ToolTipTitle = "Desligar";
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -434,5 +460,10 @@
         public System.Windows.Forms.Panel panPesoBaixo;
         public System.Windows.Forms.Label lbPeso;
         public System.Windows.Forms.Label lbNivel;
+        private System.Windows.Forms.ToolTip toolTipAdm;
+        private System.Windows.Forms.ToolTip toolTipMinerar;
+        private System.Windows.Forms.ToolTip toolTipLoja;
+        private System.Windows.Forms.ToolTip toolTipReiniciar;
+        private System.Windows.Forms.ToolTip toolTipDesligar;
     }
 }

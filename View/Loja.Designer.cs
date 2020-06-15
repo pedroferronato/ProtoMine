@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelVendedor = new System.Windows.Forms.Panel();
             this.panelb3 = new System.Windows.Forms.Panel();
             this.panelb2 = new System.Windows.Forms.Panel();
@@ -38,6 +39,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // panelVendedor
@@ -149,6 +151,10 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Caso deseje comprar uma bolsa ou picareta, clique na mesma!";
             // 
+            // toolTip1
+            // 
+            this.toolTip1.ToolTipTitle = "Pedidos";
+            // 
             // Loja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -186,5 +192,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

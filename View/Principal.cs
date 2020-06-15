@@ -77,6 +77,12 @@ namespace ProtoMine.View
             picADM.Visible = false;
             lbNivel.Text = "Nível: " + UserCache.UsuarioLogado.Nivel.ToString();
             CarregarXp();
+
+            toolTipAdm.SetToolTip(picADM, "Formulário de administração");
+            toolTipMinerar.SetToolTip(picMinerar, "Coleta de itens");
+            toolTipLoja.SetToolTip(picLoja, "Loja de compra de itens");
+            toolTipReiniciar.SetToolTip(picRelogar, "Desconectar usuário");
+            toolTipDesligar.SetToolTip(picDesligar, "Desligar o sistema");
         }
 
         private void CarregarXp()
@@ -273,6 +279,5 @@ namespace ProtoMine.View
                 }
             }
         }
-
     }
 }

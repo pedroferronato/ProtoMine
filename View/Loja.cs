@@ -27,6 +27,7 @@ namespace ProtoMine.View
         {
             InitializeComponent();
             telaPrincipal = principal;
+            toolTip1.SetToolTip(panelVendedor, "Setor de pedidos de outros usuários");
         }
 
         private void AbrirPedidos(object sender, EventArgs e)
