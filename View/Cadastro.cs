@@ -232,7 +232,18 @@ namespace ProtoMine.View
                 util.MensagemDeTeste("Erro inesperado no load do delete:  " + ex.Message, "Erro!");
                 throw ex;
             }
-
+            finally
+            {
+                txtlogin.Text = "Login";
+                txtSenha.Text = "Senha";
+                txtnomeUsu.Text = "Nome de Usuário";
+                txtConfSenha.Text = "Confirme a senha";
+                txtConfSenha.UseSystemPasswordChar = false;
+                txtSenha.UseSystemPasswordChar = false;
+                checkRole.Checked = false;
+                btnAtualizar.Visible = false;
+                btnCadastrar.Visible = true;
+            }
         }
 
         private void Atualizar(object sender, EventArgs e)
